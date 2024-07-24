@@ -2,6 +2,7 @@ import importlib.util
 import os
 
 from bs4 import BeautifulSoup
+from src.utils.utils import merge_dicts_add_values
 
 
 # 假设你有多个规则文件（例如rule1.py, rule2.py等），每个文件中都有一个名为calculate_score的函数
@@ -32,6 +33,7 @@ def calculate_total_scores(content: str, rules_path: str) -> dict:
             if os.path.isdir(item_path):
                 folder_scores = calculate_total_scores(content, item_path)
                 total_score += folder_scores["total_score"]
+                scores = merge_dicts_add_values(scores, folder_scores)
 
     scores["total_score"] = total_score  # 将总分也存储在字典中
     return scores

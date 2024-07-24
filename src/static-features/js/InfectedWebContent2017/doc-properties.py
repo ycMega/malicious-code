@@ -14,6 +14,9 @@ def calculate_score(js_content) -> int:
         "pathname",
         "URL",
         "action",
+        # 除了本文新提出的，还有一些原来就有的？比如文章给出的cookie和documentURI？
+        "cookie",
+        "documentURI",
     ]
     # 构造正则表达式，匹配形如document.[property]的模式
     regex_patterns = [re.compile(r"\bdocument\." + prop + r"\b") for prop in properties]

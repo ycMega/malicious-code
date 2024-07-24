@@ -1,6 +1,9 @@
 import re
 
+# document.write()调用可能将恶意代码注入网页，并在加载时执行
 
+
+# 提取完整的document.write()调用。考虑括号的嵌套
 def extract_document_writes(js_content: str):
     document_writes = []
     start_index = js_content.find("document.write(")

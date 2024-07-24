@@ -62,19 +62,19 @@ def calculate_score(html_content: str) -> int:
 
     # 检测可疑标签和script标签内部HTML是否包含隐藏模式
     for tag in suspicious_elements + script_tags:
-        print(f"tag:{tag}")
+        # print(f"tag:{tag}")
         for pattern in hidden_script_patterns:
             if pattern in tag.text:
-                print(f"script pattern:{pattern}")
+                # print(f"script pattern:{pattern}")
                 hidden_count += 1
                 # break  # 匹配到一个模式后，跳出内层循环
 
     # 检测style标签是否包含隐藏模式
     for style in style_tags:
-        print(f"style tag:{style}")
+        # print(f"style tag:{style}")
         for pattern in hidden_style_patterns:
             if pattern in style.text:
-                print(f"style pattern:{pattern}")
+                # print(f"style pattern:{pattern}")
                 hidden_count += 1
                 # break  # 匹配到一个模式后，跳出内层循环
 

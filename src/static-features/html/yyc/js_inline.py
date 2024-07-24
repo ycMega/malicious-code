@@ -2,7 +2,7 @@
 from bs4 import BeautifulSoup
 
 from score import calculate_total_scores
-from utils import RULES_PATH_JS
+from src.utils.utils import RULES_PATH_JS
 
 
 # inline JS funcs

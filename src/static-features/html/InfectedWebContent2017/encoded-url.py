@@ -2,7 +2,7 @@ import re
 
 from bs4 import BeautifulSoup
 
-from utils import ENCODED_URLS_AND_IPS
+from src.utils.utils import ENCODED_URLS_AND_IPS
 
 # encode--obfuscate
 

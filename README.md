@@ -2,11 +2,11 @@
 ## requirements
 - python 3.10
 - requirements.txt
-- conda: pandas
+- conda: pandas, deprecated
 
 ## usage
-- python test/main.py
-- --url, -th
+- python src/main.py
+
 
 ## 思考
 - 7.18：目前的实现是每个文件统计一个特征，并直接计算分数。后面可能设计为“多个规则”，每个规则涉及到多个特征，满足特定规则后再判断更深的规则。（规则是偏序的，且不一定要遍历所有规则）
