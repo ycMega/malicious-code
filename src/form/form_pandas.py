@@ -13,9 +13,9 @@ def form_pandas(
     base_name, extension = os.path.splitext(name)
     # 根据指定的格式保存文件
     if format_choice == "csv":
-        df.to_csv(os.path.join(path, f"{base_name}-{extension}.csv"), index=False)
+        df.to_csv(os.path.join(path, f"{base_name}-{extension[1:]}.csv"), index=False)
     elif format_choice == "html":
-        df.to_html(os.path.join(path, f"{base_name}-{extension}.html"), index=False)
+        df.to_html(os.path.join(path, f"{base_name}-{extension[1:]}.html"), index=False)
 
     # print(df.to_string(index=False))
 

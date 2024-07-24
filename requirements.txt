@@ -7,3 +7,4 @@ tqdm
 # webdriver-manager
 # selenium
 # scrapy
+cssutils # 7.24

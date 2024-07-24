@@ -1,7 +1,8 @@
 import os
 
-from ana_html import analyze_html
-from ana_js import analyze_js
+import pandas as pd
+
+from analyze import analyze_html, analyze_js
 from form.form_pandas import form_pandas
 
 webpage_path = "./webpages"
@@ -30,3 +31,18 @@ if __name__ == "__main__":
                 form_pandas(total_scores, web_dir_path, web_file, "csv")
         else:
             print(f"Skipping: {web_file}")
+
+    # CSV文件的路径
+    csv_file_path = "webpages/bilibili/412-js.csv"
+
+    # 读取CSV文件，这里header=None表示没有头部行，nrows=1读取第一行
+    keys = pd.read_csv(csv_file_path, header=None, nrows=1).iloc[0].tolist()
+
+    # 再次读取文件，这次从第二行开始读取数据
+    df = pd.read_csv(csv_file_path, header=None, skiprows=1)
+
+    # 重置列名
+    df.columns = keys
+
+    # 现在df应该是一个有正确列名和数据的DataFrame
+    print(df)

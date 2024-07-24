@@ -1,10 +1,12 @@
+# defined by yyc
 import re
 
 from bs4 import BeautifulSoup
 
 
 # use non standard ports to bypass firewalls
-def calculate_score(soup: BeautifulSoup):
+def calculate_score(html_content: str):
+    soup = BeautifulSoup(html_content, "lxml")
     links = soup.find_all("a", href=True)
     non_standard_ports = sum(
         1

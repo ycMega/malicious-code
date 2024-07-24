@@ -1,12 +1,14 @@
+# defined by yyc
 from bs4 import BeautifulSoup
 
-from constants import RULES_PATH_JS
 from score import calculate_total_scores
+from utils import RULES_PATH_JS
 
 
 # inline JS funcs
 # e.g. eval 似乎应该提取出来然后应用js规则？
-def calculate_score(soup: BeautifulSoup):
+def calculate_score(html_content: str):
+    soup = BeautifulSoup(html_content, "lxml")
     total_js_score = 0
     inline_js = ""
     # 查找所有的 <script> 标签
