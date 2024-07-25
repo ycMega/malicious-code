@@ -2,6 +2,7 @@ import importlib.util
 import os
 
 from bs4 import BeautifulSoup
+
 from src.utils.utils import merge_dicts_add_values
 
 
@@ -24,6 +25,8 @@ def calculate_total_scores(content: str, rules_path: str) -> dict:
             rule_path = os.path.join(rules_path, rule_file)
             rule_module = load_rule_module(rule_path)
             score = rule_module.calculate_score(content)
+            if isinstance(score, tuple):
+                score = score[0]  # 如果返回的是元组，则取第一个元素
             if score > -1:  # 表示此特征有效
                 total_score += score
                 feature_name = rule_file[:-3]  # 移除.py后缀来获取特征名称

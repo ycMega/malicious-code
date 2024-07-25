@@ -32,11 +32,12 @@ def calculate_score(html_content):
     return ip_count
 
 
-html_contents = """
-<iframe src="187.202.16.2" width=0 height=0></iframe>
-"""
-res = calculate_score(html_contents)
-print(f"IP count:{res}")
+if __name__ == "__main__":
+    html_contents = """
+    <iframe src="187.202.16.2" width=0 height=0></iframe>
+    """
+    res = calculate_score(html_contents)
+    print(f"IP count:{res}")
 
 # def add_init_py(root_dir):
 #     for dir_name, subdirs, files in os.walk(root_dir):

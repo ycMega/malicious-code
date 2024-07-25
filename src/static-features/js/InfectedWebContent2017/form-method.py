@@ -27,15 +27,16 @@ def calculate_score(html_content):
 
 
 # 示例使用
-html_content = """
-<form method="post" action="submit-form.php">
-    <input type="text" name="username">
-    <input type="submit" value="Submit">
-</form>
-<form method="get" action="search.php">
-    <input type="text" name="search_query">
-    <input type="submit" value="Search">
-</form>
-"""
-all_count = calculate_score(html_content)
-print(f"Form method 'get'/'post' usage count: {all_count}")
+if __name__ == "__main__":
+    html_content = """
+    <form method="post" action="submit-form.php">
+        <input type="text" name="username">
+        <input type="submit" value="Submit">
+    </form>
+    <form method="get" action="search.php">
+        <input type="text" name="search_query">
+        <input type="submit" value="Search">
+    </form>
+    """
+    all_count = calculate_score(html_content)
+    print(f"Form method 'get'/'post' usage count: {all_count}")

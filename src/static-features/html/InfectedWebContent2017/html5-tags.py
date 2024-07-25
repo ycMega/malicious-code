@@ -31,11 +31,12 @@ def calculate_score(html_content: str) -> int:
     return external_or_long_src_count + hidden_tags_count
 
 
-# 示例HTML内容
-html_content = """
-<video width="0" height="0" controls>
-<source src="www.evil.com/malicious.mp4" type="video/mp4"></video>
-"""
+if __name__ == "__main__":
+    # 示例HTML内容
+    html_content = """
+    <video width="0" height="0" controls>
+    <source src="www.evil.com/malicious.mp4" type="video/mp4"></video>
+    """
 
-res = calculate_score(html_content)
-print(f"html5-tags count:{res}")
+    res = calculate_score(html_content)
+    print(f"html5-tags count:{res}")

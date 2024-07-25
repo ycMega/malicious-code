@@ -30,16 +30,17 @@ def calculate_score(js_content):
     return sum(feature_counts.values())
 
 
-# 示例使用
-js_content = """
-window.onload = function() {
-    console.log(location.pathname);
-    location.assign('http://example.com');
-    location.reload();
-    location.replace('http://example.com/newPage');
-};
-"""
-feature_counts = calculate_score(js_content)
-print(f"location features count: {feature_counts}")
-# for feature, count in feature_counts.items():
-#     print(f"{feature}: {count}")
+if __name__ == "__main__":
+    # 示例使用
+    js_content = """
+    window.onload = function() {
+        console.log(location.pathname);
+        location.assign('http://example.com');
+        location.reload();
+        location.replace('http://example.com/newPage');
+    };
+    """
+    feature_counts = calculate_score(js_content)
+    print(f"location features count: {feature_counts}")
+    # for feature, count in feature_counts.items():
+    #     print(f"{feature}: {count}")

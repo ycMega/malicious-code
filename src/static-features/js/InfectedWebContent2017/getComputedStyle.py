@@ -13,18 +13,19 @@ def calculate_score(js_content):
 
 
 # 示例使用
-js_content = """
-var links = document.links;
-for (var i = 0; i < links.length; ++i)
-{ var link = links[i];
-if (getComputedStyle(link, "").color
-== "rgb(0, 0, 128)") {
-// we know link.href has not been visited
-}
-else{
-// we know link.href has been visited
-}
-}
-"""
-usage_count = calculate_score(js_content)
-print(f"getComputedStyle usage count: {usage_count}")
+if __name__ == "__main__":
+    js_content = """
+    var links = document.links;
+    for (var i = 0; i < links.length; ++i)
+    { var link = links[i];
+    if (getComputedStyle(link, "").color
+    == "rgb(0, 0, 128)") {
+    // we know link.href has not been visited
+    }
+    else{
+    // we know link.href has been visited
+    }
+    }
+    """
+    usage_count = calculate_score(js_content)
+    print(f"getComputedStyle usage count: {usage_count}")

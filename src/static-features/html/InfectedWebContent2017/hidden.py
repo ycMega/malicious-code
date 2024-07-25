@@ -81,42 +81,43 @@ def calculate_score(html_content: str) -> int:
     return hidden_count
 
 
-# 示例HTML内容
-html_content = """
-<html>
-<head>
-<style>
-.hidden { width: 0px; }
-.invisible { visibility: hidden; }
-.none { display: none; }
-</style>
-</head>
-<body>
-<div class="hidden">Invisible Content</div>
-<div class="invisible">Invisible Content</div>
-<div class="none">Invisible Content</div>
-<script>
-document.getElementById("someId").style.visibility = 'hidden';
-document.getElementById("anotherId").style.display = 'none';
-</script>
-</body>
-</html>
-"""
+if __name__ == "__main__":
+    # 示例HTML内容
+    html_content = """
+    <html>
+    <head>
+    <style>
+    .hidden { width: 0px; }
+    .invisible { visibility: hidden; }
+    .none { display: none; }
+    </style>
+    </head>
+    <body>
+    <div class="hidden">Invisible Content</div>
+    <div class="invisible">Invisible Content</div>
+    <div class="none">Invisible Content</div>
+    <script>
+    document.getElementById("someId").style.visibility = 'hidden';
+    document.getElementById("anotherId").style.display = 'none';
+    </script>
+    </body>
+    </html>
+    """
 
-css_text = """
-.hidden { display: none; }
-.invisible { visibility: hidden; }
-"""
+    css_text = """
+    .hidden { display: none; }
+    .invisible { visibility: hidden; }
+    """
 
-# 解析CSS
-css_parser = CSSParser()
-stylesheet = css_parser.parseString(css_text)
+    # 解析CSS
+    css_parser = CSSParser()
+    stylesheet = css_parser.parseString(css_text)
 
-# 调用函数
-result = calculate_score(html_content)
-print(result)
-# hidden_elements = soup.find_all(
-#     style=lambda value: value and "display:none" in value
-# )
-# score = len(hidden_elements)  #  * 20
-# return score
+    # 调用函数
+    result = calculate_score(html_content)
+    print(result)
+    # hidden_elements = soup.find_all(
+    #     style=lambda value: value and "display:none" in value
+    # )
+    # score = len(hidden_elements)  #  * 20
+    # return score

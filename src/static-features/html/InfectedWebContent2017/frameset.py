@@ -24,11 +24,12 @@ def calculate_score(html_content: str) -> int:
     return suspicious_frameset_count
 
 
-# 示例HTML内容
-html_content = """
-<frameset rows="100%,*" frameborder="no" border="0" framespacing="0">
-    <frame src="frame_a.htm">
-    <frame src="frame_b.htm">
-</frameset>
-"""
-print(f"Found {calculate_score(html_content)} suspicious frameset(s).")
+if __name__ == "__main__":
+    # 示例HTML内容
+    html_content = """
+    <frameset rows="100%,*" frameborder="no" border="0" framespacing="0">
+        <frame src="frame_a.htm">
+        <frame src="frame_b.htm">
+    </frameset>
+    """
+    print(f"Found {calculate_score(html_content)} suspicious frameset(s).")

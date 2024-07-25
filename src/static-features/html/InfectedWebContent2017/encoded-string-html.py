@@ -37,12 +37,11 @@ def calculate_score(html_content: str) -> int:
     return encoded_string_count + encoded_html_count
 
 
-# 示例HTML内容
-html_content = """
-&lt;iframe src=&quot; Evil.com &quot; width=0 height=0&gt;&lt;/iframe&gt;
-"""
-
-
-# 调用函数并打印结果
-res = calculate_score(html_content)
-print(f"encoded count:{res}")
+if __name__ == "__main__":
+    # 示例HTML内容
+    html_content = """
+    &lt;iframe src=&quot; Evil.com &quot; width=0 height=0&gt;&lt;/iframe&gt;
+    """
+    # 调用函数并打印结果
+    res = calculate_score(html_content)
+    print(f"encoded count:{res}")
