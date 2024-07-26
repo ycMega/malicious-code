@@ -1,3 +1,4 @@
+import os
 import re
 
 from bs4 import BeautifulSoup
@@ -51,11 +52,21 @@ def analyze_content(file_path: str, content_type: str) -> dict:
     :param content_type: 内容类型，'html' 或 'js'
     :return: 分数字典
     """
+    js_path = file_path
     with open(file_path, "r", encoding="utf-8") as file:
         content = file.read()
     if content_type == "html":
         # 对HTML内容进行处理，例如提取内联JS
         js_content = extract_inline_js(content)
+        if js_content:
+            # 生成新的文件名
+            base_name = os.path.splitext(file_path)[0]
+            js_path = f"{base_name}-inline.js"
+            # 将内联JS代码写入新的文件
+            with open(js_path, "w", encoding="utf-8") as js_file:
+                js_file.write(js_content)
+        else:
+            js_path = ""
     elif content_type == "js":
         # 直接处理JS文件内容
         js_content = content
@@ -65,7 +76,12 @@ def analyze_content(file_path: str, content_type: str) -> dict:
     # html文件和JS文件都有可能包含对方的特征以及URL的特征
     # js content是JS文件或<script>包裹的JS代码，是content的子集，只在检测js特征的时候可以减少工作量
     total_html_scores = calculate_total_scores(content, RULES_PATH_HTML)
-    total_js_scores = calculate_total_scores(js_content, RULES_PATH_JS)
+    # print(f"calling calculate js: js_path={js_path}")
+    total_js_scores = (
+        calculate_total_scores(js_content, RULES_PATH_JS, js_path)
+        if js_path != ""
+        else {}
+    )
     urls: list[str] = extract_urls(content)
     total_url_scores: dict = {}
     for url in urls:

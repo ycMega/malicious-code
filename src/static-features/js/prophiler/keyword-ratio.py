@@ -4,7 +4,7 @@ import re
 # TODO: 设定合适的公式来计算恶意分数
 
 
-def calculate_score(js_content: str) -> float:
+def calculate_score(js_content: str, js_path: str = "") -> float:
     # 定义JavaScript关键字列表
     js_keywords = {
         "break",
@@ -56,7 +56,7 @@ def calculate_score(js_content: str) -> float:
     # 计算并返回关键字与总词数的比率
     if total_words == 0:  # 避免除以零的错误
         return 0.0
-    return keyword_count / total_words
+    return round(keyword_count / total_words, 2)
 
 
 if __name__ == "__main__":

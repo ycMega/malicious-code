@@ -15,7 +15,7 @@ def calculate_score(html_content: str) -> int:
     # 查找所有元素
     for tag in soup.find_all(True):  # True 表示查找所有标签
         content = tag.get_text(strip=True)  # 获取元素的文本内容
-        print(f"tag:{tag.name},content:{content}")
+        # print(f"tag:{tag.name},content:{content}")
         # 检查内容长度和空白字符比例
         if len(content) > CONTENT_LENGTH_THRESHOLD:
             whitespace_count = sum(1 for char in content if char.isspace())

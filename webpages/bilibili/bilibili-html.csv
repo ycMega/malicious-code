@@ -1,2 +1,2 @@
-encoded-string-html,encoded-url,frameset,hidden,html5-tags,ip,noframe,total_score,iframe,js_inline,port,script_external,src-1,doc-properties,doc-write,form-method,getComputedStyle,global-func,jquery,location,create_element,doc_rw,eval
-0,0,0,0,0,0,0,8,0,0,0,4,4,0,0,0,0,0,0,0,0,0,0
+encoded-string-html,encoded-url,frameset,hidden,html5-tags,ip,noframe,total_score,double-documents,included-urls,known-malicious-patterns,out-of-place,small-area-elements,suspicious-content-elements,suspicious-objects,iframe,port,script_external,src-1
+0,0,0,0,0,0,0,12,0,4,0,0,0,0,0,0,0,4,4

@@ -21,7 +21,7 @@ def extract_document_writes(js_content: str):
     return document_writes
 
 
-def calculate_score(js_content):
+def calculate_score(js_content: str, js_path: str = ""):
     # 匹配从document.write(开始，直到字符串开始的标记（", ', 或 `），并且考虑了可能的空白字符（\s*）
     patterns = [
         "<script",

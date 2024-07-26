@@ -16,7 +16,10 @@ def calculate_score(html_content: str) -> int:
         k: v for k, v in double_document_count.items() if v > 1
     }
 
-    return presence_of_double_documents
+    return (
+        sum(v - 1 for v in presence_of_double_documents.values()),
+        presence_of_double_documents,
+    )  # 返回重复次数
 
 
 if __name__ == "__main__":

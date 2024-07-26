@@ -20,7 +20,7 @@ html5_events = [
 ]
 
 
-def calculate_score(html_content: str) -> dict:
+def calculate_score(js_content: str, js_path: str = "") -> int:
     # 使用defaultdict初始化事件计数器
     event_counts = defaultdict(int)
 
@@ -28,7 +28,7 @@ def calculate_score(html_content: str) -> dict:
     for event in html5_events:
         # 正则表达式匹配事件，考虑大小写
         pattern = re.compile(rf"\b{event}\b", re.IGNORECASE)
-        matches = pattern.findall(html_content)
+        matches = pattern.findall(js_content)
         event_counts[event] = len(matches)
 
     return sum(event_counts.values())  # 暂且只统计总和
@@ -36,7 +36,7 @@ def calculate_score(html_content: str) -> dict:
 
 if __name__ == "__main__":
     # 示例HTML内容
-    html_content = """
+    js_content = """
     <form id=test onforminput=alert(1)>
     <input> </form>
     <button form=test onformchange=alert(2)>X</button>
@@ -44,5 +44,5 @@ if __name__ == "__main__":
     """
 
     # 计算并打印事件使用次数
-    event_usage = calculate_score(html_content)
+    event_usage = calculate_score(js_content)
     print("html5 Event usage:", event_usage)

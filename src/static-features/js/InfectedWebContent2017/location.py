@@ -3,7 +3,7 @@ import re
 # The properties of a location object可能被读取，也可能成为initial sources of taint values
 
 
-def calculate_score(js_content):
+def calculate_score(js_content: str, js_path: str = ""):
     # 定义需要统计的location对象的属性和函数
     features = [
         "location.pathname",

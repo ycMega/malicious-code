@@ -104,7 +104,7 @@ xss_detection_rules = [
         3,
     ),
 ]
-regex_malfunc = r"\b(link|number|exec|eval|escape|fromCharCode|setinterval|settimeout|document\.write|createElement|ubound| \
+regex_malfunc = r"\b(link|number|exec|eval|escape|fromCharCode|setinterval|settimeout|js_content\.write|createElement|ubound| \
     global|alert|unscape|decodeURIComponent|decodeURL|encodeURL|encodeURLComponent|parseInt|parseFloat| \
     String\.(?:fromCharCode|raw|charAt|charCodeAt|concat|endsWith|includes|indexOf|lastIndexOf|localeCompare|match|matchAll|normalize|\
         padEnd|padStart|repeat|replace|replaceAll|search|slice|split|startsWith|substring|toLocaleLowerCase|toLocaleUpperCase|\
@@ -127,7 +127,7 @@ patterns: list[re.Pattern] = [
 
 
 # 检测逻辑（伪代码）
-def calculate_score(document: str) -> int:
+def calculate_score(js_content: str, js_path: str = "") -> int:
     count = 0
     for tag_list, cases_list, condition in xss_detection_rules:
         for tag in tag_list:
@@ -140,7 +140,9 @@ def calculate_score(document: str) -> int:
             tag_body_pattern = re.compile(
                 rf"<{tag}.*?>(.*?)</{tag}>", re.IGNORECASE | re.DOTALL
             )
-            matches = tag_pattern.findall(document) + tag_body_pattern.findall(document)
+            matches = tag_pattern.findall(js_content) + tag_body_pattern.findall(
+                js_content
+            )
             # 这样一来， inner HTML和 body of the tag 是否就没区别了？
             # if len(matches) > 0:
             #     print(f"tag:{tag}, matches:", matches)

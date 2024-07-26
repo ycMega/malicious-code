@@ -15,7 +15,9 @@ def load_rule_module(rule_path):
 
 
 # 能同时应用于html和JS吗
-def calculate_total_scores(content: str, rules_path: str) -> dict:
+def calculate_total_scores(
+    content: str, rules_path: str, content_path: str = ""
+) -> dict:
     scores = {}  # 初始化一个空字典来存储每个特征的分数
     total_score = 0
     for rule_file in os.listdir(rules_path):
@@ -24,17 +26,27 @@ def calculate_total_scores(content: str, rules_path: str) -> dict:
         if rule_file.endswith(".py"):
             rule_path = os.path.join(rules_path, rule_file)
             rule_module = load_rule_module(rule_path)
-            score = rule_module.calculate_score(content)
-            if isinstance(score, tuple):
-                score = score[0]  # 如果返回的是元组，则取第一个元素
-            if score > -1:  # 表示此特征有效
-                total_score += score
-                feature_name = rule_file[:-3]  # 移除.py后缀来获取特征名称
-                scores[feature_name] = score  # 将特征名称和对应分数存储在字典中
+            # try:
+            if hasattr(rule_module, "calculate_score"):
+                score = (
+                    rule_module.calculate_score(content, content_path)
+                    if content_path != ""
+                    else rule_module.calculate_score(content)  # for HTML
+                )
+                if isinstance(score, tuple):
+                    score = score[0]  # 如果返回的是元组，则取第一个元素
+                if score > -1:  # 表示此特征有效
+                    total_score += score
+                    feature_name = rule_file[:-3]  # 移除.py后缀来获取特征名称
+                    scores[feature_name] = score  # 将特征名称和对应分数存储在字典中
+                else:
+                    print(f"Failed to calculate score for {rule_file}")
+            # except Exception as e:
+            #     print(f"Error calculating score for {rule_file}: {e}")
         else:
             item_path = os.path.join(rules_path, rule_file)
             if os.path.isdir(item_path):
-                folder_scores = calculate_total_scores(content, item_path)
+                folder_scores = calculate_total_scores(content, item_path, content_path)
                 total_score += folder_scores["total_score"]
                 scores = merge_dicts_add_values(scores, folder_scores)
 

@@ -1,7 +1,7 @@
 import re
 
 
-def calculate_score(js_content) -> int:
+def calculate_score(js_content: str, js_path: str = "") -> int:
     # 定义需要统计的document属性
     properties = [
         "domain",

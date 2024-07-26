@@ -108,7 +108,7 @@ vbscript_functions = [
 ]
 
 
-def calculate_score(vbscript_code: str) -> dict:
+def calculate_score(js_content: str, js_path: str = "") -> int:
     # 使用defaultdict初始化函数计数器
     function_counts = defaultdict(int)
 
@@ -116,7 +116,7 @@ def calculate_score(vbscript_code: str) -> dict:
     for function in vbscript_functions:
         # 正则表达式匹配函数，考虑大小写
         pattern = re.compile(rf"\b{function}\b", re.IGNORECASE)
-        matches = pattern.findall(vbscript_code)
+        matches = pattern.findall(js_content)
         function_counts[function] = len(matches)
 
     return sum(function_counts.values())  # 暂且只统计总和
@@ -124,7 +124,7 @@ def calculate_score(vbscript_code: str) -> dict:
 
 if __name__ == "__main__":
     # 示例VBScript代码
-    vbscript_code = """
+    js_content = """
     <Script Language=VBScript>
     On Error Resume Next
     Set Ob = Document.CreateElement("object")
@@ -139,5 +139,5 @@ if __name__ == "__main__":
     """
 
     # 计算并打印函数使用次数
-    function_usage = calculate_score(vbscript_code)
+    function_usage = calculate_score(js_content)
     print("VBScript Function usage:", function_usage)

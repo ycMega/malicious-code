@@ -10,3 +10,8 @@ tqdm
 cssutils # 7.24
 # pyesprima # 7.25 cannot import name 'Syntax' from partially initialized module 'pyesprima' (most likely due to a circular import)
 # slimit # 7.25 No module named 'minifier'
+esprima # 7.26
+escodegen
+dnspython
+whois
+geoip2

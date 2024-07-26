@@ -17,9 +17,12 @@ def is_hexadecimal(s):
 
 # 计算重复字符的规律性：检查字符串中的字符是否以某种规律间隔重复，并计算重复模式的覆盖范围。
 # 返回概率评分：基于重复模式的强度和覆盖范围，返回一个介于0到1之间的概率评分。
+# 目前没有好的实现，且时间复杂度过大
+
+
 def has_regular_intervals(s):
-    min_pattern_length = 4
-    max_pattern_length = len(s) // 2
+    min_pattern_length = 3
+    max_pattern_length = 6  # 不可过大
     total_score = 0
     patterns_found = 0
 
@@ -51,8 +54,10 @@ def has_regular_intervals(s):
         return 0
 
 
-def calculate_score(js_code):
-    strings = re.findall(r'"([^"]*)"', js_code) + re.findall(r"'([^']*)'", js_code)
+def calculate_score(js_content: str, js_path: str = ""):
+    strings = re.findall(r'"([^"]*)"', js_content) + re.findall(
+        r"'([^']*)'", js_content
+    )
     probabilities = []
 
     for s in strings:
@@ -73,9 +78,9 @@ def calculate_score(js_code):
         #     + prob_hexadecimal * 0.4
         #     + prob_regular_intervals * 0.2
         # )
-        print(
-            f"prob_non_printable:{prob_non_printable}, prob_hexadecimal:{prob_hexadecimal}, prob_regular_intervals:{prob_regular_intervals}"
-        )
+        # print(
+        #     f"prob_non_printable:{prob_non_printable}, prob_hexadecimal:{prob_hexadecimal}, prob_regular_intervals:{prob_regular_intervals}"
+        # )
         score = max(prob_non_printable, prob_hexadecimal, prob_regular_intervals)
         probabilities.append(score)
 
@@ -85,14 +90,55 @@ def calculate_score(js_code):
 # 示例用法
 if __name__ == "__main__":
     # 测试示例
-    js_code = """
+    js_content = """
     var shell = "48656c6c6f"; // Hexadecimal shellcode
     var shellcode = "4c8bdc4981ec88000000488b8424900000004833c448898424800000004889442410";
     var nonPrintable = "This is a test string with non-printable \x01\x02\x03 characters.";
     var normalString = "Just a normal string.";
     """
-    probability = calculate_score(js_code)
+    probability = calculate_score(js_content)
     print(f"Shellcode presence probability: {probability}")
+
+
+# def has_regular_intervals(s):
+#     n = len(s)
+#     if n < 2:
+#         return 0.0  # 字符串过短
+
+#     max_length = 5  # 最大重复字符数
+#     pattern_count = {}
+
+#     # 查找字符模式
+#     for length in range(1, max_length + 1):
+#         for i in range(n - length + 1):
+#             substring = s[i:i + length]
+#             if substring not in pattern_count:
+#                 pattern_count[substring] = []
+#             pattern_count[substring].append(i)
+
+#     max_strength = 0
+#     total_coverage = 0
+
+#     # 计算强度和覆盖范围
+#     for substring, indices in pattern_count.items():
+#         if len(indices) < 2:
+#             continue
+
+#         intervals = [indices[i] - indices[i - 1] for i in range(1, len(indices))]
+#         min_interval = min(intervals)
+#         strength = len(indices) / (n / min_interval)
+
+#         coverage = (indices[-1] - indices[0] + len(substring)) / n
+
+#         max_strength = max(max_strength, strength)
+#         total_coverage += coverage
+
+#     # 计算评分
+#     if max_strength == 0:
+#         return 0.0
+
+#     score = (total_coverage / len(pattern_count)) * (max_strength / n)
+#     return min(max(score, 0), 1)
 
 
 # def has_regular_intervals(s, min_interval=5, max_interval=20):
