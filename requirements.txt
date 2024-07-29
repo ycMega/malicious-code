@@ -15,3 +15,4 @@ escodegen
 dnspython
 whois
 geoip2
+fastapi[all] # 7.29

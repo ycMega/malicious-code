@@ -2,7 +2,7 @@
 ## requirements
 - python 3.10
 - requirements.txt
-- conda: pandas, deprecated, pyjsparser
+- conda: pandas, deprecated, #pyjsparser
 <!-- - npm: esprima -->
 
 ## usage
