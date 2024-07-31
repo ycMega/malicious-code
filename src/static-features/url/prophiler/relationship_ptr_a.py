@@ -67,7 +67,7 @@ def get_ptr_record(ip: str) -> str:
         return ""
 
 
-def calculate_scores(url: str) -> Tuple[int, List[str], int, int, str, str, bool]:
+def calculate_score(url: str) -> Tuple[int, List[str], int, int, str, str, bool]:
     """
     检查URL中是否包含IP地址，并返回结果。
     :param url: 要检查的URL
@@ -117,7 +117,7 @@ if __name__ == "__main__":
 
     # 检查每个URL中是否包含IP地址，并获取TTL值和PTR记录关系
     for url in urls:
-        count, ips, a_ttl, ns_ttl, a_ip, ptr_domain, consistent = calculate_scores(url)
+        count, ips, a_ttl, ns_ttl, a_ip, ptr_domain, consistent = calculate_score(url)
         print(
             f"URL: {url} - IP Address Present: {count} - Matched IPs: {ips} - A TTL: {a_ttl} - NS TTL: {ns_ttl} - A Record IP: {a_ip} - PTR Record Domain: {ptr_domain} - Consistent: {consistent}"
         )

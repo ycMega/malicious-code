@@ -2,7 +2,7 @@ from typing import List, Tuple
 from urllib.parse import urlparse
 
 
-def calculate_scores(url: str) -> Tuple[int, str]:
+def calculate_score(url: str) -> Tuple[int, str]:
     """
     检查URL中是否包含子域，并返回结果。
     :param url: 要检查的URL
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     # 检查每个URL中是否包含子域
     for url in urls:
-        count, domain_parts = calculate_scores(url)
+        count, domain_parts = calculate_score(url)
         print(
             f"URL: {url} - Subdomain Present: {count} - Matched Patterns: {domain_parts}"
         )

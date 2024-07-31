@@ -10,7 +10,7 @@ def calculate_score(html_content: str) -> int:
     # 查找所有noframes标签
     noframes_tags = soup.find_all("noframes")
     for noframe in noframes_tags:
-        # 检查是否存在a标签且其scr（AI任务应该是href）属性长度大于150字符
+        # 检查是否存在a标签且其scr（AI认为应该是href）属性长度大于150字符
         a_tags = noframe.find_all("a")
         for a in a_tags:
             if "href" in a.attrs and len(a["href"]) > 150:

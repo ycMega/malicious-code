@@ -3,7 +3,7 @@ from typing import List, Tuple
 from urllib.parse import urlparse
 
 
-def calculate_scores(url: str) -> Tuple[int, List[str]]:
+def calculate_score(url: str) -> Tuple[int, List[str]]:
     """
     检查URL中是否包含IP地址，并返回结果。
     :param url: 要检查的URL
@@ -43,5 +43,5 @@ if __name__ == "__main__":
 
     # 检查每个URL中是否包含IP地址
     for url in urls:
-        count, ips = calculate_scores(url)
+        count, ips = calculate_score(url)
         print(f"URL: {url} - IP Address Present: {count} - Matched Patterns: {ips}")

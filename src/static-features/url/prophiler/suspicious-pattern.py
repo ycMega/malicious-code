@@ -16,7 +16,7 @@ suspicious_patterns = [
 ]
 
 
-def calculate_scores(url: str) -> Tuple[int, List[str]]:
+def calculate_score(url: str) -> Tuple[int, List[str]]:
     """
     检查URL中包含的可疑模式数量，并返回匹配的模式列表。
     :param url: 要检查的URL
@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     # 检查每个URL中的可疑模式数量和匹配的模式
     for url in urls:
-        count, patterns = calculate_scores(url)
+        count, patterns = calculate_score(url)
         print(
             f"URL: {url} - Suspicious Patterns Count: {count} - Matched Patterns: {patterns}"
         )
