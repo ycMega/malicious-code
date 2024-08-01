@@ -87,7 +87,7 @@ def analyze_events(ast):
 # analyze_events(ast)
 
 
-def calculate_score(js_content: str, js_path: str = "") -> int:
+def calculate_score(js_content: str) -> int:
     # print("event-attachments.py: calculate_score")
     # ast, error = parse_js_code(js_content)
     # if error:

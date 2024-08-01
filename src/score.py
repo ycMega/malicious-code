@@ -2,7 +2,6 @@ import importlib.util
 import os
 
 from bs4 import BeautifulSoup
-
 from src.utils.utils import merge_dicts_add_values
 
 
@@ -29,9 +28,11 @@ def calculate_total_scores(
             # try:
             if hasattr(rule_module, "calculate_score"):
                 score = (
-                    rule_module.calculate_score(content, content_path)
-                    if content_path != ""
-                    else rule_module.calculate_score(content)  # for HTML
+                    rule_module.calculate_score(
+                        content
+                    )  # no need for path when using esprima
+                    # if content_path != ""
+                    # else rule_module.calculate_score(content)  # for HTML
                 )
                 if isinstance(score, tuple):
                     score = score[0]  # 如果返回的是元组，则取第一个元素

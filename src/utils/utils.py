@@ -3,11 +3,13 @@ import re
 import subprocess
 
 import esprima
-from pyjsparser import parse
+
+# from pyjsparser import parse
 
 RULES_PATH_HTML = "src/static-features/html"
 RULES_PATH_JS = "src/static-features/js"
 RULES_PATH_URL = "src/static-features/url"
+RULES_PATH_CSS = "src/static-features/css"
 
 # The number of encoded URLs and The number of IP address in elements sources
 ENCODED_URLS_AND_IPS = [
@@ -58,6 +60,7 @@ def parse_js_code(js_code: str, js_path: str = ""):
         return ast, None  # 返回 AST 和无错误
     except esprima.Error as e:
         return None, str(e)  # 返回无 AST 和错误信息
+
     if js_path == "":
         print("ERROR:JS path should not be empty.")
         return None

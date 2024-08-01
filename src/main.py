@@ -27,6 +27,10 @@ if __name__ == "__main__":
                     # total_scores = analyze_js(js_file_path)
                     total_scores = analyze_content(js_file_path, "js")
                     print(total_scores)
+                elif web_file.endswith(".css"):
+                    css_file_path = os.path.join(web_dir_path, web_file)
+                    print(f"Analyzing CSS file: {css_file_path}")
+                    total_scores = analyze_content(css_file_path, "css")
                 else:
                     print(f"Skipping file: {web_file}")
                     continue

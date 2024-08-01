@@ -1,9 +1,11 @@
 import re
 from collections import Counter
 
+from src.utils.css import css_rules_listing, extract_css_features
+
 
 # 检测可疑的CSS滤镜。滤镜主要用于图像处理和视觉效果
-def calculate_score(html_content, css_content: str | None = None):
+def calculate_score(css_list: list):
     # 可疑滤镜
     suspicious_filters = [
         "blur",
@@ -20,22 +22,25 @@ def calculate_score(html_content, css_content: str | None = None):
 
     # 检测滤镜
     filter_pattern = r"filter:\s*([^;]+);"
-    filters = re.findall(filter_pattern, css_content)
+    all_filters = []
+    for css_content in css_list:
+        filters = re.findall(filter_pattern, css_content)
+        all_filters.extend(filters)
     filter_usage = Counter()
 
-    for f in filters:
+    for f in all_filters:
         for suspicious in suspicious_filters:
             if suspicious in f:
                 filter_usage[suspicious] += 1
 
-    # 检查 HTML 中的内联 CSS
-    inline_filter_pattern = r'style=["\'][^"\']*filter:\s*([^;]+);'
-    inline_filters = re.findall(inline_filter_pattern, html_content)
+    # # 检查 HTML 中的内联 CSS
+    # inline_filter_pattern = r'style=["\'][^"\']*filter:\s*([^;]+);'
+    # inline_filters = re.findall(inline_filter_pattern, html_content)
 
-    for f in inline_filters:
-        for suspicious in suspicious_filters:
-            if suspicious in f:
-                filter_usage[suspicious] += 1
+    # for f in inline_filters:
+    #     for suspicious in suspicious_filters:
+    #         if suspicious in f:
+    #             filter_usage[suspicious] += 1
 
     return sum(filter_usage.values()), filter_usage
 
@@ -57,7 +62,9 @@ if __name__ == "__main__":
     <div style="filter: grayscale(100%); mix-blend-mode: normal;">Content</div>
     <p style="filter: sepia(100%); mix-blend-mode: screen;">Another Content</p>
     """
-
+    css_list = extract_css_features(html_test_content) + css_rules_listing(
+        css_test_content
+    )
     # 运行检测
-    count, filters = calculate_score(html_test_content, css_test_content)
+    count, filters = calculate_score(css_list)
     print("Filter Usage Detected:", filters)

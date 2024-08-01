@@ -4,9 +4,10 @@ import re
 from bs4 import BeautifulSoup
 from deprecated import deprecated
 from pandas import merge
-
 from score import calculate_total_scores
+from src.utils.css import extract_css_features
 from src.utils.utils import (
+    RULES_PATH_CSS,
     RULES_PATH_HTML,
     RULES_PATH_JS,
     RULES_PATH_URL,
@@ -53,23 +54,32 @@ def analyze_content(file_path: str, content_type: str) -> dict:
     :return: 分数字典
     """
     js_path = file_path
+    js_content, css_content = "", ""
     with open(file_path, "r", encoding="utf-8") as file:
         content = file.read()
     if content_type == "html":
         # 对HTML内容进行处理，例如提取内联JS
         js_content = extract_inline_js(content)
-        if js_content:
-            # 生成新的文件名
-            base_name = os.path.splitext(file_path)[0]
-            js_path = f"{base_name}-inline.js"
-            # 将内联JS代码写入新的文件
-            with open(js_path, "w", encoding="utf-8") as js_file:
-                js_file.write(js_content)
-        else:
-            js_path = ""
+        # if js_content:
+        #     # 生成新的文件名
+        #     base_name = os.path.splitext(file_path)[0]
+        #     js_path = f"{base_name}-inline.js"
+        #     # 将内联JS代码写入新的文件
+        #     with open(js_path, "w", encoding="utf-8") as js_file:
+        #         js_file.write(js_content)
+        css_content = extract_css_features(content)
+        # if css_content:
+        #     # 生成新的文件名
+        #     base_name = os.path.splitext(file_path)[0]
+        #     css_path = f"{base_name}-inline-css"
+        #     # 将内联CSS代码写入新的文件
+        #     with open(css_path, "w", encoding="utf-8") as css_file:
+        #         css_file.write(css_content)
     elif content_type == "js":
         # 直接处理JS文件内容
         js_content = content
+    elif content_type == "css":
+        css_content = content
     else:
         raise ValueError("Invalid content type. Use 'html' or 'js'.")
     total_scores: dict = {}
@@ -78,9 +88,10 @@ def analyze_content(file_path: str, content_type: str) -> dict:
     total_html_scores = calculate_total_scores(content, RULES_PATH_HTML)
     # print(f"calling calculate js: js_path={js_path}")
     total_js_scores = (
-        calculate_total_scores(js_content, RULES_PATH_JS, js_path)
-        if js_path != ""
-        else {}
+        calculate_total_scores(js_content, RULES_PATH_JS) if js_content != "" else {}
+    )
+    total_css_scores = (
+        calculate_total_scores(css_content, RULES_PATH_CSS) if css_content != "" else {}
     )
     urls: list[str] = extract_urls(content)
     total_url_scores: dict = {}
@@ -88,7 +99,7 @@ def analyze_content(file_path: str, content_type: str) -> dict:
         url_scores = calculate_total_scores(url, RULES_PATH_URL)
         total_url_scores = merge_dicts_add_values(total_url_scores, url_scores)
     total_scores = merge_dicts_add_values(
-        total_html_scores, total_js_scores, total_url_scores
+        total_html_scores, total_js_scores, total_css_scores, total_url_scores
     )
     # print(
     #     f"html_scores:{total_html_scores}, js_scores:{total_js_scores}, url_scores:{total_url_scores}"

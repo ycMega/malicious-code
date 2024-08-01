@@ -112,8 +112,7 @@ def extract_decoding_routines(ast):
     return routines
 
 
-def calculate_score(js_content: str, js_path: str = "") -> int:
-    print(f"decoding routines: path={js_path}")
+def calculate_score(js_content: str) -> int:
     # try:
     # print("decoding-routines.py: calculate_score")
     # 解析代码并生成 AST

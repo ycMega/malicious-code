@@ -82,7 +82,7 @@ def count_string_assignments(node, assignments):
             count_string_assignments(node.alternate, assignments)
 
 
-def calculate_score(js_content: str, js_path: str = ""):
+def calculate_score(js_content: str):
     # print("direct-str-assign.py: calculate_score")
     ast, error = parse_js_code(js_content)
     if error:
