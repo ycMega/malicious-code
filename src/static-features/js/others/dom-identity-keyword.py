@@ -61,12 +61,13 @@ def calculate_score(js_content: str) -> dict:
     return features["identities_count"] + features["keywords_count"], features
 
 
-# 示例调用
-js_example = """
-var username = "testUser";
-var password = "123456";
-document.getElementById("login").innerHTML = "Please enter your username and password.";
-"""
+if __name__ == "__main__":
+    # 示例调用
+    js_example = """
+    var username = "testUser";
+    var password = "123456";
+    document.getElementById("login").innerHTML = "Please enter your username and password.";
+    """
 
-sum_count, features = calculate_score(js_example)
-print(f"DOM identites and keywords: {features}")
+    sum_count, features = calculate_score(js_example)
+    print(f"DOM identites and keywords: {features}")

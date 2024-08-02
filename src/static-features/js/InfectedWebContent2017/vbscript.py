@@ -108,7 +108,7 @@ vbscript_functions = [
 ]
 
 
-def calculate_score(js_content: str, js_path: str = "") -> int:
+def calculate_score(js_content: str) -> int:
     # 使用defaultdict初始化函数计数器
     function_counts = defaultdict(int)
 

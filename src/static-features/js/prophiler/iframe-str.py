@@ -1,7 +1,7 @@
 import re
 
 
-def calculate_score(js_content: str, js_path: str = "") -> int:
+def calculate_score(js_content: str) -> int:
     # 使用正则表达式查找包含 "iframe" 的字符串
     pattern = r"\biframe\b"
     matches = re.findall(pattern, js_content, re.IGNORECASE)

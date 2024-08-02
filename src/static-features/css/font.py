@@ -40,7 +40,6 @@ def extract_used_fonts(css_content, loaded_fonts):
 # 加载异常的字体，特别是那些（来自不受信任的源或）在页面上没有明显用途的字体，可能用于追踪用户或作为加载恶意内容的载体
 # 有可能会读取CSS文件的内容，并作为参数传进来？还是只传CSS文件路径呢？
 def calculate_score(css_list: list):
-    print(f"css list:{css_list}")
     font_faces = []
     font_used = []
     font_face_pattern = r"@font-face\s*\{[^@]*?font-family\s*:\s*[\"']([^\"']+)[\"']"
@@ -50,7 +49,7 @@ def calculate_score(css_list: list):
             font_faces.extend(re.findall(font_face_pattern, css_pattern))
         else:
             font_used.extend(re.findall(font_usage_pattern, css_pattern))
-    print(f"font loaded:{font_faces}, font used:{font_used}")
+    # print(f"font loaded:{font_faces}, font used:{font_used}")
     font_unused = set(font_faces) - set(font_used)
     return len(font_unused), font_unused
     # css_content = " ".join(css_list)
@@ -63,31 +62,23 @@ def calculate_score(css_list: list):
 
     # print(f"css content:{css_content}")
     # 提取加载的字体
-    loaded_fonts_pattern = r'@font-face\s*{[^}]*?font-family:\s*["\']?([^"\';]+)["\']?;'
-    loaded_fonts = re.findall(loaded_fonts_pattern, css_content)
-    print(f"loaded fonts:{loaded_fonts}")
-    # 提取页面使用的字体
-    used_fonts = set()
-    font_usage_pattern = r'font-family:\s*["\']?([^"\';]+)["\']?'
-    used_fonts_matches = re.findall(font_usage_pattern, css_content)
 
-    # 过滤掉 @font-face 规则中的字体
-    for match in used_fonts_matches:
-        if f"@font-face {{ font-family: '{match}'" not in css_content:
-            used_fonts.add(match)
-    print(f"used fonts:{used_fonts}")
+    # loaded_fonts_pattern = r'@font-face\s*{[^}]*?font-family:\s*["\']?([^"\';]+)["\']?;'
+    # loaded_fonts = re.findall(loaded_fonts_pattern, css_content)
+    # print(f"loaded fonts:{loaded_fonts}")
+    # # 提取页面使用的字体
+    # used_fonts = set()
+    # font_usage_pattern = r'font-family:\s*["\']?([^"\';]+)["\']?'
+    # used_fonts_matches = re.findall(font_usage_pattern, css_content)
 
-    # # 检查 HTML 中的字体
-    # html_font_pattern = (
-    #     r'style=["\'][^"\']*font-family:\s*["\']([^"\']+)["\'][^"\']*["\']'
-    # )
-    # html_used_fonts = re.findall(html_font_pattern, html_content)
-    # used_fonts.update(html_used_fonts)
+    # # 过滤掉 @font-face 规则中的字体
+    # for match in used_fonts_matches:
+    #     if f"@font-face {{ font-family: '{match}'" not in css_content:
+    #         used_fonts.add(match)
+    # print(f"used fonts:{used_fonts}")
+    # unused_fonts = [font for font in loaded_fonts if font not in used_fonts]
 
-    # 找出未使用的字体
-    unused_fonts = [font for font in loaded_fonts if font not in used_fonts]
-
-    return len(unused_fonts), unused_fonts
+    # return len(unused_fonts), unused_fonts
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ def calculate_score(html_content: str) -> dict:
     soup = BeautifulSoup(html_content, "lxml")
     tags = soup.find_all()
     tags = re.findall(r"(</?)([a-zA-Z][a-zA-Z0-9]*)\b[^>]*>", html_content)
-    print("tags:", tags)
+    # print("tags:", tags)
     array = []
     asymmetrical_tags = {}
     self_closing_tags = {
@@ -57,19 +57,20 @@ def calculate_score(html_content: str) -> dict:
     return sum(asymmetrical_tags.values()), asymmetrical_tags
 
 
-# 示例调用
-html_example = """
-<html>
-<head>
-    <script src="https://example.com/script.js"></script>
-</head>
-<body>
-    <div><img src="image.jpg"></div>
-    <div>Content without closing tag
-    <p>Paragraph without closing
-</body>
-</html>
-"""
+if __name__ == "__main__":
+    # 示例调用
+    html_example = """
+    <html>
+    <head>
+        <script src="https://example.com/script.js"></script>
+    </head>
+    <body>
+        <div><img src="image.jpg"></div>
+        <div>Content without closing tag
+        <p>Paragraph without closing
+    </body>
+    </html>
+    """
 
-sum_score, scores = calculate_score(html_example)
-print("Unsymmetrical tags:", scores)
+    sum_score, scores = calculate_score(html_example)
+    print("Unsymmetrical tags:", scores)

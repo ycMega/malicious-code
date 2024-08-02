@@ -70,25 +70,25 @@ def extract_css_features(html_content):
     res_list = style_tag_list + attr_list
     return res_list
 
-    # 提取内联CSS
-    inline_styles = []
-    for style in soup.find_all("style"):
-        inline_styles.append(style.string)
+    # # 提取内联CSS
+    # inline_styles = []
+    # for style in soup.find_all("style"):
+    #     inline_styles.append(style.string)
 
-    # 提取外部CSS链接
-    external_styles = []
-    for link in soup.find_all("link", rel="stylesheet"):
-        external_styles.append(link["href"])
+    # # 提取外部CSS链接
+    # external_styles = []
+    # for link in soup.find_all("link", rel="stylesheet"):
+    #     external_styles.append(link["href"])
 
-    # 提取所有元素的CSS样式
-    css_features = []
-    for element in soup.find_all(True):  # True表示所有标签
-        styles = element.get("style")
-        if styles:
-            css_features.append(styles)
-            # css_features[element.name] = styles
+    # # 提取所有元素的CSS样式
+    # css_features = []
+    # for element in soup.find_all(True):  # True表示所有标签
+    #     styles = element.get("style")
+    #     if styles:
+    #         css_features.append(styles)
+    #         # css_features[element.name] = styles
 
-    return inline_styles, external_styles, css_features
+    # return inline_styles, external_styles, css_features
 
 
 if __name__ == "__main__":

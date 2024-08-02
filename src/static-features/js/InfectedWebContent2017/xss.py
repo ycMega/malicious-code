@@ -127,7 +127,7 @@ patterns: list[re.Pattern] = [
 
 
 # 检测逻辑（伪代码）
-def calculate_score(js_content: str, js_path: str = "") -> int:
+def calculate_score(js_content: str) -> int:
     count = 0
     for tag_list, cases_list, condition in xss_detection_rules:
         for tag in tag_list:

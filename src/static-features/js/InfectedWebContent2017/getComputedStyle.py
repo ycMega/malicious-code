@@ -1,7 +1,7 @@
 import re
 
 
-def calculate_score(js_content: str, js_path: str = ""):
+def calculate_score(js_content: str):
     # 定义正则表达式来匹配getComputedStyle的使用
     pattern = re.compile(r"\bgetComputedStyle\b")
 

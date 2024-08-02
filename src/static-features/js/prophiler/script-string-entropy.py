@@ -23,7 +23,7 @@ def calculate_score(js_content: str) -> tuple:
     strings = extract_strings(js_content)
     entropies = {s: calculate_entropy(s) for s in strings}
     max_entropy = max(entropies.values())
-    return max_entropy, entropies
+    return round(max_entropy, 3), entropies
 
 
 if __name__ == "__main__":
@@ -37,4 +37,4 @@ if __name__ == "__main__":
 
     max_entropy, entropies = calculate_score(sample_js)
     for s, entropy in entropies.items():
-        print(f"String: {s}, Entropy: {entropy:.4f}")
+        print(f"String: {s}, Entropy: {entropy:.3f}")

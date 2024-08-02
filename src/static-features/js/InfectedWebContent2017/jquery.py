@@ -19,7 +19,7 @@ functions_list = [
 
 
 # 统计函数
-def calculate_score(js_content: str, js_path: str = "") -> int:
+def calculate_score(js_content: str) -> int:
     all_count = 0
     for functions in functions_list:
         for func in functions:

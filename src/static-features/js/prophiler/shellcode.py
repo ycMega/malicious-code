@@ -54,7 +54,7 @@ def has_regular_intervals(s):
         return 0
 
 
-def calculate_score(js_content: str, js_path: str = ""):
+def calculate_score(js_content: str):
     strings = re.findall(r'"([^"]*)"', js_content) + re.findall(
         r"'([^']*)'", js_content
     )

@@ -4,7 +4,7 @@ import re
 # TODO: 设定合适的公式来计算恶意分数
 
 
-def calculate_score(js_content: str, js_path: str = "") -> float:
+def calculate_score(js_content: str) -> float:
     # 定义JavaScript关键字列表
     js_keywords = {
         "break",

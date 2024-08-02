@@ -23,7 +23,7 @@ DOM_MODIFYING_FUNCTIONS = {
 }
 
 
-def calculate_score(js_content: str, js_path: str = ""):
+def calculate_score(js_content: str):
     # 查找所有函数调用
     function_calls = re.findall(r"(\w+)\s*\(", js_content)
     dom_modifying_count = 0

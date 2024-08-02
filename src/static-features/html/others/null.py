@@ -11,19 +11,20 @@ def calculate_score(html_content: str) -> dict:
     return null_characters
 
 
-# 示例调用
-html_example = """
-<html>
-<head>
-    <script src="https://example.com/script.js"></script>
-</head>
-<body>
-    <div><img src="image.jpg"></div>
-    <div>Content with NULL character\x00 here</div>
-    <div>Another NULL character\x00 here</div>
-</body>
-</html>
-"""
+if __name__ == "__main__":
+    # 示例调用
+    html_example = """
+    <html>
+    <head>
+        <script src="https://example.com/script.js"></script>
+    </head>
+    <body>
+        <div><img src="image.jpg"></div>
+        <div>Content with NULL character\x00 here</div>
+        <div>Another NULL character\x00 here</div>
+    </body>
+    </html>
+    """
 
-result = calculate_score(html_example)
-print("null characters:", result)
+    result = calculate_score(html_example)
+    print("null characters:", result)

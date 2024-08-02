@@ -20,7 +20,7 @@ html5_events = [
 ]
 
 
-def calculate_score(js_content: str, js_path: str = "") -> int:
+def calculate_score(js_content: str) -> int:
     # 使用defaultdict初始化事件计数器
     event_counts = defaultdict(int)
 

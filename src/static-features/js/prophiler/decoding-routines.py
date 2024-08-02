@@ -9,6 +9,7 @@
 
 import escodegen
 import esprima
+from attr import has
 
 from src.utils.utils import parse_js_code
 
@@ -27,6 +28,9 @@ def is_long_string(string, length_threshold=10):
 
 def extract_long_strings(node, routine_code):
     """递归提取长字符串."""
+    if not hasattr(node, "type"):
+        return
+    # Q：万一node不存在type属性呢？——但是目前找不到判断的方法
     # print(f"Current node: {escodegen.generate(node)}.")  # 输出当前遍历到的节点代码
     if node.type == "Literal" and isinstance(node.value, str):
         if is_long_string(node.value):
@@ -120,11 +124,8 @@ def calculate_score(js_content: str) -> int:
     ast, error = parse_js_code(js_content)
     if error:
         print(f"Error parsing code: {error}")
-        return -1
-        # print(ast)
-    # ast = parse_js_code(js_path)
-    # if not ast:
-    #     return -1
+        # return -1
+    # print(ast)
     decoding_routines = extract_decoding_routines(ast)
     # print("Decoding routines:", decoding_routines)
     return sum(len(routine) for routine in decoding_routines), decoding_routines

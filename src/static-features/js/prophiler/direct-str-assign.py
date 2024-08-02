@@ -87,7 +87,7 @@ def calculate_score(js_content: str):
     ast, error = parse_js_code(js_content)
     if error:
         print(f"Error parsing code: {error}")
-        return -1
+        # return -1
     assignments = []  # 用于存储所有字符串赋值表达式
     for node in ast.body:
         count_string_assignments(node, assignments)  # 记录字符串赋值

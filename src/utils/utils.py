@@ -61,68 +61,68 @@ def parse_js_code(js_code: str, js_path: str = ""):
     except esprima.Error as e:
         return None, str(e)  # 返回无 AST 和错误信息
 
-    if js_path == "":
-        print("ERROR:JS path should not be empty.")
-        return None
-    result = subprocess.run(
-        ["node", "src/utils/parse.js", js_path],
-        text=True,
-        check=True,
-        capture_output=True,
-        encoding="utf-8",
-    )
-    if result.returncode != 0:
-        print(f"Error: {result.stderr}")
-    else:
-        # print(f"stdout: {result.stdout}")  # 输出调试信息
-        print(f"stderr: {result.stderr}")  # 输出调试信息
+    # if js_path == "":
+    #     print("ERROR:JS path should not be empty.")
+    #     return None
+    # result = subprocess.run(
+    #     ["node", "src/utils/parse.js", js_path],
+    #     text=True,
+    #     check=True,
+    #     capture_output=True,
+    #     encoding="utf-8",
+    # )
+    # if result.returncode != 0:
+    #     print(f"Error: {result.stderr}")
+    # else:
+    #     # print(f"stdout: {result.stdout}")  # 输出调试信息
+    #     print(f"stderr: {result.stderr}")  # 输出调试信息
 
-        # 解析输出的 AST
-        try:
-            ast = json.loads(result.stdout)  # 解析最后一行的 AST
-            return ast
-            # print(json.dumps(ast, indent=2))
-        except json.JSONDecodeError as e:
-            print(f"JSON decode error: {e}")
+    #     # 解析输出的 AST
+    #     try:
+    #         ast = json.loads(result.stdout)  # 解析最后一行的 AST
+    #         return ast
+    #         # print(json.dumps(ast, indent=2))
+    #     except json.JSONDecodeError as e:
+    #         print(f"JSON decode error: {e}")
 
 
-def parse_js_code_python(js_code: str):
-    lines = js_code.split("\n")
-    for line in lines:
-        try:
-            ast = parse(line)
-        except Exception as e:
-            print(f"Error in line: {line}")
-            print(f"Error: {e}")
-            break
-    try:
-        # 匹配正则表达式的模式
-        # 匹配正则表达式的模式，确保不匹配字符串中的正则表达式
-        regex_pattern = r'(?<!["\'])/(.*?)/(?![*/])([gimuy]*)'
-        # regex_pattern = r"/(.*?)/([gimuy]*)"
-        regex_pattern = r"/([^\/]+?)([gimuy]*)"
+# def parse_js_code_python(js_code: str):
+#     lines = js_code.split("\n")
+#     for line in lines:
+#         try:
+#             ast = parse(line)
+#         except Exception as e:
+#             print(f"Error in line: {line}")
+#             print(f"Error: {e}")
+#             break
+#     try:
+#         # 匹配正则表达式的模式
+#         # 匹配正则表达式的模式，确保不匹配字符串中的正则表达式
+#         regex_pattern = r'(?<!["\'])/(.*?)/(?![*/])([gimuy]*)'
+#         # regex_pattern = r"/(.*?)/([gimuy]*)"
+#         regex_pattern = r"/([^\/]+?)([gimuy]*)"
 
-        # 函数用于替换正则表达式
-        def replace_regex(match):
-            regex_body = match.group(0)
-            # 转义斜杠
-            escaped_regex = regex_body.replace("/", r"\/")
-            return f"'{escaped_regex}'"  # 转为字符串
+#         # 函数用于替换正则表达式
+#         def replace_regex(match):
+#             regex_body = match.group(0)
+#             # 转义斜杠
+#             escaped_regex = regex_body.replace("/", r"\/")
+#             return f"'{escaped_regex}'"  # 转为字符串
 
-        # 替换正则表达式中的特殊字符
-        # def replace_regex(match):
-        #     pattern = match.group(1).replace("\\", "\\\\").replace("/", "\\/")
-        #     flags = match.group(2)
-        #     return f"/{pattern}/{flags}"
+#         # 替换正则表达式中的特殊字符
+#         # def replace_regex(match):
+#         #     pattern = match.group(1).replace("\\", "\\\\").replace("/", "\\/")
+#         #     flags = match.group(2)
+#         #     return f"/{pattern}/{flags}"
 
-        # 使用正则表达式替换函数
-        regex_escaped_code = re.sub(regex_pattern, replace_regex, js_code)
-        fin_code = re.sub(
-            r"(?<=\d)_(?=\d)", "", regex_escaped_code
-        )  # 确保下划线前后都是数字
-        # js_code = js_code.replace("_", "") # 赋值_ = xxx会出错
-        ast = parse(fin_code)
-    except Exception as e:
-        print(f"Failed to parse JavaScript code: {e}")
-        return None
-    return ast
+#         # 使用正则表达式替换函数
+#         regex_escaped_code = re.sub(regex_pattern, replace_regex, js_code)
+#         fin_code = re.sub(
+#             r"(?<=\d)_(?=\d)", "", regex_escaped_code
+#         )  # 确保下划线前后都是数字
+#         # js_code = js_code.replace("_", "") # 赋值_ = xxx会出错
+#         ast = parse(fin_code)
+#     except Exception as e:
+#         print(f"Failed to parse JavaScript code: {e}")
+#         return None
+#     return ast

@@ -27,12 +27,13 @@ def calculate_score(js_content: str) -> tuple:
     return sum(activex_frequency.values()), dict(activex_frequency)
 
 
-# 示例调用
-js_example = """
-var fs = new ActiveXObject("Scripting.FileSystemObject");
-var shell = new ActiveXObject("WScript.Shell");
-var stream = new ActiveXObject("Adodb.Stream");
-"""
+if __name__ == "__main__":
+    # 示例调用
+    js_example = """
+    var fs = new ActiveXObject("Scripting.FileSystemObject");
+    var shell = new ActiveXObject("WScript.Shell");
+    var stream = new ActiveXObject("Adodb.Stream");
+    """
 
-sum_count, frequency_dict = calculate_score(js_example)
-print(f"activeX: {frequency_dict}")
+    sum_count, frequency_dict = calculate_score(js_example)
+    print(f"activeX: {frequency_dict}")

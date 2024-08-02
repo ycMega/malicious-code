@@ -4,7 +4,7 @@ import re
 LONG_STRING_THRESHOLD = 40
 
 
-def calculate_score(js_content: str, js_path: str = ""):
+def calculate_score(js_content: str):
     # 使用正则表达式提取单行和多行字符串
     long_strings = re.findall(
         r'"""(.*?)"""|\'([^\']{40,})\'|\"([^"]{40,})\"', js_content, re.DOTALL

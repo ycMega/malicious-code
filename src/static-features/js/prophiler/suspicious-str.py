@@ -5,7 +5,7 @@ import re
 SUSPICIOUS_STRINGS = ["evil", "shell", "spray", "crypt"]
 
 
-def calculate_score(js_content: str, js_path: str = "") -> int:
+def calculate_score(js_content: str) -> int:
     count = 0
 
     # 使用正则表达式查找可疑字符串

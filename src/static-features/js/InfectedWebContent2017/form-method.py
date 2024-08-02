@@ -12,7 +12,7 @@ stealcookie.cgi?'
 """
 
 
-def calculate_score(js_content: str, js_path: str = ""):
+def calculate_score(js_content: str):
     # 定义正则表达式来匹配form的method属性
     # <form后跟着至少一个空白字符，到下一个>之前的所有内容。['\"]用于匹配单引号或双引号
     get_pattern = re.compile(r"<form\s+[^>]*method=['\"]get['\"]", re.IGNORECASE)
