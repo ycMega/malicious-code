@@ -5,11 +5,14 @@ import subprocess
 import esprima
 
 # from pyjsparser import parse
+METADATA_FILE = "metadata.yaml"
+HAR_FILE = "network.har"
 
 RULES_PATH_HTML = "src/static-features/html"
 RULES_PATH_JS = "src/static-features/js"
 RULES_PATH_URL = "src/static-features/url"
 RULES_PATH_CSS = "src/static-features/css"
+FILE_TYPES = ["html", "css", "js", "url", "har"]
 
 # The number of encoded URLs and The number of IP address in elements sources
 ENCODED_URLS_AND_IPS = [

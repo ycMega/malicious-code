@@ -15,6 +15,9 @@ def count_tokens(ast):
         # print(token_counts)
         # print(node.type)
         # 遍历节点的子节点
+        # 必须要检查callable，否则即使hasattr(node, "items")也会报错 'NoneType' object is not callable
+        if node is None or not callable(getattr(node, "items", None)):
+            return
         for key, value in node.items():
             if isinstance(value, list):
                 for item in value:
@@ -42,24 +45,13 @@ def calculate_score(js_content: str):
     ast, error = parse_js_code(js_content)
     if error:
         print(f"Error parsing code: {error}")
+        # return -1
     token_count = count_tokens(ast)
     return sum(token_count.values()), token_count
 
 
 if __name__ == "__main__":
     sample_js = """
-    // 异步函数
-    async function fetchData(url) {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data;
-    }
-    """
-    sum_count, token_count = calculate_score(sample_js)
-    print(f"Token count: {sum_count}, {token_count}")
-
-    js = """
-        // 简单函数声明
     function add(a, b) {
         return a + b;
     }
@@ -121,4 +113,17 @@ if __name__ == "__main__":
         const data = await response.json();
         return data;
     }
+    // 异步函数
+    async function fetchData(url) {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    }
+    """
+    sum_count, token_count = calculate_score(sample_js)
+    print(f"Token count: {sum_count}, {token_count}")
+
+    js = """
+        // 简单函数声明
+    
     """

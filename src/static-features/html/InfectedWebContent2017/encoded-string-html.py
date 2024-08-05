@@ -1,8 +1,37 @@
 import re
+import time
+from tracemalloc import start
 
 from bs4 import BeautifulSoup
 
+from src.io.feature_extractor import (
+    ExtractorMeta,
+    FeatureExtractionResult,
+    FeatureExtractor,
+)
+
 # encode--obfuscate
+
+
+class EncodedStringHTML(FeatureExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "html",
+            "EncodedStringHTML",
+            "InfectedWebContent2017",
+            "The number of encoded URLs and The number of IP address in elements sources",
+            "1.0",
+        )
+
+    def calculate_score(self):
+        start_time = time.time()
+        htmls = self.web_data.content["html"]
+        html_content = "\n".join(d["content"] for d in htmls)
+        res = calculate_score(html_content)
+        return FeatureExtractionResult(
+            self.meta.filetype, self.meta.name, res, time.time() - start_time
+        )
 
 
 def calculate_score(html_content: str) -> int:

@@ -3,6 +3,7 @@ import inspect
 import os
 
 from bs4 import BeautifulSoup
+
 from src.utils.utils import merge_dicts_add_values
 
 

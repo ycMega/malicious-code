@@ -1,0 +1,36 @@
+website:
+  url: https://www.bilibili.com/
+  crawled_at: '2024-08-05T05:10:48.426Z'
+  website_name: ExampleSite
+content_info:
+  html:
+    count: 1
+    meta:
+    - filename: bilibili.html
+      size: 2015
+  css:
+    count: 0
+    meta: []
+  js:
+    count: 4
+    meta:
+    - filename: 412.js
+      size: 7156
+    - filename: jquery1.7.2.min.js
+      size: 178008
+    - filename: js.cookie.min.js
+      size: 2847
+    - filename: sha256.min.js
+      size: 18263
+http_requests:
+  total: 170
+  average_response_time: 43.07737646437323
+  max_response_time: 951.4270001091063
+  min_response_time: 0.04300009459257126
+  crawl_time: '2024-08-05T05:10:48.426Z'
+robots_protocol: 'Disallow: /private/'
+sitemap: https://www.bilibili.com//sitemap.xml
+ssl_certificate:
+  issuer: Certificate Authority
+  validity: 2024-01-01 to 2025-01-01
+notes: This is the initial crawl of the website for feature extraction.
