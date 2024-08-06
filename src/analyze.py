@@ -4,6 +4,7 @@ import re
 from bs4 import BeautifulSoup
 from deprecated import deprecated
 from pandas import merge
+
 from score import calculate_total_scores
 from src.utils.css import extract_css_features
 from src.utils.utils import (
@@ -11,17 +12,9 @@ from src.utils.utils import (
     RULES_PATH_HTML,
     RULES_PATH_JS,
     RULES_PATH_URL,
+    extract_urls,
     merge_dicts_add_values,
 )
-
-
-def extract_urls(text: str) -> list:
-    # 正则表达式匹配URL
-    # 没有明确的边界符 ^ 和 $，这意味着它可能匹配字符串中的URL，即使URL不是字符串的开头或结尾
-    url_pattern = r"https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+"
-    urls = re.findall(url_pattern, text)
-    return urls
-
 
 # from typing import List
 

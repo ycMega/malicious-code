@@ -1,0 +1,90 @@
+.navbar a {
+    color: white;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+/* 异常模式 1. 注意，这里检查不涉及到危险函数，所以没有查出 */
+.abnormal-pattern-1 {
+    color: red;
+    font-size: 100px;
+    background-image: url("javascript:alert('XSS')");
+}
+
+/* 异常模式 2 */
+.abnormal-pattern-2 {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+/* 异常模式 3 */
+.abnormal-pattern-3 {
+    display: none;
+    visibility: hidden;
+}
+
+.example1 {
+    filter: blur(5px);
+    mix-blend-mode: multiply;
+}
+.example2 {
+    filter: brightness(150%);
+    mix-blend-mode: darken;
+}
+
+#main .content > .article:first-of-type {
+    border: 1px solid #ccc;
+}
+
+/* 复杂选择器 4 */
+input[type="text"]:focus {
+    border-color: blue;
+}
+
+@font-face {
+    font-family: "StrangeFont";
+    src: url("https://example.com/strange-font.woff2");
+}
+@font-face {
+    font-family: "CommonFont";
+    src: url("https://example.com/common-font.woff2");
+}
+body {
+    font-family: "CommonFont", sans-serif;
+}
+
+.example1 {
+    filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    opacity: 0.9;
+}
+.example2 {
+    transition: all 0.5s;
+    animation: spin 1s infinite;
+}
+div > p > span {
+    color: red;
+}
+* {
+    margin: 0;
+}
+
+.modal {
+    z-index: 2000;
+    position: fixed;
+}
+.hidden-element {
+    z-index: -1;
+    position: absolute;
+}
+.high-z-index-1 {
+    z-index: 150;
+    position: relative;
+}
+.high-z-index-2 {
+    z-index: 200;
+    position: relative;
+}

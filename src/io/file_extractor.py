@@ -9,8 +9,11 @@ from math import e
 
 import yaml
 from aiologger import Logger
+from typeguard import typechecked
 
-from src.utils.utils import HAR_FILE, METADATA_FILE
+from src.io.async_logger import GLOBAL_LOGGER, catch_exceptions
+from src.utils import url
+from src.utils.utils import HAR_FILE, METADATA_FILE, extract_urls
 
 
 class SafeDumperWithOrder(yaml.SafeDumper):
@@ -35,11 +38,13 @@ class HARProcessor:
         self.url = None
         self.total_requests = -1
         self.response_times = []
-        self.logger = Logger.with_default_handlers(level="DEBUG")
+        # self.logger = Logger.with_default_handlers(level="DEBUG")
 
-    async def async_load_data(self):
+    @typechecked
+    @catch_exceptions
+    async def async_load_data(self) -> bool:
         if not os.path.exists(os.path.join(self.dir_path, HAR_FILE)):
-            await self.logger.info(f"No HAR file found at {self.dir_path}")
+            await GLOBAL_LOGGER.info(f"No HAR file found at {self.dir_path}")
             return False
         try:
             har_path = os.path.join(self.dir_path, HAR_FILE)
@@ -47,17 +52,19 @@ class HARProcessor:
                 self.har_data = json.load(file)
             return True
         except Exception as e:
-            self.logger.error(f"Error loading HAR file: {e}")
+            GLOBAL_LOGGER.error(f"Error loading HAR file: {e}")
             return False
 
-    def extract_url(self):
+    @typechecked
+    def extract_url(self) -> str | None:
         entries = self.har_data["log"]["pages"]
         if entries and len(entries) > 0:
             # 获取第一个页面的时间
             self.url = entries[0]["title"]
         return self.url
 
-    def extract_page_time(self):
+    @typechecked
+    def extract_page_time(self) -> str | None:
         # Q：存在不同的har格式吗
         entries = self.har_data["log"]["pages"]
         if entries and len(entries) > 0:
@@ -117,9 +124,10 @@ class WebData:
         self.url: str | None = None
         self.content: dict[str, list[dict[str, str]]] | None = None
         self.har_processor = HARProcessor(dir_path)
-        self.logger = Logger.with_default_handlers(level="DEBUG")
+        # self.logger = Logger.with_default_handlers(level="DEBUG")
 
     # 在其中执行需要涉及到logger的内容
+    @catch_exceptions
     async def aysnc_load_data(self):
         if self.har_processor:
             await self.har_processor.async_load_data()
@@ -128,9 +136,9 @@ class WebData:
             with open(metadata_path, "r", encoding="utf-8") as file:
                 self.metadata = yaml.safe_load(file)
         except Exception as e:
-            await self.logger.error(f"Error loading metadata.yaml: {e}")
+            await GLOBAL_LOGGER.error(f"Error loading metadata.yaml: {e}")
 
-    def extract_url_from_meta(self):
+    def extract_url_from_meta(self) -> str:
         # 从metadata.yaml中提取URL
         return self.metadata.get("website", {}).get("url", "")
 
@@ -151,17 +159,20 @@ class WebData:
     #     return content_sizes
 
     # 读取文件填入content，返回每种文件的数量
+    @catch_exceptions
+    @typechecked
     async def load_files(self) -> dict[str, dict]:
         file_types = ["html", "css", "js"]
         files_content: dict[str, list[dict[str, str]]] = {}
         files_meta: dict[str, dict] = {}
+        url_list = []
         for file_type in file_types:
             folder_path = os.path.join(self.dir_path, file_type)
             files_meta[file_type] = {"count": 0, "meta": []}
             files_content[file_type] = []
             # 检查文件夹是否存在
             if not os.path.exists(folder_path):
-                await self.logger.error(f"文件夹 {folder_path} 不存在")
+                await GLOBAL_LOGGER.error(f"文件夹 {folder_path} 不存在")
                 continue
                 # raise FileNotFoundError(f"文件夹 {folder_path} 不存在")
 
@@ -172,6 +183,7 @@ class WebData:
                     try:
                         with open(file_path, "r", encoding="utf-8") as file:
                             content = file.read()
+                            url_list.extend(extract_urls(content))
                             files_content[file_type].append(
                                 {"filename": filename, "content": content}
                             )
@@ -183,11 +195,18 @@ class WebData:
                                 }
                             )
                     except Exception as e:
-                        await self.logger.error(f"Error loading {file_path}: {e}")
+                        await GLOBAL_LOGGER.error(f"Error loading {file_path}: {e}")
+            # 将所有URL添加到列表中
+            url_list_set = list(set(url_list))
+            files_content["url"] = url_list_set
+            files_meta["url"] = {"count": len(url_list_set), "meta": url_list_set}
+
         self.content = files_content
         return files_meta
 
-    async def create_metadata_yaml(self):
+    @catch_exceptions
+    @typechecked
+    async def create_metadata_yaml(self) -> dict:
 
         url = (
             self.extract_url_from_har()
@@ -229,6 +248,7 @@ class WebData:
 #     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
+@catch_exceptions
 async def main():
     # 示例用法
     input_directory = "webpages/bilibili/"  # 修改为实际路径

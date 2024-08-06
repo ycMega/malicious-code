@@ -1,8 +1,9 @@
 import os
 
 import pandas as pd
+
 from analyze import analyze_content, analyze_html, analyze_js
-from io.form_pandas import form_pandas
+from src.io.form_pandas import form_pandas
 
 webpage_path = "./webpages"
 

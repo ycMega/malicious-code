@@ -1,0 +1,93 @@
+import re
+
+from src.static_features.js import *
+
+
+class DeobfuscationFunc(JSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "js",
+            "DeobfuscationFunc",
+            "prophiler",
+            "检测JS代码中的解混淆函数的使用情况",
+            "1.0",
+        )
+
+    def calculate_score(self) -> FeatureExtractionResult:
+        start_time = time.time()
+        js_content_list = self.web_data.content["js"]
+        # total_res, total_decoding_routines = 0, []
+        # for js_content in js_contents:
+        #     print(f"DecodingRoutine: processing {js_content['filename']}")
+        #     res, decoding_routines = calculate_score(js_content["content"])
+        #     total_res += res
+        #     total_decoding_routines.extend(decoding_routines)
+        js_content = "\n".join(d["content"] for d in js_content_list)
+        res, deobfuscation_counts = calculate_score(js_content)
+
+        return FeatureExtractionResult(
+            self.meta.filetype,
+            self.meta.name,
+            res,
+            time.time() - start_time,
+            deobfuscation_counts,
+        )
+
+
+# 不考虑其他规则已经考虑过的函数？
+deobfuscation_functions = [
+    # "eval",
+    "Function",  # 动态创建函数
+    # "setTimeout",  # 延时执行代码
+    # "setInterval",
+    "decodeURIComponent",  # 解码 URI 组件或字符串
+    "unescape",
+    "atob",  # 解码一个已经被base-64编码的字符串
+    "btoa",
+    "parseInt",
+    "parseFloat",  # 将字符串转换为浮点数
+    "String.fromCharCode",  # 根据 Unicode 值生成字符串
+    "String.prototype.charCodeAt",  # 获取字符的 Unicode 值
+    "String.prototype.split",  # 将字符串分割为数组
+    "String.prototype.replace",  # 替换字符串中的部分内容
+    # "JSON.parse",  # 处理 JSON 数据的解析和序列化
+    # "JSON.stringify",
+    "Object.keys",  # 操作对象的键值对
+    "Object.values",
+    "Object.entries",
+]
+
+
+def calculate_score(js_content: str) -> tuple:
+    # 常见解混淆内置函数列表
+
+    counts = {}
+
+    for func in deobfuscation_functions:
+        pattern = rf"\b{func}\s*\(.*?\)"
+        matches = re.findall(pattern, js_content)
+        counts[func] = len(matches)
+
+    return sum(counts.values()), {k: v for k, v in counts.items() if v > 0}
+
+
+if __name__ == "__main__":
+    # 测试代码
+    sample_js = """
+    function test() {
+        eval('console.log("Hello");');
+        var x = Function('return 1')();
+        setTimeout(() => { console.log("Timeout"); }, 1000);
+        var y = decodeURIComponent('%20');
+        var z = unescape('%20');
+        var a = atob('SGVsbG8=');
+        var b = btoa('Hello');
+        var c = parseInt('10');
+        var d = parseFloat('10.5');
+    }
+    """
+
+    counts = calculate_score(sample_js)
+    for func, count in counts.items():
+        print(f"Number of occurrences of {func}: {count}")

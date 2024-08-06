@@ -57,12 +57,29 @@ def merge_dicts_add_values(*dicts: dict) -> dict:
     return result
 
 
+def extract_urls(text: str) -> list:
+    # 正则表达式匹配URL
+    # 没有明确的边界符 ^ 和 $，这意味着它可能匹配字符串中的URL，即使URL不是字符串的开头或结尾
+    # url_pattern = r"https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+"
+    # 协议部分：^(https?|ftp):\/\/：匹配以 http://, https://, 或 ftp:// 开头的 URL。
+    # 其他协议: |^[a-zA-Z][a-zA-Z\d+\-.]*:\/\/：匹配以其他协议（如 mailto: 或自定义协议）开头的 URL。
+    # 邮箱格式: |^[a-zA-Z0-9\-._~%!$&'()*+,;=]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+：匹配邮箱格式的字符串。
+    # 无协议 URL: |^(www\.)[^\s/$.?#].[^\s]*：匹配以 www. 开头的 URL。
+    # 通用部分: [^\s/$.?#].[^\s]*：匹配 URL 的主体部分，确保不包含空白字符和某些特殊字符。
+
+    url_pattern = r'(?:(?:https?|ftp):\/\/|\/\/|www\.)[^\s<>,;\'"(){}]+(?:\.[^\s<>,;\'"(){}]+)+[^\s<>,;\'"(){}]*'
+    urls = re.findall(url_pattern, text)
+    return urls
+
+
 def parse_js_code(js_code: str, js_path: str = ""):
+    # 8.6：经常遇到无法正确解析JS的情况，随后遍历AST会出错，因此放弃遍历AST
     try:
         ast = esprima.parseScript(js_code, tolerant=True)  # 使用 tolerant 选项
         return ast, None  # 返回 AST 和无错误
     except esprima.Error as e:
-        return None, str(e)  # 返回无 AST 和错误信息
+        error_info = str(e)
+        return ast, error_info  # 返回无 AST 和错误信息
 
     # if js_path == "":
     #     print("ERROR:JS path should not be empty.")
