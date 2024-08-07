@@ -24,7 +24,7 @@ class WordCount(HTMLExtractor):
             self.meta.name,
             res,
             time.time() - start_time,
-            word_count,
+            # word_count,
         )
 
 

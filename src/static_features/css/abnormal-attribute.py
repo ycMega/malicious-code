@@ -1,6 +1,6 @@
 import sys
 
-from bs4 import BeautifulSoup
+
 
 from src.static_features.css import *
 

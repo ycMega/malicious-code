@@ -1,0 +1,20 @@
+{
+    "WordLenCSS": {
+        "Score": 53.994589720468895,
+        "AdditionalInfo": {
+            "description": "the ratio of word count to char count in css"
+        }
+    },
+    "TestRule": {
+        "Score": 55.84905660377359,
+        "AdditionalInfo": {
+            "description": "the ratio of word count to char count in html"
+        }
+    },
+    "JSTestRule": {
+        "Score": 41.59174123488542,
+        "AdditionalInfo": {
+            "description": "the ratio of word count to char count in js"
+        }
+    }
+}

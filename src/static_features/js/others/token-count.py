@@ -1,5 +1,6 @@
 from collections import Counter
 
+# from src.static_features.js import *
 from src.utils.utils import parse_js_code
 
 

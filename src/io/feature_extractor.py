@@ -1,6 +1,7 @@
 import csv
 import json
 import os
+from typing import ChainMap
 
 from aiologger import Logger
 from attr import asdict
@@ -57,6 +58,55 @@ class FeatureExtractionResult:
         )
 
 
+class FeatureRegistry:
+    def __init__(self):
+        self.registry = {}
+        self.user_registry = {}
+
+    def register(self, feature: "FeatureExtractor", is_user_feature=True):
+        # 获取 name 属性
+        custom_name = getattr(feature.meta, "name", None)
+        if not custom_name:
+            raise ValueError("Feature name is required.")
+        # 检查是否重复
+        if not is_user_feature:
+            if custom_name in self.registry:
+                raise ValueError(
+                    f"internal feature name '{custom_name}' is already registered."
+                )
+            self.registry[custom_name] = feature
+        else:
+            if custom_name in self.user_registry:
+                raise ValueError(
+                    f"user feature name '{custom_name}' is already registered."
+                )
+            self.user_registry[custom_name] = feature
+
+    def unregister(self, feature: "FeatureExtractor"):
+        custom_name = getattr(feature.meta, "name", None)
+        if custom_name and custom_name in self.registry:
+            del self.registry[custom_name]
+        elif custom_name and custom_name in self.user_registry:
+            del self.user_registry[custom_name]
+        else:
+            return False
+        return True
+
+    def is_registered(self, feature: "FeatureExtractor"):
+        custom_name = getattr(feature.meta, "name", None)
+        return custom_name and custom_name in dict(
+            ChainMap(self.registry, self.user_registry)
+        )
+
+    # 必须在完全注册之后才能判断
+    def is_user_feature(self, feature: "FeatureExtractor"):
+        custom_name = getattr(feature.meta, "name", None)
+        return custom_name in self.user_registry
+
+    def get_feature(self, name: str):
+        return self.registry.get(name, None) or self.user_registry.get(name, None)
+
+
 class FeatureExtractor:
 
     def __init__(self, web_data: WebData) -> None:
@@ -106,7 +156,7 @@ class OverallExtractionResult:
                         writer.writerow([key, feature, count, time])
             except Exception as e:
                 print(f"Error saving to CSV: {e}")
-                GLOBAL_LOGGER.error(f"Error saving to CSV: {e}")
+                await GLOBAL_LOGGER.error(f"Error saving to CSV: {e}")
 
     @catch_exceptions
     @typechecked
@@ -126,7 +176,7 @@ class OverallExtractionResult:
                     count: int = int(count_str)
                     time = float(time_str)
                 except ValueError:
-                    GLOBAL_LOGGER.error(f"Invalid data in CSV: {row}, skipping")
+                    await GLOBAL_LOGGER.error(f"Invalid data in CSV: {row}, skipping")
                     continue
 
                 if type_ not in data:
@@ -139,44 +189,46 @@ class OverallExtractionResult:
         filename = os.path.join(self.web_data.dir_path, "features.json")
         try:
             with open(filename, mode="w", encoding="utf-8") as file:
-                res_list = []
-                for res in self.results:
-                    res_dict = {
-                        "Type": res.filetype,
-                        "Feature": res.extractor_name,
-                        "Count": res.feature_count,
-                        "Time(s)": round(res.execution_time, 5),
-                        "AdditionalInfo": res.additional_info,
-                    }
-                    res_list.append(res_dict)
-                file.write(json.dumps(res_list, indent=4))
+                file.write(json.dumps(self.summary, indent=4))
+                # res_list = []
+                # for res in self.results:
+                #     res_dict = {
+                #         "Type": res.filetype,
+                #         "Feature": res.extractor_name,
+                #         "Count": res.feature_count,
+                #         "Time(s)": round(res.execution_time, 5),
+                #         "AdditionalInfo": res.additional_info,
+                #     }
+                #     res_list.append(res_dict)
+                # file.write(json.dumps(res_list, indent=4))
         except Exception as e:
             print(f"Error saving to JSON: {e}")
             await GLOBAL_LOGGER.error(f"Error saving to JSON: {e}")
 
+    # async很难，在这里一旦await就报错OSError: [WinError 6] 句柄无效
+    # 一旦有exception也会报这个错
     @classmethod
     @typechecked
     @catch_exceptions
-    async def load_from_json(cls, filename) -> list[FeatureExtractionResult]:
-        await GLOBAL_LOGGER.info(
-            f"Loading from JSON {filename}, clearing previous results"
-        )
-        results = []
-        try:
-            with open(filename, mode="r", encoding="utf-8") as file:
-                res_list = json.load(file)
-                for res in res_list:
-                    result = FeatureExtractionResult(
-                        res["Type"],
-                        res["Feature"],
-                        res["Count"],
-                        res["Time(s)"],
-                        res["AdditionalInfo"],
-                    )
-                    results.append(result)
-        except Exception as e:
-            await GLOBAL_LOGGER.error(f"Error loading from JSON: {e}")
-        return results
+    async def load_from_json(cls, filename) -> dict:
+        # 一旦在这里await就出错OSError: [WinError 6] 句柄无效 怀疑根本不能await
+        # print(f"Loading from JSON {filename}")
+
+        with open(filename, mode="r", encoding="utf-8") as file:
+            res_dict = json.load(file)
+
+            # res_list = json.load(file)
+            # for res in res_list:
+            #     result = FeatureExtractionResult(
+            #         res["Type"],
+            #         res["Feature"],
+            #         res["Count"],
+            #         res["Time(s)"],
+            #         res["AdditionalInfo"],
+            #     )
+            #     results.append(result)
+
+        return res_dict
 
     # todo：针对不同类型的特征进行统计
     async def do_summary(self):
@@ -188,6 +240,7 @@ class OverallExtractionResult:
             self.summary[result.filetype][result.extractor_name] = {
                 "Count": result.feature_count,
                 "Time": round(result.execution_time, 5),
+                "AdditionalInfo": result.additional_info,
             }
         await self.save_to_csv()
         await self.save_to_json()

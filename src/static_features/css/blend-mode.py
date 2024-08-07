@@ -1,9 +1,35 @@
-import re
 from collections import Counter
 
-from src.utils.css import css_rules_listing, extract_css_features
-
 # 混合模式影响元素之间的视觉交互和颜色合成，通常用于重叠元素
+from src.static_features.css import *
+
+
+class BlendModeCSS(CSSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "css",
+            "BlendModeCSS",
+            "yyc",
+            "可疑的混合模式mix-blend-mode的使用次数",
+            "1.0",
+        )
+
+    # 似乎不能执行typechecked？会导致在模块加载阶段（而不是执行）报错，因为sys.modules中还没有对应的key
+    def calculate_score(self) -> FeatureExtractionResult:
+        start_time = time.time()
+        css_list = self.web_data.content["css"]
+        input_list = []
+        for css in css_list:
+            input_list.extend(css_rules_listing(css["content"]))
+        res, blend_mode_usage = calculate_score(input_list)
+        return FeatureExtractionResult(
+            self.meta.filetype,
+            self.meta.name,
+            res,
+            time.time() - start_time,
+            blend_mode_usage,
+        )
 
 
 def calculate_score(css_list: list):

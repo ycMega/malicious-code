@@ -1,102 +1,40 @@
+import argparse
 import asyncio
 import importlib.util
 import inspect
 import os
 
-from annotated_types import IsInfinite
+from aiologger import Logger
 from typeguard import typechecked
 
-from src.io.async_logger import catch_exceptions, print_logger_info, GLOBAL_LOGGER
+from src.io.async_logger import GLOBAL_LOGGER, catch_exceptions, print_logger_info
 
 # 假设 FeatureExtractor 在某个模块中
 from src.io.feature_extractor import (
     FeatureExtractionResult,
     FeatureExtractor,
+    FeatureRegistry,
     OverallExtractionResult,
 )
 from src.io.file_extractor import WebData
-from src.static_features.css import CSSExtractor
-from src.static_features.html import HTMLExtractor
-from src.static_features.js import JSExtractor
-from src.static_features.url import URLExtractor
+from src.io.rule import AnalysisResult, OverallAnalysisResult, Rule
+from src.modules import (
+    analyze_rules,
+    extract_features,
+    load_extractors_recursive,
+    load_rules_recursive,
+)
 
-
-def load_rule_module(rule_path: str):
-    base_name = os.path.splitext(rule_path)[0]
-    rule_name = base_name.replace("/", ".").replace("\\", ".")
-    # rule_name = os.path.splitext(os.path.basename(rule_path))[0]
-    # 创建一个模块的规范（spec），指定模块名称和路径
-    spec = importlib.util.spec_from_file_location(rule_name, rule_path)
-    if spec is None or spec.loader is None:
-        return None
-    # 创建模块对象
-    module = importlib.util.module_from_spec(spec)
-    # 执行模块。加载其内容
-    spec.loader.exec_module(module)
-    return module
-
-
-def load_extractors_recursive(directory, web_data: WebData, extractors: list):
-    for root, dirs, files in os.walk(directory):
-        for file in files:
-            # 只处理 .py 文件
-            if file.endswith(".py") and file != "__init__.py":
-                module_path = os.path.join(root, file)
-                # module_name = os.path.splitext(file)[0]
-                # module_path = os.path.relpath(root, directory).replace(os.sep, ".")
-                # full_module_name = f"{module_path}.{module_name}"
-                # print(f"full module name:{full_module_name}")
-                # 动态导入模块
-                # module = importlib.import_module(full_module_name)
-                module = load_rule_module(module_path)
-                if module is None:
-                    continue
-
-                # 查找继承自 FeatureExtractor 的类
-                for name, obj in inspect.getmembers(module, inspect.isclass):
-                    if issubclass(obj, FeatureExtractor) and obj not in (
-                        FeatureExtractor,
-                        HTMLExtractor,
-                        CSSExtractor,
-                        JSExtractor,
-                        URLExtractor,
-                    ):
-                        extractors.append(obj(web_data))
-        for d in dirs:
-            load_extractors_recursive(d, web_data, extractors)
-
-    return extractors
-
-
-# def load_extractors(directory, web_data: WebData):
-#     extractors = []
-
-#     # 遍历目录
-#     for root, dirs, files in os.walk(directory):
-#         for file in files:
-#             # 只处理 .py 文件
-#             if file.endswith(".py") and file != "__init__.py":
-#                 module_name = os.path.splitext(file)[0]
-#                 module_path = os.path.relpath(root, directory).replace(os.sep, ".")
-#                 full_module_name = f"{module_path}.{module_name}"
-
-#                 # 动态导入模块
-#                 module = importlib.import_module(full_module_name)
-
-#                 # 查找继承自 FeatureExtractor 的类
-#                 for name, obj in inspect.getmembers(module, inspect.isclass):
-#                     if (
-#                         issubclass(obj, FeatureExtractor)
-#                         and obj is not FeatureExtractor
-#                     ):
-#                         extractors.append(obj(web_data))
-
-#     return extractors
+# todo：禁止用户访问无权限的文件夹？
 
 
 @catch_exceptions
-async def main():
+async def main(*args, **kwargs):
     # 示例用法
+
+    if args:
+        print("Positional arguments:", args)
+    feature_registry = FeatureRegistry()  # 注册表，区分已有提取器和新增提取器
     input_directory = "webpages/bilibili/"  # 修改为实际路径
     web_data = WebData(input_directory)
     try:
@@ -106,43 +44,92 @@ async def main():
         print(f"Exception caught: {e}")
     features_dir = "src/static_features/"  # 特征提取脚本目录
     extractors = load_extractors_recursive(features_dir, web_data, [])
-
-    # 调用特征提取方法
-    overall_result = OverallExtractionResult(web_data)
     for extractor in extractors:
-        try:
-            # 尝试添加type checked wrapper但失败了
-            # if hasattr(extractor, "calculate_score"):
-            #     original_func = extractor.calculate_score
+        feature_registry.register(extractor, is_user_feature=False)
+    if kwargs and "feature_path" in kwargs and kwargs["feature_path"]:
+        extractors_added = load_extractors_recursive(
+            kwargs["feature_path"], web_data, []
+        )
+        for extractor_added in extractors_added:
+            if feature_registry.is_registered(extractor_added):
+                print(
+                    f"Error: feature extractor {type(extractor_added).__name__} conflicts with internal extractor"
+                )
+                return -1
+            feature_registry.register(extractor_added, is_user_feature=True)
+        extractors.extend(extractors_added)
+    overall_results = OverallExtractionResult(web_data)
+    await extract_features(overall_result=overall_results, extractors=extractors)
 
-            #     @typechecked
-            #     def wrapped_func(
-            #         self,
-            #     ) -> FeatureExtractionResult:  # 根据需要定义参数类型
-            #         return original_func(self)
+    feature_loaded = await OverallExtractionResult.load_from_json(
+        os.path.join(web_data.dir_path, "features.json")
+    )
+    rules_dir = "src/static_rules/"  # 规则脚本目录
+    all_rules = load_rules_recursive(rules_dir, feature_loaded, [])
+    if kwargs and "rule_path" in kwargs and kwargs["rule_path"]:
+        origin_rule_names = [type(rule).__name__ for rule in all_rules]
+        rules_added = load_rules_recursive(kwargs["rule_path"], feature_loaded, [])
+        added_rule_names = [type(rule).__name__ for rule in rules_added]
+        same_name_added = [
+            name for name in added_rule_names if added_rule_names.count(name) > 1
+        ]
+        if same_name_added:
+            print(f"Error: duplicate rule names {same_name_added}")
+            return -1
+        same_name_with_origin = [
+            name for name in added_rule_names if name in origin_rule_names
+        ]
+        if same_name_with_origin:
+            print(
+                f"Error: rule names conflict with origin rules {same_name_with_origin}"
+            )
+            return -1
 
-            #     extractor.calculate_score = wrapped_func  # 替换原方法
-            print("Extractor:", type(extractor).__name__)
-            result = extractor.calculate_score()  # 假设有 calculate_score 方法
-            if result is not None and isinstance(result, FeatureExtractionResult):
-                # 是正确的返回值，接下来检查规则是否有效
-                if result.feature_count >= 0:
-                    overall_result.add_result(result)
-            else:
-                print(f"Error in {type(extractor).__name__}: Invalid result")
-                # print_logger_info(web_data.logger)
-                try:
-                    pass  # 下面的语句会莫名报错[WinError 6] 句柄无效。即使之前输出的logger info没看出异常
-                    # await web_data.logger.error(
-                    #     f"Error in {type(extractor).__name__}: Invalid result"
-                    # )
-                except Exception as e:
-                    print(f"Error in {type(extractor).__name__}: {str(e)}")
-        except Exception as e:
-            await GLOBAL_LOGGER.error(f"Error in {type(extractor).__name__}: {e}")
-        # print(f"Extractor: {type(extractor).__name__}, Result: {result}")
-    await overall_result.do_summary()
+        all_rules.extend(rules_added)
+    overall_analysis_result = OverallAnalysisResult(web_data.dir_path)
+    await analyze_rules(overall_analysis_result, all_rules)
+    score = overall_analysis_result.judge()
+    print(f"Final score: {score}")
+    # await GLOBAL_LOGGER.info(f"Final score: {score}")
+    await GLOBAL_LOGGER.shutdown()
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    # 设置命令行参数
+    parser = argparse.ArgumentParser(description="Process some modules.")
+    parser.add_argument(
+        "-d",
+        "--web_dir",
+        type=str,
+        help="directory path of webpages to process",
+        default="webpages/bilibili/",
+    )
+    parser.add_argument(
+        "-f",
+        "--feature",
+        type=str,
+        help="directory path of feature module to add, can be recursive",
+    )
+    parser.add_argument(
+        "-r",
+        "--rule",
+        type=str,
+        help="directory path of rule module to add, can be recursive",
+    )
+
+    args, unknown = parser.parse_known_args()
+    if args.web_dir and not os.path.exists(args.web_dir):
+        print(f"Web directory path {args.web_dir} not exists.")
+    elif args.feature and not os.path.exists(args.feature):
+        print(f"Feature module path {args.feature} not exists.")
+    elif args.rule and not os.path.exists(args.rule):
+        print(f"Rule module path {args.rule} not exists.")
+    else:
+        asyncio.run(
+            main(
+                *unknown,
+                web_dir=args.web_dir,
+                feature_path=args.feature,
+                rule_path=args.rule,
+            )
+        )

@@ -38,7 +38,7 @@ class HARProcessor:
         self.url = None
         self.total_requests = -1
         self.response_times = []
-        # self.logger = Logger.with_default_handlers(level="DEBUG")
+        # self.logger = GLOBAL_LOGGER
 
     @typechecked
     @catch_exceptions
@@ -52,7 +52,7 @@ class HARProcessor:
                 self.har_data = json.load(file)
             return True
         except Exception as e:
-            GLOBAL_LOGGER.error(f"Error loading HAR file: {e}")
+            await GLOBAL_LOGGER.error(f"Error loading HAR file: {e}")
             return False
 
     @typechecked

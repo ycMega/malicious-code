@@ -11,17 +11,17 @@ content_info:
   url:
     count: 12
     meta:
-    - https://sec.biliapi.net/th/captcha/get
-    - https://example.com/strange-font.woff2
-    - https://sec.biliapi.net/th/captcha/check
-    - https://security.bilibili.com/412
-    - https://example.com/common-font.woff2
-    - //security.bilibili.com/static/js/js.cookie.min.js
-    - https://github.com/emn178/js-sha256
     - https://sec.biliapi.net/th/captcha/cc/check
-    - //static.hdslb.com/images/favicon.ico
-    - //security.bilibili.com/static/js/412.js
+    - https://sec.biliapi.net/th/captcha/check
+    - https://github.com/emn178/js-sha256
+    - https://example.com/strange-font.woff2
     - //s1.hdslb.com/bfs/static/jinkela/long/js/jquery/jquery1.7.2.min.js
+    - https://security.bilibili.com/412
+    - https://sec.biliapi.net/th/captcha/get
+    - //security.bilibili.com/static/js/412.js
+    - //static.hdslb.com/images/favicon.ico
+    - //security.bilibili.com/static/js/js.cookie.min.js
+    - https://example.com/common-font.woff2
     - //security.bilibili.com/static/js/sha256.min.js
   css:
     count: 1
