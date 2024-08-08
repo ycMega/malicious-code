@@ -17,19 +17,19 @@ class BlendModeCSS(CSSExtractor):
 
     # 似乎不能执行typechecked？会导致在模块加载阶段（而不是执行）报错，因为sys.modules中还没有对应的key
     def calculate_score(self) -> FeatureExtractionResult:
-        start_time = time.time()
         css_list = self.web_data.content["css"]
-        input_list = []
+        info_dict = {}
         for css in css_list:
-            input_list.extend(css_rules_listing(css["content"]))
-        res, blend_mode_usage = calculate_score(input_list)
-        return FeatureExtractionResult(
-            self.meta.filetype,
-            self.meta.name,
-            res,
-            time.time() - start_time,
-            blend_mode_usage,
-        )
+            start_time = time.time()
+            input_list = css_rules_listing(css["content"])
+            res, blend_mode_usage = calculate_score(input_list)
+            info_dict[css["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": blend_mode_usage,
+            }
+
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 def calculate_score(css_list: list):

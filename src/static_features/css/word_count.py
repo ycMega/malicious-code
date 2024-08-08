@@ -14,19 +14,21 @@ class WordCountCSS(CSSExtractor):
 
     # 似乎不能执行typechecked？会导致在模块加载阶段（而不是执行）报错，因为sys.modules中还没有对应的key
     def calculate_score(self) -> FeatureExtractionResult:
-        start_time = time.time()
         css_list = self.web_data.content["css"]
-        content = "\n".join(d["content"] for d in css_list)
-        # 统计字符数（去掉空白字符和不可见字符）
-        char_count = len(re.sub(r"\s+", "", content))
+        info_dict = {}
+        for css in css_list:
+            start_time = time.time()
+            content = css["content"]
+            # 统计字符数（去掉空白字符和不可见字符）
+            char_count = len(re.sub(r"\s+", "", content))
 
-        # 统计单词数
-        words = re.findall(r"\b\w+\b", content)
-        word_count = len(words)
-        return FeatureExtractionResult(
-            self.meta.filetype,
-            self.meta.name,
-            word_count,
-            time.time() - start_time,
-            {"CharCount": char_count},
-        )
+            # 统计单词数
+            words = re.findall(r"\b\w+\b", content)
+            word_count = len(words)
+            info_dict[css["filename"]] = {
+                "count": word_count,
+                "time": time.time() - start_time,
+                "additional_info": {"CharCount": char_count},
+            }
+
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)

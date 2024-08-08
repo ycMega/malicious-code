@@ -19,13 +19,17 @@ class NullCharacter(HTMLExtractor):
         )
 
     def calculate_score(self) -> FeatureExtractionResult:
-        start_time = time.time()
         htmls = self.web_data.content["html"]
-        html_content = "\n".join(d["content"] for d in htmls)
-        res = calculate_score(html_content)
-        return FeatureExtractionResult(
-            self.meta.filetype, self.meta.name, res, time.time() - start_time
-        )
+        info_dict = {}
+        for h in htmls:
+            start_time = time.time()
+            res = calculate_score(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": {},
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 def calculate_score(html_content: str) -> dict:

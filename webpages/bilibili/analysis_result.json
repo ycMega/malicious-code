@@ -1,20 +1,44 @@
 {
     "WordLenCSS": {
-        "Score": 53.994589720468895,
-        "AdditionalInfo": {
-            "description": "the ratio of word count to char count in css"
+        "test.css": {
+            "score": 53.994589720468895,
+            "additional_info": {
+                "description": "the ratio of word count to char count in css"
+            }
         }
     },
     "TestRule": {
-        "Score": 55.84905660377359,
-        "AdditionalInfo": {
-            "description": "the ratio of word count to char count in html"
+        "bilibili.html": {
+            "score": 55.84905660377359,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
         }
     },
     "JSTestRule": {
-        "Score": 41.59174123488542,
-        "AdditionalInfo": {
-            "description": "the ratio of word count to char count in js"
+        "412.js": {
+            "score": 63.76203723518083,
+            "additional_info": {
+                "description": "the ratio of word count to char count in js"
+            }
+        },
+        "jquery1.7.2.min.js": {
+            "score": 41.11567063136627,
+            "additional_info": {
+                "description": "the ratio of word count to char count in js"
+            }
+        },
+        "js.cookie.min.js": {
+            "score": 49.131985731272295,
+            "additional_info": {
+                "description": "the ratio of word count to char count in js"
+            }
+        },
+        "sha256.min.js": {
+            "score": 34.247060047871784,
+            "additional_info": {
+                "description": "the ratio of word count to char count in js"
+            }
         }
     }
 }

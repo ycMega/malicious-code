@@ -3,7 +3,6 @@ import json
 import os
 from typing import ChainMap
 
-from aiologger import Logger
 from attr import asdict
 from pydantic import BaseModel
 from typeguard import typechecked
@@ -39,22 +38,23 @@ class FeatureExtractionResult:
         self,
         filetype,
         extractor_name,
-        feature_count,
-        execution_time,
-        additional_info=None,
+        info_dict,
+        # feature_count,
+        # execution_time,
+        # additional_info=None,
     ) -> None:
         self.filetype = filetype  # 特征类型
         self.extractor_name = extractor_name  # 特征提取器的名称
-        self.feature_count = feature_count  # 特征数量
-        self.execution_time = execution_time  # 执行时间
-        self.additional_info = additional_info or {}  # 其他附加信息（可选）
+        self.info = info_dict  # 特征提取结果信息
+        # key: filename, value: dict(count, time, additional_info)
+        # self.feature_count = feature_count  # 特征数量
+        # self.execution_time = execution_time  # 执行时间
+        # self.additional_info = additional_info or {}  # 其他附加信息（可选）
 
     def __repr__(self):
         return (
             f"FeatureExtractionResult(extractor_name={self.extractor_name}, "
-            f"feature_count={self.feature_count}, "
-            f"execution_time={self.execution_time}, "
-            f"additional_info={self.additional_info})"
+            f"info={self.info}, "
         )
 
 
@@ -129,7 +129,7 @@ class OverallExtractionResult:
     def __init__(self, web_data: WebData) -> None:
         self.web_data = web_data
         self.results: list[FeatureExtractionResult] = []  # 存储所有特征提取结果
-        self.summary: dict[str, dict[str, int]] = {}
+        self.summary: dict[str, dict[str, dict]] = {}
         # self.logger = self.web_data.logger
         # self.total_features = 0  # 总特征数量
         # self.execution_times = []  # 存储各个提取器的执行时间
@@ -140,29 +140,30 @@ class OverallExtractionResult:
         # self.execution_times.append(result.execution_time)
 
     @catch_exceptions
-    async def save_to_csv(self):
+    def save_to_csv(self):
         filename = os.path.join(self.web_data.dir_path, "features.csv")
         with open(filename, mode="w", newline="", encoding="utf-8") as file:
             writer = csv.writer(file)
 
             # 写入表头
-            writer.writerow(["Type", "Feature", "Count", "Time(s)"])
+            writer.writerow(["Type", "Feature", "Filename", "Count", "Time(s)"])
 
             # 写入数据
             try:
                 for key, features in self.summary.items():
                     for feature, result in features.items():
-                        count, time = result["Count"], result["Time"]
-                        writer.writerow([key, feature, count, time])
+                        for filename, res_dict in result.items():
+                            count, time = res_dict["count"], res_dict["time"]
+                        writer.writerow([key, feature, filename, count, time])
             except Exception as e:
                 print(f"Error saving to CSV: {e}")
-                await GLOBAL_LOGGER.error(f"Error saving to CSV: {e}")
+                GLOBAL_LOGGER.error(f"Error saving to CSV: {e}")
 
     @catch_exceptions
     @typechecked
     @classmethod
-    async def load_from_csv(cls, filename) -> dict[str, dict[str, dict]]:
-        data: dict[str, dict[str, dict]] = {}
+    def load_from_csv(cls, filename) -> dict[str, dict[str, dict]]:
+        data = {}
 
         with open(filename, mode="r", newline="", encoding="utf-8") as file:
             reader = csv.reader(file)
@@ -171,21 +172,25 @@ class OverallExtractionResult:
             next(reader)
 
             for row in reader:
-                type_, feature, count_str, time_str = row
+                type_, feature, filename, count_str, time_str = row
                 try:
                     count: int = int(count_str)
                     time = float(time_str)
                 except ValueError:
-                    await GLOBAL_LOGGER.error(f"Invalid data in CSV: {row}, skipping")
+                    GLOBAL_LOGGER.error(f"Invalid data in CSV: {row}, skipping")
                     continue
 
                 if type_ not in data:
                     data[type_] = {}
-                data[type_][feature] = {"Count": count, "Time": time}
+                if feature not in data[type_]:
+                    data[type_][feature] = {}
+                data[type_][feature][filename] = {"count": count, "time": time}
+
+                # data[type_][feature] = {"Count": count, "Time": time}
 
         return data
 
-    async def save_to_json(self):
+    def save_to_json(self):
         filename = os.path.join(self.web_data.dir_path, "features.json")
         try:
             with open(filename, mode="w", encoding="utf-8") as file:
@@ -203,14 +208,14 @@ class OverallExtractionResult:
                 # file.write(json.dumps(res_list, indent=4))
         except Exception as e:
             print(f"Error saving to JSON: {e}")
-            await GLOBAL_LOGGER.error(f"Error saving to JSON: {e}")
+            GLOBAL_LOGGER.error(f"Error saving to JSON: {e}")
 
     # async很难，在这里一旦await就报错OSError: [WinError 6] 句柄无效
     # 一旦有exception也会报这个错
     @classmethod
     @typechecked
     @catch_exceptions
-    async def load_from_json(cls, filename) -> dict:
+    def load_from_json(cls, filename) -> dict:
         # 一旦在这里await就出错OSError: [WinError 6] 句柄无效 怀疑根本不能await
         # print(f"Loading from JSON {filename}")
 
@@ -231,16 +236,17 @@ class OverallExtractionResult:
         return res_dict
 
     # todo：针对不同类型的特征进行统计
-    async def do_summary(self):
+    def do_summary(self):
         for t in FILE_TYPES:
             self.summary[t] = {}
         for result in self.results:
             if result.filetype not in self.summary:
                 self.summary[result.filetype] = {}
-            self.summary[result.filetype][result.extractor_name] = {
-                "Count": result.feature_count,
-                "Time": round(result.execution_time, 5),
-                "AdditionalInfo": result.additional_info,
-            }
-        await self.save_to_csv()
-        await self.save_to_json()
+            self.summary[result.filetype][result.extractor_name] = result.info
+            # {
+            #     "Count": result.feature_count,
+            #     "Time": round(result.execution_time, 5),
+            #     "AdditionalInfo": result.additional_info,
+            # }
+        self.save_to_csv()
+        self.save_to_json()

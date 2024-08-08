@@ -32,15 +32,15 @@ class Rule:
 
 
 class AnalysisResult:
-    def __init__(self, rule_name: str, score: float, additional_info: dict = None):
+    def __init__(self, rule_name: str, res_dict: Dict[str, Dict] = None):
         self.rule_name = rule_name  # 规则名称
-        self.score = score  # 分数
-        self.additional_info = additional_info or {}  # 附加信息
+        self.res_dict = (
+            res_dict or {}
+        )  # 结果字典，key为filename，value为dict，字段包含score(float)和additional_info(dict)
 
     def __repr__(self):
         return (
-            f"AnalysisResult(rule_name={self.rule_name}, score={self.score}, "
-            f"additional_info={self.additional_info})"
+            f"AnalysisResult(rule_name={self.rule_name}, result dict={self.res_dict})"
         )
 
 
@@ -53,45 +53,49 @@ class OverallAnalysisResult:
         """添加单个分析结果并更新总得分和总用时"""
         self.results.append(analysis_result)
 
-    async def save_to_csv(self):
+    def save_to_csv(self):
         filename = os.path.join(self.dir_path, "analysis_result.csv")
         with open(filename, mode="w", newline="", encoding="utf-8") as file:
             writer = csv.writer(file)
 
             # 写入表头
-            writer.writerow(["Rule", "Score"])
+            writer.writerow(["Rule", "Filename", "Score"])
 
             # 写入数据
             try:
                 for res in self.results:
-                    writer.writerow([res.rule_name, res.score])
+                    for filename, info in res.res_dict.items():
+                        writer.writerow([res.rule_name, filename, info["score"]])
             except Exception as e:
                 print(f"Error saving to CSV: {e}")
-                await GLOBAL_LOGGER.error(f"Error saving to CSV: {e}")
+                GLOBAL_LOGGER.error(f"Error saving to CSV: {e}")
 
-    async def save_to_json(self):
+    def save_to_json(self):
         filename = os.path.join(self.dir_path, "analysis_result.json")
         try:
             with open(filename, mode="w", encoding="utf-8") as file:
                 res_dict: dict = {}
                 for res in self.results:
-                    res_dict[res.rule_name] = {
-                        "Score": res.score,
-                        "AdditionalInfo": res.additional_info,
-                    }
+                    res_dict[res.rule_name] = res.res_dict
                 file.write(json.dumps(res_dict, indent=4))
         except Exception as e:
             print(f"Error saving to JSON: {e}")
-            await GLOBAL_LOGGER.error(f"Error saving to JSON: {e}")
+            GLOBAL_LOGGER.error(f"Error saving to JSON: {e}")
 
-    async def do_summary(self):
-        await self.save_to_csv()
-        await self.save_to_json()
+    def do_summary(self):
+        self.save_to_csv()
+        self.save_to_json()
 
-    def judge(self) -> float:
+    def judge(self) -> Dict[str, float]:
         """判断是否通过,从0到100越大越恶意"""
-        score = max([res.score for res in self.results])
-        return score
+        max_scores = {}
+        for res in self.results:
+            for filename, info in res.res_dict.items():
+                score = info["score"]
+                if filename not in max_scores:
+                    max_scores[filename] = 0
+                max_scores[filename] = max(max_scores[filename], score)
+        return max_scores
 
 
 # 用于动态指定区间和对应的规则列表，可以用于记录“子规则”，构建规则树

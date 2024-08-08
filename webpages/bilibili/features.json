@@ -1,209 +1,344 @@
 {
     "html": {
         "EncodedStringHTML": {
-            "Count": 0,
-            "Time": 0.0,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
         },
         "EncodedURL": {
-            "Count": 0,
-            "Time": 0.00199,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0019941329956054688,
+                "additional_info": {}
+            }
         },
         "FrameSet": {
-            "Count": 0,
-            "Time": 0.001,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.001995086669921875,
+                "additional_info": {}
+            }
         },
         "Hidden": {
-            "Count": 0,
-            "Time": 0.00199,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0019943714141845703,
+                "additional_info": {}
+            }
         },
         "HTML5_Tags": {
-            "Count": 0,
-            "Time": 0.00202,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0019953250885009766,
+                "additional_info": {}
+            }
         },
         "IPExist": {
-            "Count": 0,
-            "Time": 0.00197,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0019936561584472656,
+                "additional_info": {}
+            }
         },
         "NoFrame": {
-            "Count": 0,
-            "Time": 0.00103,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0019948482513427734,
+                "additional_info": {}
+            }
         },
         "NullCharacter": {
-            "Count": 0,
-            "Time": 0.0,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
         },
         "Port": {
-            "Count": 0,
-            "Time": 0.001,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            }
         },
         "UnsymmetricalTag": {
-            "Count": 0,
-            "Time": 0.001,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.001994609832763672,
+                "additional_info": {}
+            }
         },
         "CharCount": {
-            "Count": 1378,
-            "Time": 0.00097,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 1378,
+                "time": 0.0009980201721191406,
+                "additional_info": {}
+            }
         },
         "DoubleDocuments": {
-            "Count": 0,
-            "Time": 0.00198,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0019948482513427734,
+                "additional_info": {}
+            }
         },
         "EmbedAndObject": {
-            "Count": 0,
-            "Time": 0.001,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            }
         },
         "IncludedUrls": {
-            "Count": 4,
-            "Time": 0.001,
-            "AdditionalInfo": [
-                "//s1.hdslb.com/bfs/static/jinkela/long/js/jquery/jquery1.7.2.min.js",
-                "//security.bilibili.com/static/js/sha256.min.js",
-                "//security.bilibili.com/static/js/js.cookie.min.js",
-                "//security.bilibili.com/static/js/412.js"
-            ]
+            "bilibili.html": {
+                "count": 4,
+                "time": 0.000997304916381836,
+                "additional_info": [
+                    "//s1.hdslb.com/bfs/static/jinkela/long/js/jquery/jquery1.7.2.min.js",
+                    "//security.bilibili.com/static/js/sha256.min.js",
+                    "//security.bilibili.com/static/js/js.cookie.min.js",
+                    "//security.bilibili.com/static/js/412.js"
+                ]
+            }
         },
         "KnownMaliciousPatterns": {
-            "Count": 0,
-            "Time": 0.00199,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0011224746704101562,
+                "additional_info": {}
+            }
         },
         "OutOfPlace": {
-            "Count": 0,
-            "Time": 0.00199,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0024521350860595703,
+                "additional_info": []
+            }
         },
         "ScriptNum": {
-            "Count": 4,
-            "Time": 0.001,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 4,
+                "time": 0.0,
+                "additional_info": {}
+            }
         },
         "ScriptRatio": {
-            "Count": 0.0,
-            "Time": 0.001,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0.0,
+                "time": 0.0,
+                "additional_info": {}
+            }
         },
         "ScriptWrongExtention": {
-            "Count": 0,
-            "Time": 0.00199,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.003995418548583984,
+                "additional_info": {}
+            }
         },
         "SmallAreaElements": {
-            "Count": 0,
-            "Time": 0.001,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            }
         },
         "SourceExternal": {
-            "Count": 4,
-            "Time": 0.00299,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 4,
+                "time": 0.003994464874267578,
+                "additional_info": {}
+            }
         },
         "SuspiciousContentElements": {
-            "Count": 0,
-            "Time": 0.001,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            }
         },
         "SuspiciousObjects": {
-            "Count": 0,
-            "Time": 0.001,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            }
         },
         "UnknownTags": {
-            "Count": 0.0,
-            "Time": 0.001,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 0.0,
+                "time": 0.003994464874267578,
+                "additional_info": {}
+            }
         },
         "WordCount": {
-            "Count": 221,
-            "Time": 0.00199,
-            "AdditionalInfo": {}
+            "bilibili.html": {
+                "count": 221,
+                "time": 0.0031702518463134766,
+                "additional_info": {}
+            }
         }
     },
     "css": {
         "AbnormalAttributeCSS": {
-            "Count": 13,
-            "Time": 0.00197,
-            "AdditionalInfo": [
-                "position: absolute",
-                "visibility: hidden",
-                "display: none",
-                "opacity: 0",
-                "opacity: 0.9",
-                "position: fixed",
-                "z-index: 2000",
-                "position: absolute",
-                "z-index: -1",
-                "position: relative",
-                "z-index: 150",
-                "position: relative",
-                "z-index: 200"
-            ]
+            "test.css": {
+                "count": 13,
+                "time": 0.0009970664978027344,
+                "additional_info": [
+                    "position: absolute",
+                    "visibility: hidden",
+                    "display: none",
+                    "opacity: 0",
+                    "opacity: 0.9",
+                    "position: fixed",
+                    "z-index: 2000",
+                    "position: absolute",
+                    "z-index: -1",
+                    "position: relative",
+                    "z-index: 150",
+                    "position: relative",
+                    "z-index: 200"
+                ]
+            }
         },
         "BlendModeCSS": {
-            "Count": 2,
-            "Time": 0.0,
-            "AdditionalInfo": {
-                "multiply": 1,
-                "darken": 1
+            "test.css": {
+                "count": 2,
+                "time": 0.0009970664978027344,
+                "additional_info": {
+                    "multiply": 1,
+                    "darken": 1
+                }
             }
         },
         "WordCountCSS": {
-            "Count": 183,
-            "Time": 0.0,
-            "AdditionalInfo": {
-                "CharCount": 1109
+            "test.css": {
+                "count": 183,
+                "time": 0.0,
+                "additional_info": {
+                    "CharCount": 1109
+                }
             }
         }
     },
     "js": {
         "DocProperties": {
-            "Count": 5,
-            "Time": 0.04638,
-            "AdditionalInfo": {}
+            "412.js": {
+                "count": 2,
+                "time": 0.0019941329956054688,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 0,
+                "time": 0.04140448570251465,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 3,
+                "time": 0.0009975433349609375,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.003989219665527344,
+                "additional_info": {}
+            }
         },
         "ActiveX": {
-            "Count": 1,
-            "Time": 0.03896,
-            "AdditionalInfo": {
-                "Microsoft.XMLHTTP": 1
+            "412.js": {
+                "count": 0,
+                "time": 0.0019943714141845703,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 1,
+                "time": 0.03304791450500488,
+                "additional_info": {
+                    "Microsoft.XMLHTTP": 1
+                }
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.002991914749145508,
+                "additional_info": {}
             }
         },
         "WordCountJS": {
-            "Count": 21950,
-            "Time": 0.01297,
-            "AdditionalInfo": {
-                "CharCount": 111978
+            "412.js": {
+                "count": 657,
+                "time": 0.000997304916381836,
+                "additional_info": {
+                    "CharCount": 4673
+                }
+            },
+            "jquery1.7.2.min.js": {
+                "count": 18935,
+                "time": 0.011967897415161133,
+                "additional_info": {
+                    "CharCount": 96014
+                }
+            },
+            "js.cookie.min.js": {
+                "count": 298,
+                "time": 0.000997781753540039,
+                "additional_info": {
+                    "CharCount": 1682
+                }
+            },
+            "sha256.min.js": {
+                "count": 2060,
+                "time": 0.001012563705444336,
+                "additional_info": {
+                    "CharCount": 9609
+                }
             }
         },
         "DeobfuscationFunc": {
-            "Count": 32,
-            "Time": 0.05852,
-            "AdditionalInfo": {
-                "Function": 1,
-                "decodeURIComponent": 1,
-                "atob": 1,
-                "parseInt": 2,
-                "parseFloat": 27
+            "412.js": {
+                "count": 2,
+                "time": 0.0020246505737304688,
+                "additional_info": {
+                    "atob": 1,
+                    "parseInt": 1
+                }
+            },
+            "jquery1.7.2.min.js": {
+                "count": 29,
+                "time": 0.046846866607666016,
+                "additional_info": {
+                    "Function": 1,
+                    "parseInt": 1,
+                    "parseFloat": 27
+                }
+            },
+            "js.cookie.min.js": {
+                "count": 1,
+                "time": 0.0009970664978027344,
+                "additional_info": {
+                    "decodeURIComponent": 1
+                }
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.004986763000488281,
+                "additional_info": {}
             }
         }
     },
     "url": {
         "SuspiciousPattern": {
-            "Count": 0,
-            "Time": 0.0,
-            "AdditionalInfo": {}
+            "all_urls": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            }
         }
     },
     "har": {}

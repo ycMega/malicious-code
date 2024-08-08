@@ -17,6 +17,6 @@ whois
 geoip2
 fastapi[all] # 7.29
 pylint # 7.31
-aiologger # 8.5
+# aiologger # 8.5
 mypy # 8.6 同时用到了pydantic, typeguard
 argparse # 8.7

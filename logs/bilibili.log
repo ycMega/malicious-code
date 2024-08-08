@@ -1,0 +1,65 @@
+2024-08-08 14:17:43.335 | INFO | Loading web data from webpages/bilibili and creating metadata.yaml......
+2024-08-08 14:17:43.495 | INFO | url:https://www.bilibili.com/
+2024-08-08 14:17:43.496 | INFO | crawled time:2024-08-05T05:10:48.426Z
+2024-08-08 14:17:43.496 | INFO | 1 HTML files:['bilibili.html']
+2024-08-08 14:17:43.496 | INFO | 4 JavaScript files:['412.js', 'jquery1.7.2.min.js', 'js.cookie.min.js', 'sha256.min.js']
+2024-08-08 14:17:43.496 | INFO | 1 CSS files:['test.css']
+2024-08-08 14:17:43.496 | INFO | Loading web data finished. Time: 160.18ms
+2024-08-08 14:17:43.497 | INFO | ==================================================
+2024-08-08 14:17:43.497 | INFO | Loading feature extractors from src/static_features/......
+2024-08-08 14:17:43.694 | INFO | --------------------------------------------------
+2024-08-08 14:17:43.694 | INFO | Finished loading feature extractors. Time: 197.65ms
+2024-08-08 14:17:43.694 | INFO | ==================================================
+2024-08-08 14:17:43.694 | INFO | Extracting features......
+2024-08-08 14:17:43.696 | INFO | Extractor Finished: AbnormalAttributeCSS. Time: 1.00ms
+2024-08-08 14:17:43.697 | INFO | Extractor Finished: BlendModeCSS. Time: 1.00ms
+2024-08-08 14:17:43.697 | INFO | Extractor Finished: WordCountCSS. Time: 0.00ms
+2024-08-08 14:17:43.697 | INFO | Extractor Finished: EncodedStringHTML. Time: 0.00ms
+2024-08-08 14:17:43.700 | INFO | Extractor Finished: EncodedURL. Time: 1.99ms
+2024-08-08 14:17:43.702 | INFO | Extractor Finished: FrameSet. Time: 2.00ms
+2024-08-08 14:17:43.704 | INFO | Extractor Finished: Hidden. Time: 1.99ms
+2024-08-08 14:17:43.706 | INFO | Extractor Finished: HTML5_Tags. Time: 2.00ms
+2024-08-08 14:17:43.708 | INFO | Extractor Finished: IPExist. Time: 1.99ms
+2024-08-08 14:17:43.710 | INFO | Extractor Finished: NoFrame. Time: 1.99ms
+2024-08-08 14:17:43.710 | INFO | Extractor Finished: NullCharacter. Time: 0.00ms
+2024-08-08 14:17:43.711 | INFO | Extractor Finished: Port. Time: 1.00ms
+2024-08-08 14:17:43.713 | INFO | Extractor Finished: UnsymmetricalTag. Time: 1.99ms
+2024-08-08 14:17:43.714 | INFO | Extractor Finished: CharCount. Time: 1.00ms
+2024-08-08 14:17:43.716 | INFO | Extractor Finished: DoubleDocuments. Time: 1.99ms
+2024-08-08 14:17:43.717 | INFO | Extractor Finished: EmbedAndObject. Time: 1.00ms
+2024-08-08 14:17:43.719 | INFO | Extractor Finished: IncludedUrls. Time: 1.00ms
+2024-08-08 14:17:43.721 | INFO | Extractor Finished: KnownMaliciousPatterns. Time: 2.12ms
+2024-08-08 14:17:43.724 | INFO | Extractor Finished: OutOfPlace. Time: 2.45ms
+2024-08-08 14:17:43.724 | INFO | Extractor Finished: ScriptNum. Time: 0.00ms
+2024-08-08 14:17:43.724 | INFO | Extractor Finished: ScriptRatio. Time: 0.00ms
+2024-08-08 14:17:43.728 | INFO | Extractor Finished: ScriptWrongExtention. Time: 4.00ms
+2024-08-08 14:17:43.728 | INFO | Extractor Finished: SmallAreaElements. Time: 0.00ms
+2024-08-08 14:17:43.732 | INFO | Extractor Finished: SourceExternal. Time: 3.99ms
+2024-08-08 14:17:43.732 | INFO | Extractor Finished: SuspiciousContentElements. Time: 0.00ms
+2024-08-08 14:17:43.732 | INFO | Extractor Finished: SuspiciousObjects. Time: 0.00ms
+2024-08-08 14:17:43.736 | INFO | Extractor Finished: UnknownTags. Time: 3.99ms
+2024-08-08 14:17:43.739 | INFO | Extractor Finished: WordCount. Time: 3.17ms
+2024-08-08 14:17:43.788 | INFO | Extractor Finished: DocProperties. Time: 48.39ms
+2024-08-08 14:17:43.827 | INFO | Extractor Finished: ActiveX. Time: 39.03ms
+2024-08-08 14:17:43.843 | INFO | Extractor Finished: WordCountJS. Time: 15.51ms
+2024-08-08 14:17:43.898 | INFO | Extractor Finished: DeobfuscationFunc. Time: 54.86ms
+2024-08-08 14:17:43.899 | INFO | Extractor Finished: SuspiciousPattern. Time: 1.00ms
+2024-08-08 14:17:43.899 | INFO | Feature extraction finished. Starting writing results to file......
+2024-08-08 14:17:43.901 | INFO | Writing to file finished. Time: 1.99ms
+2024-08-08 14:17:43.907 | INFO | **************************************************
+2024-08-08 14:17:43.908 | INFO | Now start loading rules from src/static_rules/......
+2024-08-08 14:17:43.910 | INFO | Finished loading rules. Time: 2.99ms
+2024-08-08 14:17:43.910 | INFO | ==================================================
+2024-08-08 14:17:43.910 | INFO | Analyzing rules......
+2024-08-08 14:17:43.910 | INFO | Rule Finished: WordLenCSS. Time: 0.00ms
+2024-08-08 14:17:43.910 | INFO | Rule Finished: TestRule. Time: 0.00ms
+2024-08-08 14:17:43.910 | INFO | Rule Finished: JSTestRule. Time: 0.00ms
+2024-08-08 14:17:43.912 | INFO | --------------------------------------------------
+2024-08-08 14:17:43.912 | INFO | Final score: 
+2024-08-08 14:17:43.912 | INFO | test.css           : 53.995
+2024-08-08 14:17:43.912 | INFO | bilibili.html      : 55.849
+2024-08-08 14:17:43.912 | INFO | 412.js             : 63.762
+2024-08-08 14:17:43.913 | INFO | jquery1.7.2.min.js : 41.116
+2024-08-08 14:17:43.913 | INFO | js.cookie.min.js   : 49.132
+2024-08-08 14:17:43.913 | INFO | sha256.min.js      : 34.247
+2024-08-08 14:17:43.913 | INFO | All finished.

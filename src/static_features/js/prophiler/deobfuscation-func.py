@@ -23,16 +23,16 @@ class DeobfuscationFunc(JSExtractor):
         #     res, decoding_routines = calculate_score(js_content["content"])
         #     total_res += res
         #     total_decoding_routines.extend(decoding_routines)
-        js_content = "\n".join(d["content"] for d in js_content_list)
-        res, deobfuscation_counts = calculate_score(js_content)
-
-        return FeatureExtractionResult(
-            self.meta.filetype,
-            self.meta.name,
-            res,
-            time.time() - start_time,
-            deobfuscation_counts,
-        )
+        info_dict = {}
+        for h in js_content_list:
+            start_time = time.time()
+            res, deobfuscation_functions = calculate_score(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": deobfuscation_functions,
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 # 不考虑其他规则已经考虑过的函数？

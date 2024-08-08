@@ -110,14 +110,14 @@ if __name__ == "__main__":
 
     export const baz = foo + bar;
     async function fetchData(url) {
-        const response = await fetch(url);
-        const data = await response.json();
+        const response = fetch(url);
+        const data = response.json();
         return data;
     }
     // 异步函数
     async function fetchData(url) {
-        const response = await fetch(url);
-        const data = await response.json();
+        const response = fetch(url);
+        const data = response.json();
         return data;
     }
     """

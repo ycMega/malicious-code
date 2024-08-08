@@ -1,6 +1,7 @@
 import importlib.util
 import inspect
 import os
+import time
 
 from src.io.async_logger import GLOBAL_LOGGER
 
@@ -67,43 +68,46 @@ def load_extractors_recursive(directory: str, web_data: WebData, extractors: lis
     return extractors
 
 
-async def extract_features(
+def extract_features(
     overall_result: OverallExtractionResult, extractors: list[FeatureExtractor]
 ):
     # 调用特征提取方法
     for extractor in extractors:
         try:
-            # 尝试添加type checked wrapper但失败了
-            # if hasattr(extractor, "calculate_score"):
-            #     original_func = extractor.calculate_score
-
-            #     @typechecked
-            #     def wrapped_func(
-            #         self,
-            #     ) -> FeatureExtractionResult:  # 根据需要定义参数类型
-            #         return original_func(self)
-
-            #     extractor.calculate_score = wrapped_func  # 替换原方法
-            print("Extractor:", type(extractor).__name__)
+            start_time = time.time()
             result = extractor.calculate_score()  # 假设有 calculate_score 方法
             if result is not None and isinstance(result, FeatureExtractionResult):
                 # 是正确的返回值，接下来检查规则是否有效
-                if result.feature_count >= 0:
-                    overall_result.add_result(result)
+                # if result.feature_count >= 0:
+                overall_result.add_result(result)
+                GLOBAL_LOGGER.info(
+                    f"Extractor Finished in {((time.time() - start_time) * 1000):.2f} ms: {type(extractor).__name__}. "
+                )
             else:
-                print(f"Error in {type(extractor).__name__}: Invalid result")
+                GLOBAL_LOGGER.error(
+                    f"Error in {type(extractor).__name__}: Invalid result"
+                )
                 # print_logger_info(web_data.logger)
                 try:
                     pass  # 下面的语句会莫名报错[WinError 6] 句柄无效。即使之前输出的logger info没看出异常
-                    # await web_data.logger.error(
+                    # web_data.logger.error(
                     #     f"Error in {type(extractor).__name__}: Invalid result"
                     # )
                 except Exception as e:
-                    print(f"Error in {type(extractor).__name__}: {str(e)}")
+                    GLOBAL_LOGGER.error(
+                        f"Error in {type(extractor).__name__}: {str(e)}"
+                    )
         except Exception as e:
-            await GLOBAL_LOGGER.error(f"Error in {type(extractor).__name__}: {e}")
+            GLOBAL_LOGGER.error(f"Error in {type(extractor).__name__}: {e}")
         # print(f"Extractor: {type(extractor).__name__}, Result: {result}")
-    await overall_result.do_summary()
+    GLOBAL_LOGGER.info(
+        "Feature extraction finished. Starting writing results to file......"
+    )
+    start_time = time.time()
+    overall_result.do_summary()
+    GLOBAL_LOGGER.info(
+        f"Writing to file finished. Time: {((time.time() - start_time) * 1000):.2f}ms"
+    )
 
 
 def load_rules_recursive(directory: str, feature_dict: dict, rules: list):
@@ -126,18 +130,21 @@ def load_rules_recursive(directory: str, feature_dict: dict, rules: list):
     return rules
 
 
-async def analyze_rules(
-    overall_analysis_result: OverallAnalysisResult, rules: list[Rule]
-):
+def analyze_rules(overall_analysis_result: OverallAnalysisResult, rules: list[Rule]):
     for rule in rules:
         try:
-            print("Rule:", type(rule).__name__)
+            start_time = time.time()
             result = rule.analyze()
             if result is not None and isinstance(result, AnalysisResult):
                 overall_analysis_result.add_result(result)
+                GLOBAL_LOGGER.info(
+                    f"Rule Finished: {type(rule).__name__}. Time: {((time.time() - start_time) * 1000):.2f}ms"
+                )
+            else:
+                GLOBAL_LOGGER.error(f"Error in {type(rule).__name__}: Invalid result")
         except Exception as e:
-            await GLOBAL_LOGGER.error(f"Error in {type(rule).__name__}: {e}")
-    await overall_analysis_result.do_summary()
+            GLOBAL_LOGGER.error(f"Error in {type(rule).__name__}: {e}")
+    overall_analysis_result.do_summary()
 
     # print(f"Extractor: {type(extractor).__name__}, Result: {result}")
-    # await overall_result.do_summary()
+    # overall_result.do_summary()
