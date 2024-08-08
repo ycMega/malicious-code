@@ -23,7 +23,7 @@ DOM_MODIFYING_FUNCTIONS = {
 }
 
 
-def calculate_score(js_content: str):
+def extract(js_content: str):
     # 查找所有函数调用
     function_calls = re.findall(r"(\w+)\s*\(", js_content)
     dom_modifying_count = 0
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     elem.removeChild(document.getElementById('child'));
     clearAttributes(); // IE specific
     """
-    count = calculate_score(js_content)
+    count = extract(js_content)
     print(f"Number of DOM-modifying functions: {count}")
 
 # from pyjsparser import parse
@@ -80,7 +80,7 @@ if __name__ == "__main__":
 #     return False
 
 
-# def calculate_score(node):
+# def extract(node):
 #     count = 0
 #     if isinstance(node, dict):
 #         if is_dom_modifying_function(node):
@@ -88,17 +88,17 @@ if __name__ == "__main__":
 
 #         for value in node.values():
 #             if isinstance(value, (dict, list)):
-#                 count += calculate_score(value)
+#                 count += extract(value)
 
 #     elif isinstance(node, list):
 #         for item in node:
-#             count += calculate_score(item)
+#             count += extract(item)
 #     return count
 
 
-# def calculate_score(js_content: str, js_path: str="") -> int:
+# def extract(js_content: str, js_path: str="") -> int:
 #     ast = parse(js_content)
-#     total_dom_modifying_functions = calculate_score(ast)
+#     total_dom_modifying_functions = extract(ast)
 #     return total_dom_modifying_functions
 
 
@@ -108,4 +108,4 @@ if __name__ == "__main__":
 # var elem = document.getElementById('test');
 # elem.innerHTML = '<p>Test</p>';
 # """
-# print("dom modifying functions:", calculate_score(js_content))
+# print("dom modifying functions:", extract(js_content))

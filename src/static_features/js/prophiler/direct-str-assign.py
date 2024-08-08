@@ -82,8 +82,8 @@ def count_string_assignments(node, assignments):
             count_string_assignments(node.alternate, assignments)
 
 
-def calculate_score(js_content: str):
-    # print("direct-str-assign.py: calculate_score")
+def extract(js_content: str):
+    # print("direct-str-assign.py: extract")
     ast, error = parse_js_code(js_content)
     if error:
         print(f"Error parsing code: {error}")
@@ -108,7 +108,7 @@ if __name__ == "__main__":
     var arr = ["string1", "string2"];
     """
 
-    count, assignments = calculate_score(js_content)
+    count, assignments = extract(js_content)
     print(f"Number of direct string assignments: {count}")
     for assignment in assignments:
         print(assignment)

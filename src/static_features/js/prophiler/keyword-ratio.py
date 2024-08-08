@@ -4,7 +4,7 @@ import re
 # TODO: 设定合适的公式来计算恶意分数
 
 
-def calculate_score(js_content: str) -> float:
+def extract(js_content: str) -> float:
     # 定义JavaScript关键字列表
     js_keywords = {
         "break",
@@ -69,5 +69,5 @@ if __name__ == "__main__":
         }
     }
     """
-    ratio = calculate_score(js_code)
+    ratio = extract(js_code)
     print(f"Keywords-to-words ratio: {ratio:.2f}")

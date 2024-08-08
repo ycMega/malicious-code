@@ -1,7 +1,7 @@
 import re
 
 
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     # 使用正则表达式匹配 eval() 函数调用
     pattern = r"\beval\s*\(.*?\)"
     matches = re.findall(pattern, js_content)
@@ -21,5 +21,5 @@ if __name__ == "__main__":
     var y = evalSomething('notEval()');
     """
 
-    count = calculate_score(sample_js)
+    count = extract(sample_js)
     print(f"Number of occurrences of eval(): {count}")

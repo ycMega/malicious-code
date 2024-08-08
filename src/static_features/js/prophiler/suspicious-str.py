@@ -5,7 +5,7 @@ import re
 SUSPICIOUS_STRINGS = ["evil", "shell", "spray", "crypt"]
 
 
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     count = 0
 
     # 使用正则表达式查找可疑字符串
@@ -26,5 +26,5 @@ if __name__ == "__main__":
     var data = 'this will spray'; 
     var crypt = 'encryption';
     """
-    score = calculate_score(js_content)
+    score = extract(js_content)
     print(f"Total suspicious strings: {score}")

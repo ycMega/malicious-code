@@ -14,12 +14,12 @@ class WordCount(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res, words_count = calculate_score(h["content"])
+            res, words_count = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -28,7 +28,7 @@ class WordCount(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content):
+def extract(html_content):
     soup = BeautifulSoup(html_content, "lxml")
     # 访问所有标签
     reserved = []
@@ -83,5 +83,5 @@ if __name__ == "__main__":
     """
 
     # 运行统计
-    total_words, words_count = calculate_score(example_content)
+    total_words, words_count = extract(example_content)
     print(f"Total Words: {total_words}")

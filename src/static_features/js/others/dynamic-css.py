@@ -1,7 +1,7 @@
 import re
 
 
-def calculate_score(js_content):
+def extract(js_content):
     dynamic_css_patterns = [
         r"document\.styleSheets",  # 访问当前文档的样式表
         r"element\.style",  # 修改元素的 style 属性
@@ -41,5 +41,5 @@ if __name__ == "__main__":
     """
 
     # 运行检测
-    count, dynamic_css = calculate_score(js_test_content)
+    count, dynamic_css = extract(js_test_content)
     print(f"Dynamic CSS features: {dynamic_css}")

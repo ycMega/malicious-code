@@ -17,12 +17,12 @@ class Port(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res = calculate_score(h["content"])
+            res = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -32,7 +32,7 @@ class Port(HTMLExtractor):
 
 
 # use non standard ports to bypass firewalls
-def calculate_score(html_content: str):
+def extract(html_content: str):
     soup = BeautifulSoup(html_content, "lxml")
     links = soup.find_all("a", href=True)
     non_standard_ports = sum(

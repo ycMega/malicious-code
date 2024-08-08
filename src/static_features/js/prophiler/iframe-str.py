@@ -1,7 +1,7 @@
 import re
 
 
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     # 使用正则表达式查找包含 "iframe" 的字符串
     pattern = r"\biframe\b"
     matches = re.findall(pattern, js_content, re.IGNORECASE)
@@ -15,5 +15,5 @@ if __name__ == "__main__":
     document.body.innerHTML += '<iframe src="test.com"></iframe>';
     var data = 'this is not an iframe';
     """
-    score = calculate_score(js_content)
+    score = extract(js_content)
     print(f'Total "iframe" strings: {score}')

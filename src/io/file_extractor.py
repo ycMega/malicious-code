@@ -59,7 +59,7 @@ class HARProcessor:
         entries = self.har_data["log"]["pages"]
         if entries and len(entries) > 0:
             # 获取第一个页面的时间
-            self.url = entries[0]["title"]
+            self.url = entries[0].get("title", "")
         return self.url
 
     @typechecked
@@ -127,7 +127,7 @@ class WebData:
 
     # 在其中执行需要涉及到logger的内容
     @catch_exceptions
-    def aysnc_load_data(self):
+    def load_data(self):
         if self.har_processor:
             self.har_processor.load_data()
         try:
@@ -212,6 +212,10 @@ class WebData:
             if self.har_processor
             else self.extract_url_from_meta()
         )
+        if url == "":
+            GLOBAL_LOGGER.error(
+                "No URL found at designated field in metadata or HAR file."
+            )
 
         files_meta = self.load_files()
         http_requests = (

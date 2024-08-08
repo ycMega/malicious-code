@@ -32,13 +32,13 @@ from src.utils.utils import parse_js_code
 #             "1.0",
 #         )
 
-#     def calculate_score(self) -> FeatureExtractionResult:
+#     def extract(self) -> FeatureExtractionResult:
 #         start_time = time.time()
 #         js_contents = self.web_data.content["js"]
 #         total_res, total_decoding_routines = 0, []
 #         for js_content in js_contents:
 #             print(f"DecodingRoutine: processing {js_content['filename']}")
-#             res, decoding_routines = calculate_score(js_content["content"])
+#             res, decoding_routines = extract(js_content["content"])
 #             total_res += res
 #             total_decoding_routines.extend(decoding_routines)
 #         # html_content = "\n".join(d["content"] for d in js_contents)
@@ -147,9 +147,9 @@ def extract_decoding_routines(ast):
     return routines
 
 
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     # try:
-    # print("decoding-routines.py: calculate_score")
+    # print("decoding-routines.py: extract")
     # 解析代码并生成 AST
     # ast = esprima.parseScript(js_content)
     pattern = r'\'(.*?)\'|"([^"]*?)"|\'\'\'(.*?)\'\'\'|"""(.*?)"""'
@@ -171,7 +171,7 @@ def calculate_score(js_content: str) -> int:
 # 示例JavaScript代码
 if __name__ == "__main__":
     # filename = "webpages\\bilibili\\jquery1.7.2.min.js"
-    # print("Detected decoding routines:", calculate_score("", filename))
+    # print("Detected decoding routines:", extract("", filename))
     js_code = """
     for (var i = 0; i < encodedStr.length; i++) {
         var longString = "This is a very long string...";
@@ -185,7 +185,7 @@ if __name__ == "__main__":
         decodedStr += String.fromCharCode(encodedStr.charCodeAt(i) ^ 0x30);
     }
     """
-    count, decoding_routines = calculate_score(js_code)
+    count, decoding_routines = extract(js_code)
     print("Detected decoding routines:", count)
     for routine in decoding_routines:
         for code in routine:
@@ -226,7 +226,7 @@ if __name__ == "__main__":
 #     return decoding_routines
 
 
-# def calculate_score(js_file_path: str) -> int:
+# def extract(js_file_path: str) -> int:
 #     result = subprocess.run(
 #         ["node", "parse.js", js_file_path], capture_output=True, text=True
 #     )
@@ -235,7 +235,7 @@ if __name__ == "__main__":
 
 
 # 使用示例
-# count = calculate_score("your_js_file.js")
+# count = extract("your_js_file.js")
 # print(f"Detected decoding routines: {count}")
 # 定义“长”字符串的最小长度
 # LONG_STRING_MIN_LENGTH = 10

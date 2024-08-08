@@ -1,7 +1,7 @@
 import re
 
 
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     # 使用正则表达式匹配 setTimeout() 和 setInterval() 函数调用
     timeout_pattern = r"\bsetTimeout\s*\(.*?\)"
     interval_pattern = r"\bsetInterval\s*\(.*?\)"
@@ -28,6 +28,6 @@ if __name__ == "__main__":
     setInterval(() => { console.log("Interval 2"); }, 3000);
     """
 
-    _, counts = calculate_score(sample_js)
+    _, counts = extract(sample_js)
     print(f"Number of occurrences of setTimeout(): {counts['setTimeout_count']}")
     print(f"Number of occurrences of setInterval(): {counts['setInterval_count']}")

@@ -15,12 +15,12 @@ class HTML5_Tags(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:        
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res = calculate_score(h["content"])
+            res = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -28,7 +28,8 @@ class HTML5_Tags(HTMLExtractor):
             }
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
-def calculate_score(html_content: str) -> int:
+
+def extract(html_content: str) -> int:
     soup = BeautifulSoup(html_content, "lxml")
     tags_to_check = ["embed", "video", "audio", "track", "source"]
     external_or_long_src_count = 0
@@ -61,5 +62,5 @@ if __name__ == "__main__":
     <source src="www.evil.com/malicious.mp4" type="video/mp4"></video>
     """
 
-    res = calculate_score(html_content)
+    res = extract(html_content)
     print(f"html5-tags count:{res}")

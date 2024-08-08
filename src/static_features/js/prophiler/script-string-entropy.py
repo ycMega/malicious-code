@@ -19,7 +19,7 @@ def extract_strings(js_content: str) -> list:
     return re.findall(pattern, js_content)
 
 
-def calculate_score(js_content: str) -> tuple:
+def extract(js_content: str) -> tuple:
     strings = extract_strings(js_content)
     entropies = {s: calculate_entropy(s) for s in strings}
     max_entropy = max(entropies.values())
@@ -35,6 +35,6 @@ if __name__ == "__main__":
     var d = 'Another example string.';
     """
 
-    max_entropy, entropies = calculate_score(sample_js)
+    max_entropy, entropies = extract(sample_js)
     for s, entropy in entropies.items():
         print(f"String: {s}, Entropy: {entropy:.3f}")

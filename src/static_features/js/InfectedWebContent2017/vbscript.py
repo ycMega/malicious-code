@@ -108,7 +108,7 @@ vbscript_functions = [
 ]
 
 
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     # 使用defaultdict初始化函数计数器
     function_counts = defaultdict(int)
 
@@ -139,5 +139,5 @@ if __name__ == "__main__":
     """
 
     # 计算并打印函数使用次数
-    function_usage = calculate_score(js_content)
+    function_usage = extract(js_content)
     print("VBScript Function usage:", function_usage)

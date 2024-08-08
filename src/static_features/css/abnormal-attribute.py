@@ -15,13 +15,13 @@ class AbnormalAttributeCSS(CSSExtractor):
         )
 
     # 似乎不能执行typechecked？会导致在模块加载阶段（而不是执行）报错，因为sys.modules中还没有对应的key
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         css_list = self.web_data.content["css"]
         info_dict = {}
         for css in css_list:
             start_time = time.time()
             input_list = css_rules_listing(css["content"])
-            res, abnormal_styles = calculate_score(input_list)
+            res, abnormal_styles = extract(input_list)
             info_dict[css["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -57,7 +57,7 @@ def is_abnormal_css_usage(style):
     return matches
 
 
-def calculate_score(css_list: list):
+def extract(css_list: list):
     abnormal_styles = []
     for style in css_list:
         matches = is_abnormal_css_usage(style)
@@ -131,5 +131,5 @@ if __name__ == "__main__":
     """
     # 检测
     css_list = extract_css_features(html_content) + css_rules_listing(css_content)
-    count, abnormal_styles = calculate_score(css_list)
+    count, abnormal_styles = extract(css_list)
     print(f"Abnormal CSS Usage count={count}: ", abnormal_styles)

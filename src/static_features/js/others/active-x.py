@@ -14,12 +14,12 @@ class ActiveX(JSExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         js_list = self.web_data.content["js"]
         info_dict = {}
         for h in js_list:
             start_time = time.time()
-            res, frequency_dict = calculate_score(h["content"])
+            res, frequency_dict = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -28,7 +28,7 @@ class ActiveX(JSExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(js_content: str) -> tuple:
+def extract(js_content: str) -> tuple:
     # 定义 ActiveX 对象列表
     activex_objects = [
         "Scripting.FileSystemObject",
@@ -63,5 +63,5 @@ if __name__ == "__main__":
     var stream = new ActiveXObject("Adodb.Stream");
     """
 
-    sum_count, frequency_dict = calculate_score(js_example)
+    sum_count, frequency_dict = extract(js_example)
     print(f"activeX: {frequency_dict}")

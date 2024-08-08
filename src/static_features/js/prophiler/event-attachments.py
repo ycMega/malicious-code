@@ -87,8 +87,8 @@ def analyze_events(ast):
 # analyze_events(ast)
 
 
-def calculate_score(js_content: str) -> int:
-    # print("event-attachments.py: calculate_score")
+def extract(js_content: str) -> int:
+    # print("event-attachments.py: extract")
     # ast, error = parse_js_code(js_content)
     # if error:
     #     print(f"Error parsing code: {error}")
@@ -128,7 +128,7 @@ if __name__ == "__main__":
     # window.onload = function() { console.log('Loaded'); };
     # window.addEventListener('error', function() { console.log('Error'); });
     # document.attachEvent('onbeforeunload', function() { console.log('Before unload'); });
-    count, total_event_attachments = calculate_score(js_content)
+    count, total_event_attachments = extract(js_content)
     print(f"Number of event attachments: {count}")
     print("Events attached:")
     for event in set(total_event_attachments):  # 去重事件类型

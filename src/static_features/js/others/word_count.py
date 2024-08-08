@@ -12,7 +12,7 @@ class WordCountJS(JSExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         js_list = self.web_data.content["js"]
         info_dict = {}
         for h in js_list:

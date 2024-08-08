@@ -39,7 +39,7 @@ def extract_used_fonts(css_content, loaded_fonts):
 
 # 加载异常的字体，特别是那些（来自不受信任的源或）在页面上没有明显用途的字体，可能用于追踪用户或作为加载恶意内容的载体
 # 有可能会读取CSS文件的内容，并作为参数传进来？还是只传CSS文件路径呢？
-def calculate_score(css_list: list):
+def extract(css_list: list):
     font_faces = []
     font_used = []
     font_face_pattern = r"@font-face\s*\{[^@]*?font-family\s*:\s*[\"']([^\"']+)[\"']"
@@ -105,5 +105,5 @@ if __name__ == "__main__":
         css_test_content
     )
     # 运行检测
-    count, unused_fonts = calculate_score(css_list)
+    count, unused_fonts = extract(css_list)
     print("Unused Fonts Detected:", unused_fonts)

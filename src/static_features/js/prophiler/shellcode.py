@@ -54,7 +54,7 @@ def has_regular_intervals(s):
         return 0
 
 
-def calculate_score(js_content: str):
+def extract(js_content: str):
     strings = re.findall(r'"([^"]*)"', js_content) + re.findall(
         r"'([^']*)'", js_content
     )
@@ -96,7 +96,7 @@ if __name__ == "__main__":
     var nonPrintable = "This is a test string with non-printable \x01\x02\x03 characters.";
     var normalString = "Just a normal string.";
     """
-    probability = calculate_score(js_content)
+    probability = extract(js_content)
     print(f"Shellcode presence probability: {probability}")
 
 

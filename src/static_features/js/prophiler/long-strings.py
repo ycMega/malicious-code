@@ -4,7 +4,7 @@ import re
 LONG_STRING_THRESHOLD = 40
 
 
-def calculate_score(js_content: str):
+def extract(js_content: str):
     # 使用正则表达式提取单行和多行字符串
     long_strings = re.findall(
         r'"""(.*?)"""|\'\'\'(.*?)\'\'\'|\'([^\']{40,})\'|\"([^"]{40,})\"',
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     the threshold of forty characters.\"""
     var anotherLongString = "Another long string that is definitely longer than the limit set.";
     """
-    count, long_strings = calculate_score(js_content)
+    count, long_strings = extract(js_content)
     print(f"Number of long strings: {count}")
     for string in long_strings:
         print(f"Detected long string: {string}")
@@ -53,7 +53,7 @@ if __name__ == "__main__":
 #     return result
 
 
-# def calculate_score(code_content: str) -> int:
+# def extract(code_content: str) -> int:
 #     # 使用正则表达式匹配所有字符串（包括单引号、双引号和多行字符串）
 #     string_patterns = [
 #         r"\'(.*?)\'",  # 匹配单行单引号字符串
@@ -81,5 +81,5 @@ if __name__ == "__main__":
 # """
 
 # # 计算并打印长字符串的数量
-# long_strings_count = calculate_score(code_content)
+# long_strings_count = extract(code_content)
 # print(f"Number of long strings: {long_strings_count}")

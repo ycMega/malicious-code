@@ -30,10 +30,13 @@ from src.modules import (
 
 @catch_exceptions
 def main(*args, **kwargs):
+    if not kwargs or not kwargs.get("web_dir"):
+        print("Error: <web_dir> is an required argument.")
+        return -1
+    input_directory = kwargs["web_dir"]
     if args:
         print("Positional arguments:", args)
     feature_registry = FeatureRegistry()  # 注册表，区分已有提取器和新增提取器
-    input_directory = "webpages/bilibili"  # 修改为实际路径
     GLOBAL_LOGGER.remove()  # 移除默认处理器
     GLOBAL_LOGGER.add(
         f"logs/{os.path.basename(input_directory)}.log",
@@ -48,14 +51,14 @@ def main(*args, **kwargs):
         f"Loading web data from {input_directory} and creating metadata.yaml......"
     )
     try:
-        web_data.aysnc_load_data()
+        web_data.load_data()
         metadata = web_data.create_metadata_yaml()
         info_list = [
             f"url:{metadata['website']['url']}",
             f"crawled time: {metadata['website']['crawled_at']}",
-            f"{metadata['content_info']['html']['count']} HTML files:{[x['filename'] for x in metadata['content_info']['html']['meta']]}",
-            f"{metadata['content_info']['js']['count']} JavaScript files:{[x['filename'] for x in metadata['content_info']['js']['meta']]}",
-            f"{metadata['content_info']['css']['count']} CSS files:{[x['filename'] for x in metadata['content_info']['css']['meta']]}",
+            f"find {metadata['content_info']['html']['count']} HTML files:{[x['filename'] for x in metadata['content_info']['html']['meta']]}",
+            f"find {metadata['content_info']['js']['count']} JavaScript files:{[x['filename'] for x in metadata['content_info']['js']['meta']]}",
+            f"find {metadata['content_info']['css']['count']} CSS files:{[x['filename'] for x in metadata['content_info']['css']['meta']]}",
         ]
         for info in info_list:
             GLOBAL_LOGGER.info(info)
@@ -75,7 +78,7 @@ def main(*args, **kwargs):
     extractors = load_extractors_recursive(features_dir, web_data, [])
     for extractor in extractors:
         feature_registry.register(extractor, is_user_feature=False)
-    if kwargs and "feature_path" in kwargs and kwargs["feature_path"]:
+    if "feature_path" in kwargs and kwargs["feature_path"]:
         GLOBAL_LOGGER.info(
             f"Loading additional feature extractors from {kwargs['feature_path']}......"
         )
@@ -110,7 +113,7 @@ def main(*args, **kwargs):
     GLOBAL_LOGGER.info("*" * 50)
     GLOBAL_LOGGER.info(f"Now start loading rules from {rules_dir}......")
     all_rules = load_rules_recursive(rules_dir, feature_loaded, [])
-    if kwargs and "rule_path" in kwargs and kwargs["rule_path"]:
+    if "rule_path" in kwargs and kwargs["rule_path"]:
         GLOBAL_LOGGER.info(f"Loading additional rules from {kwargs['rule_path']}......")
         origin_rule_names = [type(rule).__name__ for rule in all_rules]
         rules_added = load_rules_recursive(kwargs["rule_path"], feature_loaded, [])
@@ -159,7 +162,7 @@ if __name__ == "__main__":
         "--web_dir",
         type=str,
         help="directory path of webpages to process",
-        default="webpages/bilibili/",
+        default="webpages/bilibili",
     )
     parser.add_argument(
         "-f",

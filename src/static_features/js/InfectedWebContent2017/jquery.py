@@ -19,7 +19,7 @@ functions_list = [
 
 
 # 统计函数
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     all_count = 0
     for functions in functions_list:
         for func in functions:
@@ -44,5 +44,5 @@ if __name__ == "__main__":
     </script>
     """
 
-    res = calculate_score(code)
+    res = extract(code)
     print(f"jQuery functions count: {res}")

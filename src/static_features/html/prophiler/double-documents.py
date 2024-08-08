@@ -14,12 +14,12 @@ class DoubleDocuments(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res, presence_of_double_documents = calculate_score(h["content"])
+            res, presence_of_double_documents = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -28,7 +28,7 @@ class DoubleDocuments(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content: str) -> int:
+def extract(html_content: str) -> int:
     soup = BeautifulSoup(html_content, "html.parser")
 
     # 计数器
@@ -67,7 +67,7 @@ if __name__ == "__main__":
         </body>
     </html>
     """
-    double_documents = calculate_score(html_content)
+    double_documents = extract(html_content)
     if double_documents:
         print("Presence of double documents:")
         for element, count in double_documents.items():

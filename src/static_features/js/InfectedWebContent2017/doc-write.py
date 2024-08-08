@@ -21,7 +21,7 @@ def extract_document_writes(js_content: str):
     return document_writes
 
 
-def calculate_score(js_content: str):
+def extract(js_content: str):
     # 匹配从document.write(开始，直到字符串开始的标记（", ', 或 `），并且考虑了可能的空白字符（\s*）
     patterns = [
         "<script",
@@ -96,7 +96,7 @@ if __name__ == "__main__":
     document.write("<scr"+"ipt src=’" +http://badsite.com+
     "/mal.js’></scr"+"ipt>");
     """
-    suspicious_count = calculate_score(js_content)
+    suspicious_count = extract(js_content)
     print(f"Suspicious document.write count: {suspicious_count}")
 
 # patterns = [

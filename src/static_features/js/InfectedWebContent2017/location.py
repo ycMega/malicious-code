@@ -3,7 +3,7 @@ import re
 # The properties of a location object可能被读取，也可能成为initial sources of taint values
 
 
-def calculate_score(js_content: str):
+def extract(js_content: str):
     # 定义需要统计的location对象的属性和函数
     features = [
         "location.pathname",
@@ -40,7 +40,7 @@ if __name__ == "__main__":
         location.replace('http://example.com/newPage');
     };
     """
-    feature_counts = calculate_score(js_content)
+    feature_counts = extract(js_content)
     print(f"location features count: {feature_counts}")
     # for feature, count in feature_counts.items():
     #     print(f"{feature}: {count}")

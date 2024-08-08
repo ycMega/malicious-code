@@ -42,7 +42,7 @@ def count_tokens(ast):
     return token_counts
 
 
-def calculate_score(js_content: str):
+def extract(js_content: str):
     ast, error = parse_js_code(js_content)
     if error:
         print(f"Error parsing code: {error}")
@@ -121,7 +121,7 @@ if __name__ == "__main__":
         return data;
     }
     """
-    sum_count, token_count = calculate_score(sample_js)
+    sum_count, token_count = extract(sample_js)
     print(f"Token count: {sum_count}, {token_count}")
 
     js = """

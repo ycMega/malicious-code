@@ -16,12 +16,12 @@ class UnsymmetricalTag(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res, asymmetrical_tags = calculate_score(h["content"])
+            res, asymmetrical_tags = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -30,7 +30,7 @@ class UnsymmetricalTag(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content: str) -> dict:
+def extract(html_content: str) -> dict:
     # 匹配所有开始标签和结束标签
     soup = BeautifulSoup(html_content, "lxml")
     tags = soup.find_all()
@@ -99,5 +99,5 @@ if __name__ == "__main__":
     </html>
     """
 
-    sum_score, scores = calculate_score(html_example)
+    sum_score, scores = extract(html_example)
     print("Unsymmetrical tags:", scores)

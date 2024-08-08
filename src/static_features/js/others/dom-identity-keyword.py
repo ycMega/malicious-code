@@ -5,7 +5,7 @@ from collections import Counter
 # 例如，身份可能表示用户角色或登录信息，而关键字则可能与表单字段、输入要求或用户认证相关。
 
 
-def calculate_score(js_content: str) -> dict:
+def extract(js_content: str) -> dict:
     features = {
         "identities_count": 0,
         "identities": [],
@@ -69,5 +69,5 @@ if __name__ == "__main__":
     document.getElementById("login").innerHTML = "Please enter your username and password.";
     """
 
-    sum_count, features = calculate_score(js_example)
+    sum_count, features = extract(js_example)
     print(f"DOM identites and keywords: {features}")

@@ -14,12 +14,12 @@ class KnownMaliciousPatterns(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res = calculate_score(h["content"])
+            res = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -28,7 +28,7 @@ class KnownMaliciousPatterns(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content: str) -> int:
+def extract(html_content: str) -> int:
     soup = BeautifulSoup(html_content, "html.parser")
     malicious_pattern_count = 0
 
@@ -55,5 +55,5 @@ if __name__ == "__main__":
         </body>
     </html>
     """
-    count = calculate_score(html_content)
+    count = extract(html_content)
     print(f"Number of known malicious patterns: {count}")

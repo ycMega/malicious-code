@@ -19,12 +19,12 @@ class SuspiciousContentElements(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res, suspicious_elements = calculate_score(h["content"])
+            res, suspicious_elements = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -33,7 +33,7 @@ class SuspiciousContentElements(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content: str) -> int:
+def extract(html_content: str) -> int:
     soup = BeautifulSoup(html_content, "html.parser")
     suspicious_count = 0
     suspicious_elements = []
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     <div>1234567890123456789012345678901234567890</div>
     <div>Short content.</div>
     """
-    count, suspicious_elements = calculate_score(html_content)
+    count, suspicious_elements = extract(html_content)
     print(f"Number of elements containing suspicious content: {count}")
     for element in suspicious_elements:
         print(f"Detected suspicious element: {element[0]} - Content: {element[1]}")

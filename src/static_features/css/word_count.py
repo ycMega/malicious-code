@@ -13,7 +13,7 @@ class WordCountCSS(CSSExtractor):
         )
 
     # 似乎不能执行typechecked？会导致在模块加载阶段（而不是执行）报错，因为sys.modules中还没有对应的key
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         css_list = self.web_data.content["css"]
         info_dict = {}
         for css in css_list:

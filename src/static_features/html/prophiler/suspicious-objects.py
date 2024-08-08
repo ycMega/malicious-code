@@ -23,12 +23,12 @@ class SuspiciousObjects(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res, suspicious_objects = calculate_score(h["content"])
+            res, suspicious_objects = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -37,7 +37,7 @@ class SuspiciousObjects(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content: str) -> int:
+def extract(html_content: str) -> int:
     soup = BeautifulSoup(html_content, "html.parser")
     suspicious_count = 0
     suspicious_objects = []
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     <object classid="clsid:00000000-0000-0000-0000-000000000000"></object>
     <div>Some other content</div>
     """
-    count, suspicious_objects = calculate_score(html_content)
+    count, suspicious_objects = extract(html_content)
     print(f"Number of suspicious objects: {count}")
     for obj in suspicious_objects:
         print(f"Detected suspicious object with classid: {obj}")

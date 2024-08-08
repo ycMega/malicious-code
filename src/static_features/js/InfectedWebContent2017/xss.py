@@ -127,7 +127,7 @@ patterns: list[re.Pattern] = [
 
 
 # 检测逻辑（伪代码）
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     count = 0
     for tag_list, cases_list, condition in xss_detection_rules:
         for tag in tag_list:
@@ -177,7 +177,7 @@ if __name__ == "__main__":
         <script>alert('XSS')</script>
     </div>
     """
-    res = calculate_score(html_content)
+    res = extract(html_content)
     print("suspicious XSS count:", res)
 
 

@@ -1,6 +1,5 @@
 from typing import List, Tuple
 
-
 from src.static_features.url import *
 
 
@@ -15,12 +14,12 @@ class SuspiciousPattern(URLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         url_list = self.web_data.content["url"]
         info_dict = {}
         for h in url_list:
             start_time = time.time()
-            res, matched_patterns = calculate_score(h)
+            res, matched_patterns = extract(h)
             info_dict["all_urls"] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -44,7 +43,7 @@ suspicious_patterns = [
 ]
 
 
-def calculate_score(url: str) -> Tuple[int, List[str]]:
+def extract(url: str) -> Tuple[int, List[str]]:
     """
     检查URL中包含的可疑模式数量，并返回匹配的模式列表。
     :param url: 要检查的URL
@@ -71,7 +70,7 @@ if __name__ == "__main__":
 
     # 检查每个URL中的可疑模式数量和匹配的模式
     for url in urls:
-        count, patterns = calculate_score(url)
+        count, patterns = extract(url)
         print(
             f"URL: {url} - Suspicious Patterns Count: {count} - Matched Patterns: {patterns}"
         )

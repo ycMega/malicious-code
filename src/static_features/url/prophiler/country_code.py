@@ -17,7 +17,7 @@ def get_country_code(ip_address: str) -> str:
         return ""
 
 
-def calculate_score(url: str) -> int:
+def extract(url: str) -> int:
     return -1
 
 

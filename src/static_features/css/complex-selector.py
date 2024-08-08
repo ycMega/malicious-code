@@ -1,6 +1,7 @@
 import re
 
 from bs4 import BeautifulSoup
+
 from src.utils.css import css_rules_listing, extract_css_features
 
 
@@ -20,7 +21,7 @@ def is_complex_selector(selector):
     )
 
 
-def calculate_score(css_list: list):
+def extract(css_list: list):
     complex_selectors = []
     for style in css_list:
         # 提取选择器部分
@@ -138,5 +139,5 @@ if __name__ == "__main__":
 
     # 检测
     css_list = extract_css_features(html_content) + css_rules_listing(css_content)
-    count, selectors = calculate_score(css_list)
+    count, selectors = extract(css_list)
     print(f"Complex Selectors Found count = {count}:", selectors)

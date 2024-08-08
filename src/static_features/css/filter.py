@@ -5,7 +5,7 @@ from src.utils.css import css_rules_listing, extract_css_features
 
 
 # 检测可疑的CSS滤镜。滤镜主要用于图像处理和视觉效果
-def calculate_score(css_list: list):
+def extract(css_list: list):
     # 可疑滤镜
     suspicious_filters = [
         "blur",
@@ -66,5 +66,5 @@ if __name__ == "__main__":
         css_test_content
     )
     # 运行检测
-    count, filters = calculate_score(css_list)
+    count, filters = extract(css_list)
     print("Filter Usage Detected:", filters)

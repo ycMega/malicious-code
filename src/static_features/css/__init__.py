@@ -6,7 +6,7 @@ from src.utils.css import css_rules_listing, extract_css_features
 
 class CSSExtractor(FeatureExtractor):
 
-    def calculate_score(self):
+    def extract(self):
         raise NotImplementedError(
             "HTMLExtractor: Subclasses must implement this method"
         )

@@ -16,12 +16,12 @@ class IPExist(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:      
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res = calculate_score(h["content"])
+            res = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -30,7 +30,7 @@ class IPExist(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content):
+def extract(html_content):
     # 定义IP地址的正则表达式
     ip_pattern = re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}\b")
     ip6_pattern = re.compile(r"\b(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\b")
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     html_contents = """
     <iframe src="187.202.16.2" width=0 height=0></iframe>
     """
-    res = calculate_score(html_contents)
+    res = extract(html_contents)
     print(f"IP count:{res}")
 
 # def add_init_py(root_dir):

@@ -36,7 +36,7 @@ def get_ttl_for_ns_record(domain: str) -> int:
         return -1
 
 
-def calculate_score(url: str) -> Tuple[int, List[str], int, int]:
+def extract(url: str) -> Tuple[int, List[str], int, int]:
     """
     检查URL中是否包含IP地址，并返回结果。
     :param url: 要检查的URL
@@ -81,7 +81,7 @@ if __name__ == "__main__":
 
     # 检查每个URL中是否包含IP地址，并获取TTL值
     for url in urls:
-        count, ips, a_ttl, ns_ttl = calculate_score(url)
+        count, ips, a_ttl, ns_ttl = extract(url)
         print(
             f"URL: {url} - IP Address Present: {count} - Matched IPs: {ips} - A TTL: {a_ttl} - NS TTL: {ns_ttl}"
         )

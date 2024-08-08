@@ -20,7 +20,7 @@ html5_events = [
 ]
 
 
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     # 使用defaultdict初始化事件计数器
     event_counts = defaultdict(int)
 
@@ -44,5 +44,5 @@ if __name__ == "__main__":
     """
 
     # 计算并打印事件使用次数
-    event_usage = calculate_score(js_content)
+    event_usage = extract(js_content)
     print("html5 Event usage:", event_usage)

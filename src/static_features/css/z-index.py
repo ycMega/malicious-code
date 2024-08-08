@@ -2,6 +2,7 @@
 import re
 
 from bs4 import BeautifulSoup
+
 from src.utils.css import css_rules_listing, extract_css_features
 
 
@@ -15,7 +16,7 @@ def extract_z_index_from_style(style_content):
     return z_indices
 
 
-def calculate_score(css_list: list):
+def extract(css_list: list):
     # soup = BeautifulSoup(html_content, "html.parser")
     suspicious_elements = []
     high_z_indices = []
@@ -170,5 +171,5 @@ if __name__ == "__main__":
     }
     """
     css_test_list = extract_css_features(html_content) + css_rules_listing(css_content)
-    z_index_score, suspicious_elements = calculate_score(css_test_list)
+    z_index_score, suspicious_elements = extract(css_test_list)
     print(f"suspicious z-index count = {z_index_score}: {suspicious_elements}")

@@ -15,12 +15,12 @@ class OutOfPlace(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res, out_of_place_elements = calculate_score(h["content"])
+            res, out_of_place_elements = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -29,7 +29,7 @@ class OutOfPlace(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content: str) -> int:
+def extract(html_content: str) -> int:
     soup = BeautifulSoup(html_content, "html.parser")
     out_of_place_count = 0
     out_of_place_elements = []
@@ -80,7 +80,7 @@ if __name__ == "__main__":
         
     </html>
     """
-    count, elements = calculate_score(html_content)
+    count, elements = extract(html_content)
     print(f"Number of out of place elements: {count}")
     for element in elements:
         print(f"Detected out of place element: {element[0]} - {element[1]}")

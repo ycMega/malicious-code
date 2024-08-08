@@ -14,19 +14,19 @@ class DeobfuscationFunc(JSExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         start_time = time.time()
         js_content_list = self.web_data.content["js"]
         # total_res, total_decoding_routines = 0, []
         # for js_content in js_contents:
         #     print(f"DecodingRoutine: processing {js_content['filename']}")
-        #     res, decoding_routines = calculate_score(js_content["content"])
+        #     res, decoding_routines = extract(js_content["content"])
         #     total_res += res
         #     total_decoding_routines.extend(decoding_routines)
         info_dict = {}
         for h in js_content_list:
             start_time = time.time()
-            res, deobfuscation_functions = calculate_score(h["content"])
+            res, deobfuscation_functions = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -59,7 +59,7 @@ deobfuscation_functions = [
 ]
 
 
-def calculate_score(js_content: str) -> tuple:
+def extract(js_content: str) -> tuple:
     # 常见解混淆内置函数列表
 
     counts = {}
@@ -88,6 +88,6 @@ if __name__ == "__main__":
     }
     """
 
-    counts = calculate_score(sample_js)
+    counts = extract(sample_js)
     for func, count in counts.items():
         print(f"Number of occurrences of {func}: {count}")

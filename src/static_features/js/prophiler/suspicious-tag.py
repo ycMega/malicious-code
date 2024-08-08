@@ -4,7 +4,7 @@ import re
 SUSPICIOUS_TAGS = ["script", "object", "embed", "frame"]
 
 
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     count = 0
 
     # 使用正则表达式查找可疑标签
@@ -25,5 +25,5 @@ if __name__ == "__main__":
     var frameCode = '<frame src="frame.html">';
     var normalText = 'This is not a tag.';
     """
-    score = calculate_score(js_content)
+    score = extract(js_content)
     print(f"Total suspicious tag strings: {score}")

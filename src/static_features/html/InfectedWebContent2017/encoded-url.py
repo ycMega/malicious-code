@@ -15,12 +15,12 @@ class EncodedURL(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res = calculate_score(h["content"])
+            res = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -29,7 +29,7 @@ class EncodedURL(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content):
+def extract(html_content):
     # 定义正则表达式来匹配编码的URL：URL编码或HTML实体编码，至少五个
     pattern = re.compile(r"(%[0-9a-fA-F]{2}){5,}|(&#[0-9]+;){5,}")
 
@@ -66,5 +66,5 @@ if __name__ == "__main__":
     .js%22%3e%3c%2fscript%3e
     """
 
-    score = calculate_score(html_content)
+    score = extract(html_content)
     print("Encoded URL count:", score)

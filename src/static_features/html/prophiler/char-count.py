@@ -15,12 +15,12 @@ class CharCount(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res = calculate_score(h["content"])
+            res = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -29,7 +29,7 @@ class CharCount(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content):
+def extract(html_content):
     # 列出自闭合标签
     self_closing_tags = {
         "area",
@@ -104,5 +104,5 @@ if __name__ == "__main__":
     """
 
     # 运行统计
-    characters = calculate_score(example_content)
+    characters = extract(example_content)
     print(f"Total Characters: {characters}")

@@ -116,7 +116,7 @@ class FeatureExtractor:
         # self.execution_time = None
         # self.logger = self.web_data.logger
 
-    def calculate_score(self):
+    def extract(self):
         raise NotImplementedError("Subclasses must implement this method")
 
     def log_info(self, message):

@@ -1,7 +1,7 @@
 import re
 
 
-def calculate_score(js_content: str):
+def extract(js_content: str):
     # 定义正则表达式来匹配getComputedStyle的使用
     pattern = re.compile(r"\bgetComputedStyle\b")
 
@@ -27,5 +27,5 @@ if __name__ == "__main__":
     }
     }
     """
-    usage_count = calculate_score(js_content)
+    usage_count = extract(js_content)
     print(f"getComputedStyle usage count: {usage_count}")

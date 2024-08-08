@@ -75,7 +75,7 @@ def extract_features(
     for extractor in extractors:
         try:
             start_time = time.time()
-            result = extractor.calculate_score()  # 假设有 calculate_score 方法
+            result = extractor.extract()  # 假设有 extract 方法
             if result is not None and isinstance(result, FeatureExtractionResult):
                 # 是正确的返回值，接下来检查规则是否有效
                 # if result.feature_count >= 0:

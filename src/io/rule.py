@@ -168,7 +168,7 @@ class SuccRule:
     @deprecated.deprecated(version="1.0", reason="not supported yet")
     def modify_segment(self, index: int, new_start: float, new_end: float) -> None:
         """修改区间范围"""
-        if not (0 <= index < len(self.rules)):
+        if not 0 <= index < len(self.rules):
             raise IndexError(f"Index {index} out of bounds.")
         if new_start >= new_end:
             raise ValueError("New start must be less than new end.")

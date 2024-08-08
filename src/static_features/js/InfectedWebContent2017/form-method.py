@@ -12,7 +12,7 @@ stealcookie.cgi?'
 """
 
 
-def calculate_score(js_content: str):
+def extract(js_content: str):
     # 定义正则表达式来匹配form的method属性
     # <form后跟着至少一个空白字符，到下一个>之前的所有内容。['\"]用于匹配单引号或双引号
     get_pattern = re.compile(r"<form\s+[^>]*method=['\"]get['\"]", re.IGNORECASE)
@@ -38,5 +38,5 @@ if __name__ == "__main__":
         <input type="submit" value="Search">
     </form>
     """
-    all_count = calculate_score(js_content)
+    all_count = extract(js_content)
     print(f"Form method 'get'/'post' usage count: {all_count}")

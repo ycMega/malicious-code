@@ -14,12 +14,12 @@ class DocProperties(JSExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         js_content_list = self.web_data.content["js"]
         info_dict = {}
         for h in js_content_list:
             start_time = time.time()
-            res = calculate_score(h["content"])
+            res = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -28,7 +28,7 @@ class DocProperties(JSExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(js_content: str) -> int:
+def extract(js_content: str) -> int:
     # 定义需要统计的document属性
     properties = [
         "domain",
@@ -68,5 +68,5 @@ if __name__ == "__main__":
     document.links[0].href = "http://www.example.com";
     </script>
     """
-    res = calculate_score(js_content)
+    res = extract(js_content)
     print(f"Document properties usage count: {res}")

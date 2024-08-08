@@ -1,7 +1,7 @@
 beautifulsoup4
 # requests
 lxml
-tqdm
+# tqdm
 # notebook
 # jupyter
 # webdriver-manager
@@ -10,9 +10,9 @@ tqdm
 cssutils # 7.24
 # pyesprima # 7.25 cannot import name 'Syntax' from partially initialized module 'pyesprima' (most likely due to a circular import)
 # slimit # 7.25 No module named 'minifier'
-esprima # 7.26
+esprima # 7.26 与escodegen目前没有使用，因为生成AST经常报错，最后选择了从str提取特征
 escodegen
-dnspython # 下面三个目前unused
+dnspython # 下面三个目前没有使用，因为没有正确处理url的信息
 whois
 geoip2
 fastapi[all] # 7.29

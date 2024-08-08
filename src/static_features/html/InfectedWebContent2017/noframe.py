@@ -14,12 +14,12 @@ class NoFrame(HTMLExtractor):
             "1.0",
         )
 
-    def calculate_score(self) -> FeatureExtractionResult:
+    def extract(self) -> FeatureExtractionResult:
         htmls = self.web_data.content["html"]
         info_dict = {}
         for h in htmls:
             start_time = time.time()
-            res = calculate_score(h["content"])
+            res = extract(h["content"])
             info_dict[h["filename"]] = {
                 "count": res,
                 "time": time.time() - start_time,
@@ -28,7 +28,7 @@ class NoFrame(HTMLExtractor):
         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
-def calculate_score(html_content: str) -> int:
+def extract(html_content: str) -> int:
     soup = BeautifulSoup(html_content, "lxml")
     suspicious_count = 0
     # 查找所有noframes标签
@@ -61,4 +61,4 @@ if __name__ == "__main__":
     <meta http-equiv="refresh" content="5; url=http://MalSite.com">
     </noframes>
     """
-    print(f"noframe count:{calculate_score(html_content)}")
+    print(f"noframe count:{extract(html_content)}")
