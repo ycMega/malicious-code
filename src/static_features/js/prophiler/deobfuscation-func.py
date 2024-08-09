@@ -3,26 +3,20 @@ import re
 from src.static_features.js import *
 
 
-class DeobfuscationFunc(JSExtractor):
+class DeobfuscationFuncJS(JSExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "js",
-            "DeobfuscationFunc",
+            "DeobfuscationFuncJS",
             "prophiler",
-            "检测JS代码中的解混淆函数的使用情况",
+            "JS代码中的解混淆函数的使用情况",
             "1.0",
         )
 
     def extract(self) -> FeatureExtractionResult:
         start_time = time.time()
         js_content_list = self.web_data.content["js"]
-        # total_res, total_decoding_routines = 0, []
-        # for js_content in js_contents:
-        #     print(f"DecodingRoutine: processing {js_content['filename']}")
-        #     res, decoding_routines = extract(js_content["content"])
-        #     total_res += res
-        #     total_decoding_routines.extend(decoding_routines)
         info_dict = {}
         for h in js_content_list:
             start_time = time.time()

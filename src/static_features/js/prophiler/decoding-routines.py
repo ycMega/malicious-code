@@ -6,7 +6,8 @@
 # import subprocess
 # from pyjsparser import parse
 
-
+# todo: 由于不支持循环嵌套，本特征暂未实现
+import deprecated
 import escodegen
 import esprima
 from attr import has
@@ -21,35 +22,31 @@ from src.utils.utils import parse_js_code
 # 配置化字符串长度阈值：可以考虑将字符串长度阈值作为参数传递，以便更灵活地调整。
 # 记录字符串位置：除了检测字符串外，还可以记录字符串的位置，以便后续分析使用。
 
-# class DecodingRoutine(JSExtractor):
+
+# class LoopLongStringJS(JSExtractor):
 #     def __init__(self, web_data):
 #         super().__init__(web_data)
 #         self.meta = ExtractorMeta(
 #             "js",
-#             "DecodingRoutine",
+#             "LoopLongStringJS",
 #             "prophiler",
-#             "遍历AST，检查是否存在长度大于threshold的字符串，作为解码例程的判断标准",
+#             "检测循环中长度达到30字符的字符串数量",
 #             "1.0",
 #         )
 
 #     def extract(self) -> FeatureExtractionResult:
 #         start_time = time.time()
-#         js_contents = self.web_data.content["js"]
-#         total_res, total_decoding_routines = 0, []
-#         for js_content in js_contents:
-#             print(f"DecodingRoutine: processing {js_content['filename']}")
-#             res, decoding_routines = extract(js_content["content"])
-#             total_res += res
-#             total_decoding_routines.extend(decoding_routines)
-#         # html_content = "\n".join(d["content"] for d in js_contents)
-
-#         return FeatureExtractionResult(
-#             self.meta.filetype,
-#             self.meta.name,
-#             total_res,
-#             time.time() - start_time,
-#             total_decoding_routines,
-#         )
+#         js_content_list = self.web_data.content["js"]
+#         info_dict = {}
+#         for h in js_content_list:
+#             start_time = time.time()
+#             res = extract(h["content"])
+#             info_dict[h["filename"]] = {
+#                 "count": res,
+#                 "time": time.time() - start_time,
+#                 "additional_info": {},
+#             }
+#         return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 def is_long_string(string, length_threshold=10):
@@ -131,6 +128,9 @@ def extract_long_strings(node, routine_code):
             extract_long_strings(node.alternate, routine_code)
 
 
+@deprecated.deprecated(
+    reason="This function is deprecated due to unstable performance of parsing the ast."
+)
 def extract_decoding_routines(ast):
     """提取可能的解码例程并统计数量."""
     routines = []
@@ -148,23 +148,59 @@ def extract_decoding_routines(ast):
 
 
 def extract(js_content: str) -> int:
-    # try:
-    # print("decoding-routines.py: extract")
-    # 解析代码并生成 AST
-    # ast = esprima.parseScript(js_content)
-    pattern = r'\'(.*?)\'|"([^"]*?)"|\'\'\'(.*?)\'\'\'|"""(.*?)"""'
-    ast, error = parse_js_code(js_content)
-    if error:
-        print(f"Error parsing code: {error}")
-        # return -1
-    # print(ast)
-    decoding_routines = extract_decoding_routines(ast)
-    # print("Decoding routines:", decoding_routines)
-    return sum(len(routine) for routine in decoding_routines), decoding_routines
+    # 匹配循环结构，包含更多种类
+    loop_pattern = r"\b(for|while|do\s*while)\s*\(.*?\)\s*{(.*?)}"
+
+    # 查找所有循环
+    loops = re.findall(loop_pattern, js_content, re.DOTALL)
+
+    string_pattern = r"""
+    "(?:\\.|[^"\\\n])*"         |  # 双引号字符串，支持换行
+    '(?:\\.|[^'\\\n])*'         |  # 单引号字符串，支持换行
+    `(?:\\.|[^`\\\n])*`         # 模板字符串，支持换行
+"""
+
+    long_strings_found = []
+    start = 0
+    threshold = 10
+    while True:
+        # 查找下一个循环或条件结构
+        match = re.search(loop_pattern, js_content[start:], re.DOTALL)
+        if not match:
+            break
+
+        start += match.start() + len(match.group(0))
+
+        # 查找匹配的结束括号
+        brace_count = 1
+        while brace_count > 0:
+            if js_content[start] == "{":
+                brace_count += 1
+            elif js_content[start] == "}":
+                brace_count -= 1
+            start += 1
+
+        # 获取结构内部的代码
+        body = js_content[match.end() : start - 1]
+
+        # 查找长字符串
+        long_strings = re.findall(string_pattern, body, re.VERBOSE)
+        long_strings_found.extend(s for s in long_strings if len(s) > threshold)
+
+    return len(long_strings_found), long_strings_found
+    # pattern = r'\'(.*?)\'|"([^"]*?)"|\'\'\'(.*?)\'\'\'|"""(.*?)"""'
+    # ast, error = parse_js_code(js_content)
+    # if error:
+    #     print(f"Error parsing code: {error}")
+    #     # return -1
+    # # print(ast)
+    # decoding_routines = extract_decoding_routines(ast)
+    # # print("Decoding routines:", decoding_routines)
+    # return sum(len(routine) for routine in decoding_routines), decoding_routines
 
 
 # except Exception as e:
-#     print(f"Error calculating score: {e}")
+#     print(f"Error calculating score: {str(e)}")
 #     return 0
 
 
@@ -185,14 +221,16 @@ if __name__ == "__main__":
         decodedStr += String.fromCharCode(encodedStr.charCodeAt(i) ^ 0x30);
     }
     """
-    count, decoding_routines = extract(js_code)
-    print("Detected decoding routines:", count)
-    for routine in decoding_routines:
-        for code in routine:
-            try:
-                print(f"Routine code: {escodegen.generate(code)}")
-            except Exception as e:
-                print(f"Error generating code: {e}, code: {code}")
+    count, long_strings = extract(js_code)
+    print(f"long strings count:{count}\nlong strings:{long_strings}")
+    # count, decoding_routines = extract(js_code)
+    # print("Detected decoding routines:", count)
+    # for routine in decoding_routines:
+    #     for code in routine:
+    #         try:
+    #             print(f"Routine code: {escodegen.generate(code)}")
+    #         except Exception as e:
+    #             print(f"Error generating code: {str(e)}, code: {code}")
 
 
 # def find_decoding_routines(ast):

@@ -3,12 +3,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class DoubleDocuments(HTMLExtractor):
+class DoubleDocumentsHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "DoubleDocuments",
+            "DoubleDocumentsHTML",
             "prophiler",
             "统计html，head，title，body tags的重复次数",
             "1.0",

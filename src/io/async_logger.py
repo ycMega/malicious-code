@@ -38,7 +38,7 @@ def catch_exceptions(coro):
         try:
             return coro(*args, **kwargs)
         except Exception as e:
-            print(f"Caught exception in {coro.__name__}: {e}")
+            print(f"Caught exception in {coro.__name__}: {str(e)}")
             print("Traceback:")
             traceback.print_exc()  # 打印完整的堆栈跟踪
 

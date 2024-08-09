@@ -26,7 +26,7 @@ def get_registration_date(domain: str) -> Tuple[str, str]:
             "%Y-%m-%d"
         )
     except Exception as e:
-        print(f"Error fetching Whois data for {domain}: {e}")
+        print(f"Error fetching Whois data for {domain}: {str(e)}")
         return "", ""
 
 

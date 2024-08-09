@@ -1,0 +1,37 @@
+{
+    "WordLenCSS": {},
+    "WordLenHTML": {
+        "ek_angler_malware-traffic-analysis_net.html": {
+            "score": 62.6829268292683,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
+        },
+        "fortinetdonation_indexm.html": {
+            "score": 67.95958535625246,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
+        },
+        "indexsdpo3i3-dskuh3u4_indexm.html": {
+            "score": 70.01752144964561,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
+        },
+        "lp_tachographs.html": {
+            "score": 62.161087172688106,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
+        }
+    },
+    "WordLenJS": {
+        "ek_angler_2015_06_10.js": {
+            "score": 54.06939287382891,
+            "additional_info": {
+                "description": "the ratio of word count to char count in js"
+            }
+        }
+    }
+}

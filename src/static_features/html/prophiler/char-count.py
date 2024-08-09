@@ -4,12 +4,12 @@ from src.static_features.html import *
 
 
 # regex方法无法把包含属性的标签删掉而只保留其中属性，bs4可以做到
-class CharCount(HTMLExtractor):
+class CharCountHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "CharCount",
+            "CharCountHTML",
             "prophiler",
             "提取标签的属性和文本内容，统计总字符数",
             "1.0",

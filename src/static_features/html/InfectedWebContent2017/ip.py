@@ -5,12 +5,12 @@ from src.utils.utils import ENCODED_URLS_AND_IPS
 
 
 # use the IP address to escape the black list of security filters
-class IPExist(HTMLExtractor):
+class IPExistHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "IPExist",
+            "IPExistHTML",
             "InfectedWebContent2017",
             "检查特定tag-attribute组合中是否存在IPv4/v6地址",
             "1.0",

@@ -7,6 +7,7 @@ from typing import Dict, List, Tuple
 import deprecated
 
 from src.io.async_logger import GLOBAL_LOGGER
+from src.utils.utils import make_serializable
 
 
 class Rule:
@@ -67,8 +68,8 @@ class OverallAnalysisResult:
                     for filename, info in res.res_dict.items():
                         writer.writerow([res.rule_name, filename, info["score"]])
             except Exception as e:
-                print(f"Error saving to CSV: {e}")
-                GLOBAL_LOGGER.error(f"Error saving to CSV: {e}")
+                print(f"Error saving to CSV: {str(e)}")
+                GLOBAL_LOGGER.error(f"Error saving to CSV: {str(e)}")
 
     def save_to_json(self):
         filename = os.path.join(self.dir_path, "analysis_result.json")
@@ -76,11 +77,17 @@ class OverallAnalysisResult:
             with open(filename, mode="w", encoding="utf-8") as file:
                 res_dict: dict = {}
                 for res in self.results:
-                    res_dict[res.rule_name] = res.res_dict
+                    try:
+                        serialized_res = make_serializable(res.res_dict)
+                        res_dict[res.rule_name] = serialized_res
+                    except Exception as e:
+                        GLOBAL_LOGGER.error(
+                            f"Error serializing result of {res.rule_name}: {str(e)}. Ignoring it."
+                        )
                 file.write(json.dumps(res_dict, indent=4))
         except Exception as e:
-            print(f"Error saving to JSON: {e}")
-            GLOBAL_LOGGER.error(f"Error saving to JSON: {e}")
+            print(f"Error saving to JSON: {str(e)}")
+            GLOBAL_LOGGER.error(f"Error saving to JSON: {str(e)}")
 
     def do_summary(self):
         self.save_to_csv()

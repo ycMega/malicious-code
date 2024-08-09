@@ -10,7 +10,7 @@ class BlendModeCSS(CSSExtractor):
         self.meta = ExtractorMeta(
             "css",
             "BlendModeCSS",
-            "yyc",
+            "others",
             "可疑的混合模式mix-blend-mode的使用次数",
             "1.0",
         )

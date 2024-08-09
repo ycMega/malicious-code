@@ -3,14 +3,14 @@ from typing import List, Tuple
 from src.static_features.url import *
 
 
-class SuspiciousPattern(URLExtractor):
+class SuspiciousPatternURL(URLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "url",
-            "SuspiciousPattern",
-            "InfectedWebContent2017",
-            "document.+特定property的使用次数",
+            "SuspiciousPatternURL",
+            "prophiler",
+            "可疑模式（比如exploit\.js，infected\.dll）数量",
             "1.0",
         )
 

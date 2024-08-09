@@ -1,9 +1,9 @@
 from src.static_rules import *
 
 
-class JSTestRule(Rule):
+class WordLenJS(Rule):
     def __init__(self, feature_dict):
-        super().__init__(feature_dict, name="JSTestRule")
+        super().__init__(feature_dict, name="WordLenJS")
         self.description = "the ratio of word count to char count in js"
 
     def analyze(self):

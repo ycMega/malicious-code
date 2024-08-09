@@ -4,12 +4,12 @@ from src.static_features.html import *
 
 
 # some HTML5 tags are capable of loading files in themselves
-class HTML5_Tags(HTMLExtractor):
+class HTML5_TagsHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "HTML5_Tags",
+            "HTML5_TagsHTML",
             "InfectedWebContent2017",
             "检查特定tags中是否有外部或过长（超过150字符）的src属性，以及是否隐藏",
             "1.0",

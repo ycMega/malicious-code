@@ -1,0 +1,59 @@
+website:
+  url: angler_fortinetdonation_indexm
+  crawled_at: ''
+  website_name: ExampleSite
+content_info:
+  html:
+    count: 4
+    meta:
+    - filename: ek_angler_malware-traffic-analysis_net.html
+      size: 147568
+    - filename: fortinetdonation_indexm.html
+      size: 24634
+    - filename: indexsdpo3i3-dskuh3u4_indexm.html
+      size: 100595
+    - filename: lp_tachographs.html
+      size: 148290
+  url:
+    count: 25
+    meta:
+    - www.vietfederationsd.org/Previous/HealthfairJune2005.htm
+    - www.tradevv.com/vs-rawtest/
+    - http://sdpo3i3-dskuh3u4.bxowpibzopwei.in/utnwcuxduffpw.html
+    - www.runscanner.net/lib/rawtest.sys.html
+    - www.webpagetest.org/forums/showthread.php?tid=333
+    - www.youtube.com/video/fHsVP5ptpqA
+    - www.acronymfinder.com/rawtest.html
+    - www.acronymfinder.com/Vessel-File-Steering-System-Detail-
+    - www.skyguide.ch/.../VerordnungUeberdieFlugsicherung.pdf?...
+    - www.bellperc.com/.../rawtest1_-_Vic_Firth_SD1_Wood_BP02510
+    - www.facebook.com/people/Gfd-rawtest/1467881448
+    - www.rawtest.de/
+    - www.admin.ch/ch/d/sr/c748_132_1.html
+    - www.cnttr.cn/?action-viewnews-itemid-12
+    - http://sdpo3i3-dskuh3u4.bxowpibzopwei.in/nmfkynuxvhneylbddoav.html
+    - www.tetfest.org/.../
+    - www.fire119.com.cn/new_view_3412.html
+    - www.rawtest.org.
+    - www.dnfire.cn/products/pro1281600824377.html
+    - www.facebook.com/people/Rwer-rawtest/1311396381
+    - //mail.google.com/favicon.ico
+    - www.rawtest.cfsites.org/
+    - www.experts-exchange.com/Software/Server.../Q_22400398.html
+    - www.rawtest.cfsites.org
+    - www.y3.com/search-results/4141028/rawtest
+  css:
+    count: 0
+    meta: []
+  js:
+    count: 1
+    meta:
+    - filename: ek_angler_2015_06_10.js
+      size: 83157
+http_requests: {}
+robots_protocol: 'Disallow: /private/'
+sitemap: angler_fortinetdonation_indexm/sitemap.xml
+ssl_certificate:
+  issuer: Certificate Authority
+  validity: 2024-01-01 to 2025-01-01
+notes: This is the initial crawl of the website for feature extraction.

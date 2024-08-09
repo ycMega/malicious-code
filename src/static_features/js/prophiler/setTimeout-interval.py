@@ -1,4 +1,30 @@
-import re
+from src.static_features.js import *
+
+
+class SetTimeoutIntervalJS(JSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "js",
+            "SetTimeoutIntervalJS",
+            "prophiler",
+            "setTimeout和setInterval函数调用次数",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        start_time = time.time()
+        js_content_list = self.web_data.content["js"]
+        info_dict = {}
+        for h in js_content_list:
+            start_time = time.time()
+            res, func_counts = extract(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": func_counts,
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 def extract(js_content: str) -> int:

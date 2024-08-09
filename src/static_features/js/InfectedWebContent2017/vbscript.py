@@ -1,5 +1,32 @@
-import re
 from collections import defaultdict
+
+from src.static_features.js import *
+
+
+class VBScriptJS(JSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "js",
+            "VBScriptJS",
+            "InfectedWebContent2017",
+            "VBScript函数的使用次数",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        js_content_list = self.web_data.content["js"]
+        info_dict = {}
+        for h in js_content_list:
+            start_time = time.time()
+            res, function_counts = extract(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": function_counts,
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
+
 
 # 定义VBScript函数列表
 vbscript_functions = [
@@ -118,8 +145,9 @@ def extract(js_content: str) -> int:
         pattern = re.compile(rf"\b{function}\b", re.IGNORECASE)
         matches = pattern.findall(js_content)
         function_counts[function] = len(matches)
+    function_counts = {k: v for k, v in function_counts.items() if v > 0}
 
-    return sum(function_counts.values())  # 暂且只统计总和
+    return sum(function_counts.values()), function_counts  # 暂且只统计总和
 
 
 if __name__ == "__main__":
@@ -139,5 +167,5 @@ if __name__ == "__main__":
     """
 
     # 计算并打印函数使用次数
-    function_usage = extract(js_content)
-    print("VBScript Function usage:", function_usage)
+    function_usage, function_counts = extract(js_content)
+    print(f"VBScript Function usage:{function_usage}: {function_counts}")

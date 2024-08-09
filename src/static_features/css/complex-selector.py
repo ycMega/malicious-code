@@ -2,7 +2,36 @@ import re
 
 from bs4 import BeautifulSoup
 
+from src.static_features.css import *
 from src.utils.css import css_rules_listing, extract_css_features
+
+
+class ComplexSelectorCSS(CSSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "css",
+            "ComplexSelectorCSS",
+            "others",
+            "复杂的选择器：包含多个层级/伪类/伪元素/ID和类选择器的组合，至少匹配两个特征或用' '分为至少三部分",
+            "1.0",
+        )
+
+    # 似乎不能执行typechecked？会导致在模块加载阶段（而不是执行）报错，因为sys.modules中还没有对应的key
+    def extract(self) -> FeatureExtractionResult:
+        css_list = self.web_data.content["css"]
+        info_dict = {}
+        for css in css_list:
+            start_time = time.time()
+            input_list = css_rules_listing(css["content"])
+            res, complex_selectors_list = extract(input_list)
+            info_dict[css["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": complex_selectors_list,
+            }
+
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 def is_complex_selector(selector):
@@ -13,7 +42,6 @@ def is_complex_selector(selector):
     complex_pattern = r"(>|~|\+|:|\.|\#)"
     matches = re.findall(complex_pattern, selector)
     selector_count = len(selector.split(" "))
-    print(f"selector={selector}, matches={matches}, selector_count={selector_count}")
     # 这里允许=2，使得最基本的复杂形式也能被检测到？
     return (
         len(matches) >= 2
@@ -101,7 +129,7 @@ if __name__ == "__main__":
         border: 1px solid #ccc;
     }
 
-    /* 复杂选择器 4 */
+    /* 复杂选择器 4 但是暂不支持检测这种复杂检测器！  */ 
     input[type="text"]:focus {
         border-color: blue;
     }

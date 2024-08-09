@@ -5,6 +5,8 @@ from urllib.parse import urlparse
 import dns.resolver
 
 
+# 检查所分析的主机名的第一个NS条目的生存时间。
+# 这个功能对于识别恶意网页非常有用，因为一旦犯罪分子的命令和控制服务器被关闭，他们通常会使用不同的DNS记录将请求重定向到不同的IP地址。
 # todo: 对TTL的正确收集和处理
 def get_ttl_for_a_record(domain: str) -> int:
     """
@@ -17,7 +19,7 @@ def get_ttl_for_a_record(domain: str) -> int:
         for rdata in answers:
             return answers.rrset.ttl
     except Exception as e:
-        print(f"Error resolving A record for {domain}: {e}")
+        print(f"Error resolving A record for {domain}: {str(e)}")
         return -1
 
 
@@ -32,7 +34,7 @@ def get_ttl_for_ns_record(domain: str) -> int:
         for rdata in answers:
             return answers.rrset.ttl
     except Exception as e:
-        print(f"Error resolving NS record for {domain}: {e}")
+        print(f"Error resolving NS record for {domain}: {str(e)}")
         return -1
 
 

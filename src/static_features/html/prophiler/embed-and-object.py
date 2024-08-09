@@ -3,12 +3,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class EmbedAndObject(HTMLExtractor):
+class EmbedAndObjectHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "EmbedAndObject",
+            "EmbedAndObjectHTML",
             "prophiler",
             "统计embed和object标签的数量",
             "1.0",

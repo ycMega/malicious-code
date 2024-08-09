@@ -3,12 +3,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class KnownMaliciousPatterns(HTMLExtractor):
+class KnownMaliciousPatternsHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "KnownMaliciousPatterns",
+            "KnownMaliciousPatternsHTML",
             "prophiler",
             "统计'index.php?spl='在meta http-equiv='refresh'中的出现次数",
             "1.0",

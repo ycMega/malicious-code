@@ -9,8 +9,8 @@ class AbnormalAttributeCSS(CSSExtractor):
         self.meta = ExtractorMeta(
             "css",
             "AbnormalAttributeCSS",
-            "yyc",
-            "检查异常模式的出现次数",
+            "others",
+            "异常模式的出现次数",
             "1.0",
         )
 

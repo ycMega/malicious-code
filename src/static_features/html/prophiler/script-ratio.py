@@ -4,12 +4,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class ScriptRatio(HTMLExtractor):
+class ScriptRatioHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "ScriptRatio",
+            "ScriptRatioHTML",
             "prophiler",
             "script tag的string内容占整个页面字符数的百分比",
             "1.0",

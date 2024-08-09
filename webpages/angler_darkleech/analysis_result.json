@@ -1,0 +1,42 @@
+{
+    "WordLenCSS": {},
+    "WordLenHTML": {
+        "2015-10-13 pseudo-Darkleech Script_injected.html": {
+            "score": 59.75576662143826,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
+        },
+        "2015-12-16 pseudo-Darkleech Script_injected.html": {
+            "score": 76.26483510933791,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
+        },
+        "2016-02-05 pseudo-Darkleech Script_injected.html": {
+            "score": 24.104803493449793,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
+        },
+        "2016-02-24 pseudo-Darkleech Script_injected.html": {
+            "score": 21.83001220008134,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
+        },
+        "2016-03-07 pseudo-Darkleech Script_injected.html": {
+            "score": 25.15009639217846,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
+        },
+        "2016-03-14 pseudo-Darkleech Script_injected.html": {
+            "score": 28.528111181301323,
+            "additional_info": {
+                "description": "the ratio of word count to char count in html"
+            }
+        }
+    },
+    "WordLenJS": {}
+}

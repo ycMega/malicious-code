@@ -3,12 +3,12 @@ from src.static_features.html import *
 
 # The noframes tag is a fallback tag for browsers that do not support frames,
 # but usually attackers put their infected elements in this tag
-class NoFrame(HTMLExtractor):
+class NoFrameHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "NoFrame",
+            "NoFrameHTML",
             "InfectedWebContent2017",
             "对于所有noframes tags，检查是否存在a标签且其是href属性长度大于150字符，检查是否存在meta标签且为refresh形式",
             "1.0",

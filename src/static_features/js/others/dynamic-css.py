@@ -1,4 +1,29 @@
-import re
+from src.static_features.js import *
+
+
+class DynamicCSSJS(JSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "js",
+            "DynamicCSSJS",
+            "others",
+            "部分dynamic CSS patterns的出现次数",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        js_list = self.web_data.content["js"]
+        info_dict = {}
+        for h in js_list:
+            start_time = time.time()
+            res, dynamic_css = extract(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": dynamic_css,
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 def extract(js_content):

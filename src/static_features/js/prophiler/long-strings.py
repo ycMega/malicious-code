@@ -1,36 +1,96 @@
-import re
+import deprecated
 
-# 定义长字符串的长度阈值
-LONG_STRING_THRESHOLD = 40
+from src.static_features.js import *
+
+
+class LongStringJS(JSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "js",
+            "LongStringJS",
+            "prophiler",
+            "检测长度达到阈值（比如30）字符的字符串数量，包含直接用“+”连接的情况",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        start_time = time.time()
+        js_content_list = self.web_data.content["js"]
+        info_dict = {}
+        for h in js_content_list:
+            start_time = time.time()
+            res, long_strings = extract(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": long_strings,
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 def extract(js_content: str):
     # 使用正则表达式提取单行和多行字符串
-    long_strings = re.findall(
-        r'"""(.*?)"""|\'\'\'(.*?)\'\'\'|\'([^\']{40,})\'|\"([^"]{40,})\"',
-        js_content,
-        re.DOTALL,
-    )
+    string_pattern = r"""
+    "(?:\\.|[^"\\\n])*"         |  # 双引号字符串，支持换行
+    '(?:\\.|[^'\\\n])*'         |  # 单引号字符串，支持换行
+    `(?:\\.|[^`\\\n])*`         |# 模板字符串，支持换行
+    \+
+"""
+    # 找到所有字符串
+    threshold = 30
+    found_strings = re.findall(string_pattern, js_content, re.VERBOSE | re.DOTALL)
 
-    # 提取符合条件的长字符串
-    detected_strings = [
-        s
-        for group in long_strings
-        for s in group
-        if s and len(s) >= LONG_STRING_THRESHOLD
-    ]
+    complete_strings = []  # 完整的字符串
+    current_string = ""
+    prev_joint = True  # 前一个字符是否是加号
+    for item in found_strings:
+        item = item.strip()
+        if not prev_joint:  # 之前不是加号，如果出现字符串就重置
+            if item and item != "+":
+                complete_strings.append(current_string)
+                current_string = item
+            elif item == "+":
+                prev_joint = True
+                continue
+        else:  # 之前是加号
+            if item and item != "+":
+                current_string += item
+                prev_joint = False
+                continue
+    complete_strings.append(current_string)  # 最后一个字符串
+    # 检查长度
+    long_strings = [s for s in complete_strings if len(s) > threshold]
 
-    return len(detected_strings), detected_strings
+    return len(long_strings), long_strings
 
 
 if __name__ == "__main__":
     # 测试示例
     js_content = """
-    var normalString = "This is a short string.";
-    var longString = \"""This is a very long string that exceeds 
-    ooh?
-    the threshold of forty characters.\"""
-    var anotherLongString = "Another long string that is definitely longer than the limit set.";
+    const testStrings = [
+    // 双引号字符串，包含转义字符和换行
+    "This is a long string with a newline character:\nAnd it continues here.",
+    
+    // 单引号字符串，包含转义字符
+    'Another long string with a tab character:\tAnd more text.',
+    
+    // 模板字符串，包含换行
+    `This is a long template string
+    that spans multiple lines
+    and includes variables like ${variable}.`,
+
+    // 含有 JavaScript 表达式
+    "A string with an expression: " + (1 + 2) + " is the result.",
+
+    // 复杂的转义字符
+    "A string with an escaped quote: \" and a backslash: \\.",
+
+    // 超长字符串，超过阈值
+    "A very long string that , " +
+    "and this part continues" +
+    "to ensure we have a ."
+];
     """
     count, long_strings = extract(js_content)
     print(f"Number of long strings: {count}")

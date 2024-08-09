@@ -1,7 +1,37 @@
 import re
 
+from src.static_features.css import *
+
 # from cssutils import parseString, parseStyle
 from src.utils.css import css_rules_listing, extract_css_features
+
+
+class FontUnusedCSS(CSSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "css",
+            "FontUnusedCSS",
+            "others",
+            "加载但未使用的字体",
+            "1.0",
+        )
+
+    # 似乎不能执行typechecked？会导致在模块加载阶段（而不是执行）报错，因为sys.modules中还没有对应的key
+    def extract(self) -> FeatureExtractionResult:
+        css_list = self.web_data.content["css"]
+        info_dict = {}
+        for css in css_list:
+            start_time = time.time()
+            input_list = css_rules_listing(css["content"])
+            res, unused_list = extract(input_list)
+            info_dict[css["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": unused_list,
+            }
+
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 def contains_font_face(block):

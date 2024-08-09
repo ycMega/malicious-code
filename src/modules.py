@@ -2,6 +2,7 @@ import importlib.util
 import inspect
 import os
 import time
+import traceback
 
 from src.io.async_logger import GLOBAL_LOGGER
 
@@ -72,6 +73,8 @@ def extract_features(
     overall_result: OverallExtractionResult, extractors: list[FeatureExtractor]
 ):
     # 调用特征提取方法
+    success_count, fail_count = 0, 0
+    total_start_time = time.time()
     for extractor in extractors:
         try:
             start_time = time.time()
@@ -83,25 +86,20 @@ def extract_features(
                 GLOBAL_LOGGER.info(
                     f"Extractor Finished in {((time.time() - start_time) * 1000):.2f} ms: {type(extractor).__name__}. "
                 )
+                success_count += 1
             else:
                 GLOBAL_LOGGER.error(
                     f"Error in {type(extractor).__name__}: Invalid result"
                 )
-                # print_logger_info(web_data.logger)
-                try:
-                    pass  # 下面的语句会莫名报错[WinError 6] 句柄无效。即使之前输出的logger info没看出异常
-                    # web_data.logger.error(
-                    #     f"Error in {type(extractor).__name__}: Invalid result"
-                    # )
-                except Exception as e:
-                    GLOBAL_LOGGER.error(
-                        f"Error in {type(extractor).__name__}: {str(e)}"
-                    )
+                fail_count += 1
         except Exception as e:
-            GLOBAL_LOGGER.error(f"Error in {type(extractor).__name__}: {e}")
+            GLOBAL_LOGGER.error(f"Error in {type(extractor).__name__}: {str(e)}")
+            GLOBAL_LOGGER.error(f"detail: {traceback.format_exc()}")
+            fail_count += 1  # is it right?
         # print(f"Extractor: {type(extractor).__name__}, Result: {result}")
+    GLOBAL_LOGGER.info("-" * 75)
     GLOBAL_LOGGER.info(
-        "Feature extraction finished. Starting writing results to file......"
+        f"Feature extraction finished in {((time.time() - total_start_time) * 1000):.2f} ms: {success_count} success, {fail_count} failed. Starting writing results to file......"
     )
     start_time = time.time()
     overall_result.do_summary()
@@ -131,6 +129,8 @@ def load_rules_recursive(directory: str, feature_dict: dict, rules: list):
 
 
 def analyze_rules(overall_analysis_result: OverallAnalysisResult, rules: list[Rule]):
+    success_count, fail_count = 0, 0
+    total_start_time = time.time()
     for rule in rules:
         try:
             start_time = time.time()
@@ -140,10 +140,18 @@ def analyze_rules(overall_analysis_result: OverallAnalysisResult, rules: list[Ru
                 GLOBAL_LOGGER.info(
                     f"Rule Finished: {type(rule).__name__}. Time: {((time.time() - start_time) * 1000):.2f}ms"
                 )
+                success_count += 1
             else:
                 GLOBAL_LOGGER.error(f"Error in {type(rule).__name__}: Invalid result")
+                fail_count += 1
         except Exception as e:
-            GLOBAL_LOGGER.error(f"Error in {type(rule).__name__}: {e}")
+            GLOBAL_LOGGER.error(f"Error in {type(rule).__name__}: {str(e)}")
+            GLOBAL_LOGGER.error(f"detail: {traceback.format_exc()}")
+            fail_count += 1  # is it right?
+    GLOBAL_LOGGER.info("-" * 75)
+    GLOBAL_LOGGER.info(
+        f"Rule analysis finished in {((time.time() - total_start_time) * 1000):.2f} ms: {success_count} success, {fail_count} failed. Starting writing results to file......"
+    )
     overall_analysis_result.do_summary()
 
     # print(f"Extractor: {type(extractor).__name__}, Result: {result}")

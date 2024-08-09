@@ -1,6 +1,33 @@
 from typing import List, Tuple
 from urllib.parse import urlparse
 
+from src.static_features.url import *
+
+
+class SubDomainURL(URLExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "url",
+            "SubDomainURL",
+            "prophiler",
+            "URL是否包含子域：len(domain_parts) > 2",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        url_list = self.web_data.content["url"]
+        info_dict = {}
+        for h in url_list:
+            start_time = time.time()
+            res, domain_parts = extract(h)
+            info_dict["all_urls"] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": domain_parts,
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
+
 
 def extract(url: str) -> Tuple[int, str]:
     """

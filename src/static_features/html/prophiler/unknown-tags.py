@@ -3,12 +3,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class UnknownTags(HTMLExtractor):
+class UnknownTagsHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "UnknownTags",
+            "UnknownTagsHTML",
             "prophiler",
             "未知标签的百分比",
             "1.0",

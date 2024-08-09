@@ -3,98 +3,105 @@
         "EncodedStringHTML": {
             "bilibili.html": {
                 "count": 0,
-                "time": 0.0009975433349609375,
+                "time": 0.0,
                 "additional_info": {}
             }
         },
-        "EncodedURL": {
+        "EncodedURLHTML": {
             "bilibili.html": {
                 "count": 0,
-                "time": 0.0019948482513427734,
+                "time": 0.0029921531677246094,
                 "additional_info": {}
             }
         },
-        "FrameSet": {
+        "FrameSetHTML": {
             "bilibili.html": {
                 "count": 0,
                 "time": 0.0019943714141845703,
                 "additional_info": {}
             }
         },
-        "Hidden": {
+        "HiddenHTML": {
             "bilibili.html": {
                 "count": 0,
                 "time": 0.0019948482513427734,
                 "additional_info": {}
             }
         },
-        "HTML5_Tags": {
-            "bilibili.html": {
-                "count": 0,
-                "time": 0.0009980201721191406,
-                "additional_info": {}
-            }
-        },
-        "IPExist": {
-            "bilibili.html": {
-                "count": 0,
-                "time": 0.0029909610748291016,
-                "additional_info": {}
-            }
-        },
-        "NoFrame": {
-            "bilibili.html": {
-                "count": 0,
-                "time": 0.000997781753540039,
-                "additional_info": {}
-            }
-        },
-        "NullCharacter": {
-            "bilibili.html": {
-                "count": 0,
-                "time": 0.0,
-                "additional_info": {}
-            }
-        },
-        "Port": {
-            "bilibili.html": {
-                "count": 0,
-                "time": 0.0009975433349609375,
-                "additional_info": {}
-            }
-        },
-        "UnsymmetricalTag": {
-            "bilibili.html": {
-                "count": 0,
-                "time": 0.0009980201721191406,
-                "additional_info": {}
-            }
-        },
-        "CharCount": {
-            "bilibili.html": {
-                "count": 1378,
-                "time": 0.0009968280792236328,
-                "additional_info": {}
-            }
-        },
-        "DoubleDocuments": {
+        "HTML5_TagsHTML": {
             "bilibili.html": {
                 "count": 0,
                 "time": 0.000997304916381836,
                 "additional_info": {}
             }
         },
-        "EmbedAndObject": {
+        "IPExistHTML": {
             "bilibili.html": {
                 "count": 0,
-                "time": 0.001516580581665039,
+                "time": 0.002991914749145508,
                 "additional_info": {}
             }
         },
-        "IncludedUrls": {
+        "NoFrameHTML": {
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            }
+        },
+        "XSSHTML": {
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.012964963912963867,
+                "additional_info": {}
+            }
+        },
+        "NullCharacterHTML": {
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "PortHTML": {
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0009975433349609375,
+                "additional_info": {}
+            }
+        },
+        "UnsymmetricalTagHTML": {
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.001994609832763672,
+                "additional_info": {}
+            }
+        },
+        "CharCountHTML": {
+            "bilibili.html": {
+                "count": 1378,
+                "time": 0.00151824951171875,
+                "additional_info": {}
+            }
+        },
+        "DoubleDocumentsHTML": {
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0009996891021728516,
+                "additional_info": {}
+            }
+        },
+        "EmbedAndObjectHTML": {
+            "bilibili.html": {
+                "count": 0,
+                "time": 0.0019941329956054688,
+                "additional_info": {}
+            }
+        },
+        "IncludedUrlsHTML": {
             "bilibili.html": {
                 "count": 4,
-                "time": 0.001996278762817383,
+                "time": 0.001994609832763672,
                 "additional_info": [
                     "//s1.hdslb.com/bfs/static/jinkela/long/js/jquery/jquery1.7.2.min.js",
                     "//security.bilibili.com/static/js/sha256.min.js",
@@ -103,80 +110,80 @@
                 ]
             }
         },
-        "KnownMaliciousPatterns": {
+        "KnownMaliciousPatternsHTML": {
             "bilibili.html": {
                 "count": 0,
-                "time": 0.0010263919830322266,
+                "time": 0.0009984970092773438,
                 "additional_info": {}
             }
         },
-        "OutOfPlace": {
+        "OutOfPlaceHTML": {
             "bilibili.html": {
                 "count": 0,
-                "time": 0.001993894577026367,
+                "time": 0.0019927024841308594,
                 "additional_info": []
             }
         },
-        "ScriptNum": {
+        "ScriptNumHTML": {
             "bilibili.html": {
                 "count": 4,
-                "time": 0.002000570297241211,
+                "time": 0.0019953250885009766,
                 "additional_info": {}
             }
         },
-        "ScriptRatio": {
+        "ScriptRatioHTML": {
             "bilibili.html": {
                 "count": 0.0,
-                "time": 0.0009632110595703125,
+                "time": 0.0019953250885009766,
                 "additional_info": {}
             }
         },
-        "ScriptWrongExtention": {
+        "ScriptWrongExtentionHTML": {
             "bilibili.html": {
                 "count": 0,
-                "time": 0.000997304916381836,
+                "time": 0.0009968280792236328,
                 "additional_info": {}
             }
         },
-        "SmallAreaElements": {
+        "SmallAreaElementsHTML": {
             "bilibili.html": {
                 "count": 0,
-                "time": 0.000997304916381836,
+                "time": 0.0019948482513427734,
                 "additional_info": []
             }
         },
-        "SourceExternal": {
+        "SourceExternalHTML": {
             "bilibili.html": {
                 "count": 4,
-                "time": 0.0019669532775878906,
+                "time": 0.001994609832763672,
                 "additional_info": {}
             }
         },
-        "SuspiciousContentElements": {
+        "SuspiciousContentElementsHTML": {
             "bilibili.html": {
                 "count": 0,
                 "time": 0.001994609832763672,
                 "additional_info": []
             }
         },
-        "SuspiciousObjects": {
+        "SuspiciousObjectsHTML": {
             "bilibili.html": {
                 "count": 0,
-                "time": 0.0009975433349609375,
+                "time": 0.0009970664978027344,
                 "additional_info": []
             }
         },
-        "UnknownTags": {
+        "UnknownTagsHTML": {
             "bilibili.html": {
                 "count": 0.0,
-                "time": 0.001994609832763672,
+                "time": 0.000997304916381836,
                 "additional_info": {}
             }
         },
-        "WordCount": {
+        "WordCountHTML": {
             "bilibili.html": {
                 "count": 221,
-                "time": 0.001994609832763672,
+                "time": 0.0020263195037841797,
                 "additional_info": {}
             }
         }
@@ -185,7 +192,7 @@
         "AbnormalAttributeCSS": {
             "test.css": {
                 "count": 13,
-                "time": 0.0009980201721191406,
+                "time": 0.001993894577026367,
                 "additional_info": [
                     "position: absolute",
                     "visibility: hidden",
@@ -213,6 +220,84 @@
                 }
             }
         },
+        "ComplexSelectorCSS": {
+            "test.css": {
+                "count": 4,
+                "time": 0.0,
+                "additional_info": [
+                    ".navbar a",
+                    ".navbar a:hover",
+                    "#main .content > .article:first-of-type",
+                    "div > p > span"
+                ]
+            }
+        },
+        "FilterCSS": {
+            "test.css": {
+                "count": 3,
+                "time": 0.0,
+                "additional_info": {
+                    "blur": 2,
+                    "brightness": 1
+                }
+            }
+        },
+        "FontUnusedCSS": {
+            "test.css": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": [
+                    "StrangeFont"
+                ]
+            }
+        },
+        "PerformanceDegradationCSS": {
+            "test.css": {
+                "count": 29,
+                "time": 0.0029921531677246094,
+                "additional_info": {
+                    "complex_selectors": 2,
+                    "wildcard_selectors": 1,
+                    "width": 0,
+                    "height": 0,
+                    "position": 5,
+                    "top": 1,
+                    "left": 1,
+                    "right": 0,
+                    "bottom": 0,
+                    "margin": 1,
+                    "padding": 1,
+                    "border": 1,
+                    "font-size": 1,
+                    "line-height": 0,
+                    "z-index": 4,
+                    "display": 1,
+                    "float": 0,
+                    "clear": 0,
+                    "overflow": 0,
+                    "visibility": 1,
+                    "opacity": 1,
+                    "background": 0,
+                    "background-color": 1,
+                    "color": 5,
+                    "text-align": 0,
+                    "text-decoration": 0,
+                    "text-transform": 0,
+                    "letter-spacing": 0,
+                    "word-spacing": 0,
+                    "white-space": 0,
+                    "vertical-align": 0,
+                    "list-style": 0,
+                    "list-style-type": 0,
+                    "list-style-position": 0,
+                    "list-style-image": 0,
+                    "animation": 1,
+                    "transition": 1,
+                    "@import": 0,
+                    "!important": 0
+                }
+            }
+        },
         "WordCountCSS": {
             "test.css": {
                 "count": 183,
@@ -221,52 +306,394 @@
                     "CharCount": 1109
                 }
             }
+        },
+        "ZIndexCSS": {
+            "test.css": {
+                "count": 2,
+                "time": 0.000997304916381836,
+                "additional_info": [
+                    [
+                        "modal",
+                        2000,
+                        "High z-index"
+                    ],
+                    [
+                        "element",
+                        -1,
+                        "Negative z-index"
+                    ]
+                ]
+            }
         }
     },
     "js": {
-        "DocProperties": {
+        "DocPropertiesJS": {
             "412.js": {
                 "count": 2,
-                "time": 0.0019953250885009766,
+                "time": 0.0019919872283935547,
                 "additional_info": {}
             },
             "jquery1.7.2.min.js": {
                 "count": 0,
-                "time": 0.039782047271728516,
+                "time": 0.03986501693725586,
                 "additional_info": {}
             },
             "js.cookie.min.js": {
                 "count": 3,
+                "time": 0.0010218620300292969,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.003964662551879883,
+                "additional_info": {}
+            }
+        },
+        "DocWriteJS": {
+            "412.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 0,
                 "time": 0.0,
                 "additional_info": {}
             },
             "sha256.min.js": {
                 "count": 0,
-                "time": 0.0039958953857421875,
+                "time": 0.0,
                 "additional_info": {}
             }
         },
-        "ActiveX": {
+        "FormMethodJS": {
             "412.js": {
                 "count": 0,
                 "time": 0.0,
                 "additional_info": {}
             },
             "jquery1.7.2.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "GetComputedStyleJS": {
+            "412.js": {
+                "count": 0,
+                "time": 0.0009996891021728516,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 5,
+                "time": 0.0029897689819335938,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "GlobalFuncJS": {
+            "412.js": {
                 "count": 1,
-                "time": 0.03664588928222656,
+                "time": 0.0009963512420654297,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 31,
+                "time": 0.019977569580078125,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 6,
+                "time": 0.00099945068359375,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.0020859241485595703,
+                "additional_info": {}
+            }
+        },
+        "HTML_5_EventsJS": {
+            "412.js": {
+                "count": 1,
+                "time": 0.0019648075103759766,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 4,
+                "time": 0.04852128028869629,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0009963512420654297,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.00498652458190918,
+                "additional_info": {}
+            }
+        },
+        "JQueryJS": {
+            "412.js": {
+                "count": 10,
+                "time": 0.002993345260620117,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 91,
+                "time": 0.05739712715148926,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0009951591491699219,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.005984783172607422,
+                "additional_info": {}
+            }
+        },
+        "LocationJS": {
+            "412.js": {
+                "count": 1,
+                "time": 0.0009992122650146484,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 0,
+                "time": 0.0009949207305908203,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "VBScriptJS": {
+            "412.js": {
+                "count": 22,
+                "time": 0.013934612274169922,
+                "additional_info": {
+                    "Date": 2,
+                    "Exp": 3,
+                    "Log": 1,
+                    "Split": 3,
+                    "Mid": 2,
+                    "Err": 5,
+                    "split": 3,
+                    "CreateElement": 2,
+                    "SetAttribute": 1
+                }
+            },
+            "jquery1.7.2.min.js": {
+                "count": 274,
+                "time": 0.3144505023956299,
+                "additional_info": {
+                    "Date": 4,
+                    "Time": 2,
+                    "Now": 14,
+                    "Month": 1,
+                    "Cos": 1,
+                    "Fix": 3,
+                    "Array": 14,
+                    "IsArray": 15,
+                    "Join": 7,
+                    "Split": 23,
+                    "Filter": 36,
+                    "Left": 30,
+                    "Replace": 47,
+                    "Right": 2,
+                    "Trim": 9,
+                    "Eval": 1,
+                    "IsNumeric": 4,
+                    "split": 23,
+                    "eval": 1,
+                    "CreateElement": 27,
+                    "SetAttribute": 10
+                }
+            },
+            "js.cookie.min.js": {
+                "count": 14,
+                "time": 0.005016326904296875,
+                "additional_info": {
+                    "Date": 2,
+                    "Now": 1,
+                    "Join": 1,
+                    "Split": 3,
+                    "Replace": 4,
+                    "split": 3
+                }
+            },
+            "sha256.min.js": {
+                "count": 28,
+                "time": 0.03786969184875488,
+                "additional_info": {
+                    "Hex": 7,
+                    "Array": 10,
+                    "IsArray": 5,
+                    "Split": 1,
+                    "Eval": 2,
+                    "split": 1,
+                    "eval": 2
+                }
+            }
+        },
+        "ActiveXJS": {
+            "412.js": {
+                "count": 0,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 1,
+                "time": 0.03348183631896973,
                 "additional_info": {
                     "Microsoft.XMLHTTP": 1
                 }
             },
             "js.cookie.min.js": {
                 "count": 0,
-                "time": 0.0009968280792236328,
+                "time": 0.0009982585906982422,
                 "additional_info": {}
             },
             "sha256.min.js": {
                 "count": 0,
-                "time": 0.0059850215911865234,
+                "time": 0.003989219665527344,
+                "additional_info": {}
+            }
+        },
+        "DomIdentityKeywordJS": {
+            "412.js": {
+                "count": 0,
+                "time": 0.0029718875885009766,
+                "additional_info": {
+                    "identities_count": 0,
+                    "identities": [],
+                    "keywords_count": 0,
+                    "keywords": []
+                }
+            },
+            "jquery1.7.2.min.js": {
+                "count": 25,
+                "time": 0.06535673141479492,
+                "additional_info": {
+                    "identities_count": 1,
+                    "identities": [
+                        "client"
+                    ],
+                    "keywords_count": 24,
+                    "keywords": [
+                        "username",
+                        "password",
+                        "email",
+                        "submit",
+                        "access"
+                    ]
+                }
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0009975433349609375,
+                "additional_info": {
+                    "identities_count": 0,
+                    "identities": [],
+                    "keywords_count": 0,
+                    "keywords": []
+                }
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.0069811344146728516,
+                "additional_info": {
+                    "identities_count": 0,
+                    "identities": [],
+                    "keywords_count": 0,
+                    "keywords": []
+                }
+            }
+        },
+        "DynamicCSSJS": {
+            "412.js": {
+                "count": 0,
+                "time": 0.001994609832763672,
+                "additional_info": []
+            },
+            "jquery1.7.2.min.js": {
+                "count": 6,
+                "time": 0.000997304916381836,
+                "additional_info": [
+                    "cssText = \"\"",
+                    "getComputedStyle(",
+                    "getComputedStyle(",
+                    "getComputedStyle(",
+                    "getComputedStyle(",
+                    "getComputedStyle("
+                ]
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            }
+        },
+        "TokenCountJS": {
+            "412.js": {
+                "count": 1271,
+                "time": 0.001995086669921875,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 40765,
+                "time": 0.021941423416137695,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 803,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 5410,
+                "time": 0.0029916763305664062,
                 "additional_info": {}
             }
         },
@@ -280,30 +707,52 @@
             },
             "jquery1.7.2.min.js": {
                 "count": 18935,
-                "time": 0.01296544075012207,
+                "time": 0.011968612670898438,
                 "additional_info": {
                     "CharCount": 96014
                 }
             },
             "js.cookie.min.js": {
                 "count": 298,
-                "time": 0.0,
+                "time": 0.000997304916381836,
                 "additional_info": {
                     "CharCount": 1682
                 }
             },
             "sha256.min.js": {
                 "count": 2060,
-                "time": 0.0019943714141845703,
+                "time": 0.0009968280792236328,
                 "additional_info": {
                     "CharCount": 9609
                 }
             }
         },
-        "DeobfuscationFunc": {
+        "ContentEntropyJS": {
+            "412.js": {
+                "count": 5.1808792904510295,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 4.121871134933352,
+                "time": 0.011968135833740234,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 4.31313861734081,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 4.142486918739606,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            }
+        },
+        "DeobfuscationFuncJS": {
             "412.js": {
                 "count": 2,
-                "time": 0.002991914749145508,
+                "time": 0.0029921531677246094,
                 "additional_info": {
                     "atob": 1,
                     "parseInt": 1
@@ -311,7 +760,7 @@
             },
             "jquery1.7.2.min.js": {
                 "count": 29,
-                "time": 0.0463564395904541,
+                "time": 0.04739880561828613,
                 "additional_info": {
                     "Function": 1,
                     "parseInt": 1,
@@ -320,20 +769,918 @@
             },
             "js.cookie.min.js": {
                 "count": 1,
-                "time": 0.000997304916381836,
+                "time": 0.0009970664978027344,
                 "additional_info": {
                     "decodeURIComponent": 1
                 }
             },
             "sha256.min.js": {
                 "count": 0,
-                "time": 0.004987239837646484,
+                "time": 0.004987478256225586,
                 "additional_info": {}
+            }
+        },
+        "DirectStrAssignJS": {
+            "412.js": {
+                "count": 17,
+                "time": 0.0009965896606445312,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 86,
+                "time": 0.005985736846923828,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 4,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "DomModifyJS": {
+            "412.js": {
+                "count": 4,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 82,
+                "time": 0.009972333908081055,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            }
+        },
+        "EvalJS": {
+            "412.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 0,
+                "time": 0.0029938220977783203,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 2,
+                "time": 0.000995635986328125,
+                "additional_info": {}
+            }
+        },
+        "EventAttachmentJS": {
+            "412.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            },
+            "jquery1.7.2.min.js": {
+                "count": 0,
+                "time": 0.003988981246948242,
+                "additional_info": []
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": []
+            }
+        },
+        "IframeJS": {
+            "412.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "KeywordRatioJS": {
+            "412.js": {
+                "count": 0.13546,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            },
+            "jquery1.7.2.min.js": {
+                "count": 0.14502,
+                "time": 0.007047891616821289,
+                "additional_info": {}
+            },
+            "js.cookie.min.js": {
+                "count": 0.19128,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "sha256.min.js": {
+                "count": 0.13155,
+                "time": 0.0009968280792236328,
+                "additional_info": {}
+            }
+        },
+        "LongStringJS": {
+            "412.js": {
+                "count": 13,
+                "time": 0.0009980201721191406,
+                "additional_info": [
+                    "\"https://sec.biliapi.net/th/captcha/get\"",
+                    "\"https://sec.biliapi.net/th/captcha/check\"",
+                    "\"https://security.bilibili.com/412\"",
+                    "\"https://sec.biliapi.net/th/captcha/cc/check\"",
+                    "\"application/x-www-form-urlencoded\"",
+                    "\"data:image/jpeg;base64,\"\".check-input .title\"",
+                    "'<div class=\"txt-item\">\u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801\u8fdb\u884c\u4eba\u673a\u6821\u9a8c:</div>'",
+                    "'<input id=\"validate-input\"></input>'",
+                    "'<button id=\"validate_submit\">\u63d0\u4ea4</button>'",
+                    "'<span id=\"success_msg\" style=\"color: green; display: none;\">\u9a8c\u8bc1\u6210\u529f\uff0c5s\u540e\u81ea\u52a8\u5237\u65b0\u9875\u9762....</span>'",
+                    "'<span id=\"error_msg\" style=\"color: red; display: none;\">\u9a8c\u8bc1\u7801\u9519\u8bef</span>'",
+                    "\"skip checking sec token, verity is : \"\".err-text\"",
+                    "\"application/x-www-form-urlencoded\""
+                ]
+            },
+            "jquery1.7.2.min.js": {
+                "count": 37,
+                "time": 0.0019941329956054688,
+                "additional_info": [
+                    "\"border\"\"padding\"\"margin\"\"border\"\"Width\"\"px\"\"padding\"\"padding\"\"border\"\"Width\"",
+                    "\"return \"\"Invalid JSON: \"\"string\"",
+                    "\"regexp\"\"number\"\"number\"\"string\"\"object\"\"compatible\"",
+                    "\"Boolean Number String Function Array Date RegExp Object\"",
+                    "\"   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>\"",
+                    "\"position:absolute;top:0;left:0;width:1px;height:1px;\"\"0;visibility:hidden;\"",
+                    "\"<div \"\"display:block;'><div style='\"\"0;display:block;overflow:hidden;'></div></div>\"\"<table \"\"' cellpadding='0' cellspacing='0'>\"\"<tr><td></td></tr></table>\"",
+                    "\"div\"\"width:0;height:0;position:static;top:0;margin-top:\"\"px\"",
+                    "\"<table><tr><td style='\"\"0;display:none'></td><td>t</td></tr></table>\"",
+                    "\"<div style='width:5px;'></div>\"\"fixed\"",
+                    "\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\"",
+                    "\"getData\"\"setData\"\"changeData\"\"fx\"\"mark\"\"fx\"\"mark\"",
+                    "\"inprogress\"\".run\"\"queue \"\".run\"",
+                    "\"once memory\"\"string\"\" \"\" \"\" \"\" \"\" \"",
+                    "\"type property can't be changed\"",
+                    "\"mouseenter$1 mouseleave$1\"\"undefined\"",
+                    "\"(^|\\\\.)\"\"\\\\.(?:.*\\\\.)?\"\"(\\\\.|$)\"",
+                    "\"click\"\"attrChange attrName relatedNode srcElement altKey bubbles cancelable ctrlKey currentTarget eventPhase metaKey relatedTarget shiftKey target timeStamp view which\"",
+                    "\"button buttons clientX clientY fromElement offsetX offsetY pageX pageY screenX screenY toElement\"",
+                    "\"click._submit keypress._submit\"",
+                    "\"**\"\"lastToggle\"\"lastToggle\"\"blur focus focusin focusout load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error contextmenu\"",
+                    "\"Syntax error, unrecognized expression: \"\"\"",
+                    "\"TAG\"'\"]*((?:[\\w\\u00c0-\\uFFFF\\-]|\\\\.)+)['\"className\"",
+                    "\"<div class='test e'></div><div class='test'></div>\"",
+                    "\":not(\"\")\"\"abbr|article|aside|audio|bdi|canvas|data|datalist|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video\"\"(?:\\d+|null)\"\"<(?:\"\")[\\\\s/>]\"",
+                    "\"<table><tbody></tbody><colgroup>\"",
+                    "\"replaceWith\"\"<\"\">\"\"undefined\"\"number\"\"\"",
+                    "\"ajaxStart ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend\"",
+                    "\"application/x-www-form-urlencoded; charset=UTF-8\"",
+                    "\"application/json, text/javascript\"",
+                    "\"?\"\"=\"\"script json\"\" was not called\"",
+                    "\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"",
+                    "\"fxshow\"\"fxshow\"\"fxshow\"\"fxshow\"\"width\"",
+                    "\"overflow\"\"fxshow\"\"toggle\"\"opacity\"\"margin\"\"getBoundingClientRect\"\"fixed\"\"visible\"\"relative\"",
+                    "\"static\"\"fixed\"\"marginTop\"\"marginLeft\"",
+                    "\"marginLeft\"\"borderTopWidth\"\"borderLeftWidth\"",
+                    "\"client\"\"scroll\"\"offset\"\"inner\"\"padding\""
+                ]
+            },
+            "js.cookie.min.js": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": [
+                    "\"number\"\"\"\"; \"\"=\"\";\"\"=\"\"undefined\""
+                ]
+            },
+            "sha256.min.js": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": [
+                    "\"string\"\"object\"\"input is invalid type\""
+                ]
+            }
+        },
+        "SetTimeoutIntervalJS": {
+            "412.js": {
+                "count": 1,
+                "time": 0.0009982585906982422,
+                "additional_info": {
+                    "setTimeout_count": 1,
+                    "setInterval_count": 0
+                }
+            },
+            "jquery1.7.2.min.js": {
+                "count": 8,
+                "time": 0.005983114242553711,
+                "additional_info": {
+                    "setTimeout_count": 7,
+                    "setInterval_count": 1
+                }
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {
+                    "setTimeout_count": 0,
+                    "setInterval_count": 0
+                }
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {
+                    "setTimeout_count": 0,
+                    "setInterval_count": 0
+                }
+            }
+        },
+        "ShellcodeJS": {
+            "412.js": {
+                "count": 1,
+                "time": 0.002991914749145508,
+                "additional_info": "\"https://security.bilibili.com/412\""
+            },
+            "jquery1.7.2.min.js": {
+                "count": 1,
+                "time": 0.012965202331542969,
+                "additional_info": "\"   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>\""
+            },
+            "js.cookie.min.js": {
+                "count": 0.0,
+                "time": 0.0009975433349609375,
+                "additional_info": "\"object\""
+            },
+            "sha256.min.js": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": "\"require('buffer').Buffer\""
+            }
+        },
+        "StringEntropyJS": {
+            "412.js": {
+                "count": 5.005,
+                "time": 0.000997304916381836,
+                "additional_info": {
+                    "\"https://sec.biliapi.net/th/captcha/get\"": 3.780709582593748,
+                    "\"https://sec.biliapi.net/th/captcha/check\"": 3.7768776267796107,
+                    "\"https://security.bilibili.com/412\"": 4.183014003266001,
+                    "\"https://sec.biliapi.net/th/captcha/cc/check\"": 3.718731986511434,
+                    "\".user_url\"": 2.9139770731827523,
+                    "\"\u5f53\u524dURL\uff1a\"": 2.75,
+                    "\".datetime_now\"": 3.5068905956085192,
+                    "\"\u5f53\u524d\u65f6\u95f4\uff1a\"": 2.521640636343318,
+                    "\".user_ip\"": 3.121928094887362,
+                    "\"IP\u5730\u5740\uff1a\"": 2.521640636343318,
+                    "\".user_id\"": 3.121928094887362,
+                    "\"\u7528\u6237ID\uff1a\"": 2.521640636343318,
+                    "\"#img-captcha\"": 3.378783493486176,
+                    "\"src\"": 1.9219280948873623,
+                    "\"#hidden-input\"": 3.3735572622751846,
+                    "\"#validate_submit\"": 3.7254805569978675,
+                    "\"#validate-input\"": 3.6168746059562227,
+                    "\"POST\"": 2.251629167387823,
+                    "\"application/x-www-form-urlencoded\"": 4.150292659616668,
+                    "\"#success_msg\"": 2.9502120649147465,
+                    "\"#error_msg\"": 3.0220552088742,
+                    "\"data:image/jpeg;base64,\"": 3.9736606896881854,
+                    "\".check-input .title\"": 3.6897037321995474,
+                    "'<div class=\"txt-item\">\u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801\u8fdb\u884c\u4eba\u673a\u6821\u9a8c:</div>'": 4.833014173206122,
+                    "\"img-captcha\"": 3.238901256602631,
+                    "\"check-input\"": 3.3927474104487847,
+                    "\".check-input .box-pic\"": 3.882045108136863,
+                    "\"input\"": 2.521640636343318,
+                    "\"hidden-input\"": 3.2359263506290334,
+                    "\"type\"": 2.2516291673878226,
+                    "\"hidden\"": 2.5,
+                    "\".check-input\"": 3.521640636343319,
+                    "\".check-input .box\"": 3.9321380397593733,
+                    "'<input id=\"validate-input\"></input>'": 3.969607339117404,
+                    "'<button id=\"validate_submit\">\u63d0\u4ea4</button>'": 4.3024498629973955,
+                    "\".check-input .state\"": 3.7849418274376427,
+                    "'<span id=\"success_msg\" style=\"color: green; display: none;\">\u9a8c\u8bc1\u6210\u529f\uff0c5s\u540e\u81ea\u52a8\u5237\u65b0\u9875\u9762....</span>'": 5.004636783812997,
+                    "'<span id=\"error_msg\" style=\"color: red; display: none;\">\u9a8c\u8bc1\u7801\u9519\u8bef</span>'": 4.67430485363119,
+                    "\"X-BILI-SEC-TOKEN\"": 3.5724312513221195,
+                    "\",\"": 0.9182958340544896,
+                    "\"3\"": 0.9182958340544896,
+                    "\".err-text\"": 2.7321588913645702,
+                    "\"color\"": 2.2359263506290326,
+                    "\"#03a9f4\"": 2.94770277922009,
+                    "\"\u6b63\u5728\u8bc6\u522b\u98ce\u9669\u4e2d...\u8bf7\u7a0d\u7b49\u5927\u7ea610\u79d2...\"": 3.7622673906514947,
+                    "\".\"": 0.9182958340544896,
+                    "\"\"": -0.0,
+                    "\"q\"": 0.9182958340544896,
+                    "\"r\"": 0.9182958340544896,
+                    "\"verity\"": 2.75,
+                    "\"exp\"": 1.9219280948873623,
+                    "\"skip checking sec token, verity is : \"": 3.8516548608906165,
+                    "\"\u5df2\u6210\u529f\u9a8c\u8bc1,\u8bf7\u5237\u65b0\u91cd\u8bd5\"": 3.546593564294939,
+                    "\"X-BILI-SEC-TOKEN=\"": 3.6818808028034016,
+                    "\"1\"": 0.9182958340544896,
+                    "\"code\"": 2.251629167387823,
+                    "\"message\"": 2.503258334775646,
+                    "\"\u9a8c\u8bc1\u6210\u529f\uff0c\u8bf7\u5237\u65b0\u9875\u9762\"": 3.4182958340544896,
+                    "\"* \u81ea\u52a8\u9a8c\u8bc1\u5931\u8d25\uff0c\u8bf7\u91cd\u65b0\u5237\u65b0\u9875\u9762 *\"": 3.921928094887362,
+                    "\"script\"": 2.75,
+                    "\"text/javascript\"": 3.572469458770136,
+                    "\"head\"": 2.2516291673878226
+                }
+            },
+            "jquery1.7.2.min.js": {
+                "count": 4.649,
+                "time": 0.0055103302001953125,
+                "additional_info": {
+                    "\"<\"": 0.9182958340544896,
+                    "\">\"": 0.9182958340544896,
+                    "\"display\"": 2.94770277922009,
+                    "\"none\"": 1.9182958340544896,
+                    "\"\"": -0.0,
+                    "\"iframe\"": 2.75,
+                    "\"<!doctype html>\"": 3.8521687236032816,
+                    "\"<html><body>\"": 3.378783493486176,
+                    "\"Microsoft.XMLHTTP\"": 3.8268748818646374,
+                    "\"string\"": 2.75,
+                    "\"*\"": 0.9182958340544896,
+                    "\" \"": 0.9182958340544896,
+                    "\"* \"": 1.5,
+                    "\"No conversion from \"": 3.4992275417233567,
+                    "\" to \"": 1.9182958340544896,
+                    "\"content-type\"": 3.039148671903071,
+                    "\"[\"": 0.9182958340544896,
+                    "\"object\"": 2.75,
+                    "\"]\"": 0.9182958340544896,
+                    "\"unshift\"": 2.94770277922009,
+                    "\"push\"": 2.2516291673878226,
+                    "\"width\"": 2.521640636343318,
+                    "\"border\"": 2.5,
+                    "\"padding\"": 2.725480556997868,
+                    "\"margin\"": 2.75,
+                    "\"Width\"": 2.5216406363433186,
+                    "\"px\"": 1.5,
+                    "\"div\"": 1.9219280948873623,
+                    "\"input\"": 2.521640636343318,
+                    "\"script\"": 2.75,
+                    "\"undefined\"": 2.7321588913645702,
+                    "\"checkbox\"": 2.9219280948873623,
+                    "\"radio\"": 2.521640636343318,
+                    "\"option\"": 2.5,
+                    "\"textarea\"": 2.5219280948873624,
+                    "\"_submit_attached\"": 3.5724312513221195,
+                    "\"_change_attached\"": 3.239097917988786,
+                    "\"table\"": 2.5216406363433186,
+                    "\"tbody\"": 2.521640636343318,
+                    "\"|\"": 0.9182958340544896,
+                    "\"defer\"": 2.235926350629032,
+                    "\"queue\"": 1.9502120649147465,
+                    "\"mark\"": 2.2516291673878226,
+                    "\"data\"": 1.9182958340544896,
+                    "\"toJSON\"": 2.75,
+                    "\"data-\"": 2.2359263506290326,
+                    "\"-$1\"": 1.9219280948873623,
+                    "\"true\"": 2.2516291673878226,
+                    "\"false\"": 2.5216406363433186,
+                    "\"null\"": 1.9182958340544896,
+                    "\"left\"": 2.2516291673878226,
+                    "\"[^\"": 1.5,
+                    "\"body\"": 2.2516291673878226,
+                    "\"1.7.2\"": 2.2359263506290326,
+                    "\"find\"": 2.2516291673878226,
+                    "\".\"": 0.9182958340544896,
+                    "\"(\"": 0.9182958340544896,
+                    "\")\"": 0.9182958340544896,
+                    "\"slice\"": 2.521640636343318,
+                    "\",\"": 0.9182958340544896,
+                    "\"boolean\"": 2.725480556997868,
+                    "\"ready\"": 2.521640636343318,
+                    "\"once memory\"": 3.085055102756477,
+                    "\"complete\"": 2.9219280948873623,
+                    "\"DOMContentLoaded\"": 3.5032583347756456,
+                    "\"load\"": 2.251629167387823,
+                    "\"onreadystatechange\"": 3.5464393446710156,
+                    "\"onload\"": 2.5,
+                    "\"function\"": 2.9219280948873623,
+                    "\"array\"": 1.9502120649147465,
+                    "\"constructor\"": 2.931208948910323,
+                    "\"isPrototypeOf\"": 3.5068905956085192,
+                    "\"@\"": 0.9182958340544896,
+                    "\"return \"": 2.725480556997868,
+                    "\"Invalid JSON: \"": 3.75,
+                    "\"text/xml\"": 2.7219280948873625,
+                    "\"Microsoft.XMLDOM\"": 3.6835423624332306,
+                    "\"parsererror\"": 2.4996981431844145,
+                    "\"Invalid XML: \"": 3.640223928941852,
+                    "\"ms-\"": 1.9219280948873623,
+                    "\"regexp\"": 2.5,
+                    "\"number\"": 2.75,
+                    "\"compatible\"": 3.418295834054489,
+                    "\"0\"": 0.9182958340544896,
+                    "\"Boolean Number String Function Array Date RegExp Object\"": 4.486032120600407,
+                    "\"[object \"": 3.121928094887362,
+                    "\"\u00a0\"": 0.9182958340544896,
+                    "\"memory\"": 2.5,
+                    "\"pending\"": 2.725480556997868,
+                    "\"resolve\"": 2.725480556997868,
+                    "\"reject\"": 2.5,
+                    "\"notify\"": 2.75,
+                    "\"With\"": 2.2516291673878226,
+                    "\"resolved\"": 2.9219280948873623,
+                    "\"rejected\"": 2.6464393446710153,
+                    "\"className\"": 2.913977073182752,
+                    "\"t\"": 0.9182958340544896,
+                    "\"   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>\"": 4.649027760967751,
+                    "\"a\"": 0.9182958340544896,
+                    "\"select\"": 2.5,
+                    "\"link\"": 2.2516291673878226,
+                    "\"style\"": 2.521640636343318,
+                    "\"href\"": 2.2516291673878226,
+                    "\"/a\"": 1.5,
+                    "\"on\"": 1.5,
+                    "\"form\"": 2.251629167387823,
+                    "\"nav\"": 1.9219280948873623,
+                    "\"<:nav></:nav>\"": 2.9735572622751856,
+                    "\"CSS1Compat\"": 3.084962500721156,
+                    "\"onclick\"": 2.725480556997868,
+                    "\"type\"": 2.2516291673878226,
+                    "\"checked\"": 2.503258334775646,
+                    "\"name\"": 2.2516291673878226,
+                    "\"return;\"": 2.725480556997868,
+                    "\"Bubbles\"": 2.725480556997868,
+                    "\"padding:0;margin:0;border:\"": 3.797902689682947,
+                    "\"position:absolute;top:0;left:0;width:1px;height:1px;\"": 4.194909151098145,
+                    "\"0;visibility:hidden;\"": 3.6589934152538053,
+                    "\"style='\"": 2.94770277922009,
+                    "\"5px solid #000;\"": 3.572469458770136,
+                    "\"<div \"": 2.521640636343318,
+                    "\"display:block;'><div style='\"": 4.348394345536403,
+                    "\"0;display:block;overflow:hidden;'></div></div>\"": 4.4727942093616955,
+                    "\"<table \"": 2.94770277922009,
+                    "\"' cellpadding='0' cellspacing='0'>\"": 3.882021446536749,
+                    "\"<tr><td></td></tr></table>\"": 3.179361746147822,
+                    "\"width:0;height:0;position:static;top:0;margin-top:\"": 4.026678901993835,
+                    "\"<table><tr><td style='\"": 3.7201755214643453,
+                    "\"0;display:none'></td><td>t</td></tr></table>\"": 4.031623032511563,
+                    "\"td\"": 1.5,
+                    "\"2px\"": 1.9219280948873623,
+                    "\"1px\"": 1.9219280948873623,
+                    "\"hidden\"": 2.5,
+                    "\"inline\"": 2.25,
+                    "\"block\"": 2.521640636343318,
+                    "\"visible\"": 2.725480556997868,
+                    "\"<div style='width:5px;'></div>\"": 4.327819531114783,
+                    "\"fixed\"": 2.521640636343318,
+                    "\"20px\"": 2.251629167387823,
+                    "\"relative\"": 2.9219280948873623,
+                    "\"1%\"": 1.5,
+                    "\"jQuery\"": 2.75,
+                    "\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\"": 4.362507470762515,
+                    "\"events\"": 2.5,
+                    "\"classid\"": 2.725480556997868,
+                    "\"parsedAttrs\"": 3.085055102756477,
+                    "\"!\"": 0.9182958340544896,
+                    "\"getData\"": 2.503258334775646,
+                    "\"setData\"": 2.503258334775646,
+                    "\"changeData\"": 3.0220552088742,
+                    "\"fx\"": 1.5,
+                    "\"inprogress\"": 3.084962500721156,
+                    "\".run\"": 2.251629167387823,
+                    "\"queue \"": 2.25,
+                    "\"addClass\"": 2.5219280948873624,
+                    "\"removeClass\"": 3.238901256602631,
+                    "\"__className__\"": 2.973557262275186,
+                    "\"set\"": 1.9219280948873623,
+                    "\"value\"": 2.5216406363433186,
+                    "\"get\"": 1.9219280948873623,
+                    "\"select-one\"": 3.0220552088742,
+                    "\"disabled\"": 2.9219280948873623,
+                    "\"optgroup\"": 2.721928094887362,
+                    "\"type property can't be changed\"": 3.827819531114783,
+                    "\"button\"": 2.5,
+                    "\"tabIndex\"": 3.121928094887362,
+                    "\"readOnly\"": 3.121928094887362,
+                    "\"htmlFor\"": 2.94770277922009,
+                    "\"maxLength\"": 3.277613436819116,
+                    "\"cellSpacing\"": 3.238901256602631,
+                    "\"cellPadding\"": 3.238901256602631,
+                    "\"rowSpan\"": 2.9477027792200903,
+                    "\"colSpan\"": 2.9477027792200903,
+                    "\"useMap\"": 2.75,
+                    "\"frameBorder\"": 3.0269868333592873,
+                    "\"contentEditable\"": 3.4548223999466066,
+                    "\"tabindex\"": 3.121928094887362,
+                    "\"height\"": 2.5,
+                    "\"auto\"": 2.2516291673878226,
+                    "\"src\"": 1.9219280948873623,
+                    "\"encoding\"": 2.9219280948873623,
+                    "\"(?:^|\\\\s)\"": 3.0957952550009344,
+                    "\"(?:\\\\s|$)\"": 3.0957952550009344,
+                    "\"class\"": 2.2359263506290326,
+                    "\"mouseenter$1 mouseleave$1\"": 3.6619328723735824,
+                    "\"(^|\\\\.)\"": 2.725480556997868,
+                    "\"\\\\.(?:.*\\\\.)?\"": 2.789898095464287,
+                    "\"(\\\\.|$)\"": 2.725480556997868,
+                    "\"**\"": 1.0,
+                    "\"handle\"": 2.75,
+                    "\":\"": 0.9182958340544896,
+                    "\"click\"": 2.2359263506290326,
+                    "\"focus\"": 2.521640636343318,
+                    "\"blur\"": 2.251629167387823,
+                    "\"attrChange attrName relatedNode srcElement altKey bubbles cancelable ctrlKey currentTarget eventPhase metaKey relatedTarget shiftKey target timeStamp view which\"": 4.236931817106627,
+                    "\"char charCode key keyCode\"": 3.541743520601859,
+                    "\"button buttons clientX clientY fromElement offsetX offsetY pageX pageY screenX screenY toElement\"": 4.067268053540163,
+                    "\"focusin\"": 2.94770277922009,
+                    "\"focusout\"": 2.7219280948873625,
+                    "\"mouseover\"": 2.9139770731827523,
+                    "\"mouseout\"": 2.721928094887362,
+                    "\"click._submit keypress._submit\"": 3.9764097655573916,
+                    "\"submit._submit\"": 3.125,
+                    "\"submit\"": 2.75,
+                    "\"._submit\"": 3.121928094887362,
+                    "\"propertychange._change\"": 3.720175521464345,
+                    "\"click._change\"": 3.4565647621309536,
+                    "\"change\"": 2.75,
+                    "\"beforeactivate._change\"": 3.8035088547976788,
+                    "\"change._change\"": 3.125,
+                    "\"._change\"": 3.121928094887362,
+                    "\"lastToggle\"": 3.0849625007211556,
+                    "\"blur focus focusin focusout load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error contextmenu\"": 4.145035279386587,
+                    "'\"][^'": 2.251629167387823,
+                    "\"]*['\"": 2.251629167387823,
+                    "\"sizcache\"": 2.9219280948873623,
+                    "\"~\"": 0.9182958340544896,
+                    "\"+\"": 0.9182958340544896,
+                    "\"[object Array]\"": 3.75,
+                    "\"\\\\\"": 1.0,
+                    "\"Syntax error, unrecognized expression: \"": 4.089889359470837,
+                    "\"ID\"": 1.5,
+                    "\"NAME\"": 2.2516291673878226,
+                    "\"TAG\"": 1.9219280948873623,
+                    "'\"]*((?:[\\w\\u00c0-\\uFFFF\\-]|\\\\.)+)['": 3.9959065984842446,
+                    "\"parentNode\"": 3.251629167387823,
+                    "\"previousSibling\"": 3.6901165175936654,
+                    "\"nth\"": 1.9219280948873623,
+                    "\"even\"": 1.9182958340544896,
+                    "\"2n\"": 1.5,
+                    "\"odd\"": 1.5219280948873621,
+                    "\"2n+1\"": 2.2516291673878226,
+                    "\"0n+\"": 1.9219280948873623,
+                    "\"~=\"": 1.5,
+                    "\"not\"": 1.9219280948873623,
+                    "\"text\"": 1.9182958340544896,
+                    "\"file\"": 2.251629167387823,
+                    "\"password\"": 2.9219280948873623,
+                    "\"image\"": 2.5216406363433186,
+                    "\"reset\"": 2.2359263506290326,
+                    "\"contains\"": 2.9219280948873623,
+                    "\"only\"": 2.2516291673878226,
+                    "\"first\"": 2.521640636343318,
+                    "\"last\"": 2.2516291673878226,
+                    "\"id\"": 1.5,
+                    "\"!=\"": 1.5,
+                    "\"=\"": 0.9182958340544896,
+                    "\"*=\"": 1.5,
+                    "\"^=\"": 1.5,
+                    "\"$=\"": 1.5,
+                    "\"|=\"": 1.5,
+                    "\"-\"": 0.9182958340544896,
+                    "\"<a name='\"": 3.095795255000934,
+                    "\"'/>\"": 1.9219280948873623,
+                    "\"<a href='#'></a>\"": 3.6143694458867563,
+                    "\"#\"": 0.9182958340544896,
+                    "\"__sizzle__\"": 2.584962500721156,
+                    "\"<p class='TEST'></p>\"": 3.8230679822736606,
+                    "\".TEST\"": 2.235926350629032,
+                    "\"\\\\$&\"": 1.9182958340544896,
+                    "\"[id='\"": 2.521640636343318,
+                    "\"'] \"": 1.9219280948873623,
+                    "\"[test!='']:sizzle\"": 3.616348566075164,
+                    "'\"\\]]*)\\s*\\]/g, \"='": 3.4316235658474303,
+                    "\"<div class='test e'></div><div class='test'></div>\"": 3.9116022179746714,
+                    "\"e\"": 0.9182958340544896,
+                    "\"CLASS\"": 2.2359263506290326,
+                    "\"HTML\"": 2.251629167387823,
+                    "\"filter\"": 2.75,
+                    "\"closest\"": 2.725480556997868,
+                    "\"nextSibling\"": 3.238901256602631,
+                    "\":not(\"": 2.521640636343318,
+                    "\"abbr|article|aside|audio|bdi|canvas|data|datalist|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video\"": 4.125310229961151,
+                    "\"(?:\\d+|null)\"": 3.521640636343319,
+                    "\"<(?:\"": 2.251629167387823,
+                    "\")[\\\\s/>]\"": 2.9219280948873623,
+                    "\"i\"": 0.9182958340544896,
+                    "\"<select multiple='multiple'>\"": 3.694739663055176,
+                    "\"</select>\"": 3.095795255000934,
+                    "\"<fieldset>\"": 3.2516291673878226,
+                    "\"</fieldset>\"": 3.3927474104487847,
+                    "\"<table>\"": 2.94770277922009,
+                    "\"</table>\"": 3.121928094887362,
+                    "\"<table><tbody>\"": 3.375,
+                    "\"</tbody></table>\"": 3.503258334775645,
+                    "\"<table><tbody><tr>\"": 3.408694969562842,
+                    "\"</tr></tbody></table>\"": 3.522711955680758,
+                    "\"<table><tbody></tbody><colgroup>\"": 3.866587105828959,
+                    "\"</colgroup></table>\"": 3.8208888513501886,
+                    "\"<map>\"": 2.521640636343318,
+                    "\"</map>\"": 2.75,
+                    "\"div<div>\"": 2.5219280948873624,
+                    "\"</div>\"": 2.75,
+                    "\"before\"": 2.5,
+                    "\"after\"": 2.5216406363433186,
+                    "\"<$1></$2>\"": 2.7321588913645702,
+                    "\"replaceWith\"": 3.392747410448785,
+                    "\"tr\"": 1.5,
+                    "\"GET\"": 1.9219280948873623,
+                    "\"/*$0*/\"": 2.25,
+                    "\"append\"": 2.5,
+                    "\"prepend\"": 2.503258334775646,
+                    "\"absolute\"": 3.121928094887362,
+                    "\"Top\"": 1.9219280948873623,
+                    "\"Right\"": 2.5216406363433186,
+                    "\"Bottom\"": 2.25,
+                    "\"Left\"": 2.2516291673878226,
+                    "\"opacity\"": 2.94770277922009,
+                    "\"1\"": 0.9182958340544896,
+                    "\"cssFloat\"": 2.9219280948873623,
+                    "\"styleFloat\"": 3.084962500721156,
+                    "\"float\"": 2.521640636343318,
+                    "\"fontSize\"": 3.121928094887362,
+                    "\"1em\"": 1.9219280948873623,
+                    "\"alpha(opacity=\"": 3.452819531114783,
+                    "\"inline-block\"": 3.2359263506290326,
+                    "\"margin-right\"": 3.2359263506290334,
+                    "\"*/\"": 1.5,
+                    "\"POST\"": 2.251629167387823,
+                    "\"html\"": 2.2516291673878226,
+                    "\"<div>\"": 2.521640636343318,
+                    "\"\\r\\n\"": 1.9182958340544896,
+                    "\"ajaxStart ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend\"": 3.8829719637329942,
+                    "\"post\"": 2.251629167387823,
+                    "\"json\"": 2.251629167387823,
+                    "\"application/x-www-form-urlencoded; charset=UTF-8\"": 4.633269689515108,
+                    "\"application/xml, text/xml\"": 3.7821222241453056,
+                    "\"text/html\"": 2.845350936622437,
+                    "\"text/plain\"": 3.2516291673878226,
+                    "\"application/json, text/javascript\"": 4.000432302535625,
+                    "\"responseXML\"": 3.2389012566026314,
+                    "\"responseText\"": 3.1820058147602133,
+                    "\"* text\"": 2.5,
+                    "\"text html\"": 2.845350936622437,
+                    "\"text json\"": 3.095795255000934,
+                    "\"text xml\"": 2.7219280948873625,
+                    "\"Last-Modified\"": 3.5068905956085183,
+                    "\"Etag\"": 2.2516291673878226,
+                    "\"notmodified\"": 3.0850551027564768,
+                    "\"success\"": 2.197159723424149,
+                    "\"error\"": 1.8423709931771084,
+                    "\"ajax\"": 1.9182958340544896,
+                    "\"Success\"": 2.503258334775646,
+                    "\"Error\"": 1.8423709931771084,
+                    "\"ajaxComplete\"": 3.378783493486176,
+                    "\"ajaxStop\"": 2.9219280948873623,
+                    "\"abort\"": 2.521640636343318,
+                    "\"//\"": 1.0,
+                    "\"http:\"": 2.2359263506290326,
+                    "\"ajaxStart\"": 2.6635327548042547,
+                    "\"&\"": 0.9182958340544896,
+                    "\"?\"": 0.9182958340544896,
+                    "\"$1_=\"": 2.2516291673878226,
+                    "\"_=\"": 1.5,
+                    "\"Content-Type\"": 3.2359263506290326,
+                    "\"If-Modified-Since\"": 3.471354487013929,
+                    "\"If-None-Match\"": 3.6402239289418516,
+                    "\"Accept\"": 2.5,
+                    "\", \"": 1.5,
+                    "\"; q=0.01\"": 2.9219280948873623,
+                    "\"No Transport\"": 3.3787834934861767,
+                    "\"ajaxSend\"": 2.9219280948873623,
+                    "\"timeout\"": 2.725480556997868,
+                    "\"callback\"": 2.5219280948873624,
+                    "\"_\"": 0.9182958340544896,
+                    "\"json jsonp\"": 2.751629167387823,
+                    "\"jsonp\"": 2.521640636343318,
+                    "\"$1\"": 1.5,
+                    "\"$2\"": 1.5,
+                    "\"script json\"": 3.392747410448785,
+                    "\" was not called\"": 3.4548223999466066,
+                    "\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"": 3.990804673766349,
+                    "\"text script\"": 3.1808329872054415,
+                    "\"head\"": 2.2516291673878226,
+                    "\"async\"": 2.521640636343318,
+                    "\"withCredentials\"": 3.6168746059562227,
+                    "\"X-Requested-With\"": 3.5724312513221195,
+                    "\"XMLHttpRequest\"": 3.452819531114783,
+                    "\"marginTop\"": 3.277613436819116,
+                    "\"marginBottom\"": 3.2359263506290326,
+                    "\"paddingTop\"": 3.084962500721156,
+                    "\"paddingBottom\"": 3.3735572622751855,
+                    "\"marginLeft\"": 3.418295834054489,
+                    "\"marginRight\"": 3.238901256602631,
+                    "\"paddingLeft\"": 3.3927474104487847,
+                    "\"paddingRight\"": 3.2359263506290334,
+                    "\"show\"": 2.2516291673878226,
+                    "\"olddisplay\"": 3.084962500721156,
+                    "\"hide\"": 2.2516291673878226,
+                    "\":hidden\"": 2.725480556997868,
+                    "\"toggle\"": 2.5,
+                    "\"expand\"": 2.75,
+                    "\"swing\"": 2.521640636343318,
+                    "\"-=\"": 1.5,
+                    "\"fxshow\"": 2.75,
+                    "\"X\"": 0.9182958340544896,
+                    "\"Y\"": 0.9182958340544896,
+                    "\"overflow\"": 2.9219280948873623,
+                    "\"getBoundingClientRect\"": 3.642489673166126,
+                    "\"static\"": 2.5,
+                    "\"position\"": 2.721928094887362,
+                    "\"top\"": 1.9219280948873623,
+                    "\"using\"": 2.521640636343318,
+                    "\"borderTopWidth\"": 3.5,
+                    "\"borderLeftWidth\"": 3.4992275471326932,
+                    "\"pageXOffset\"": 3.238901256602631,
+                    "\"pageYOffset\"": 3.238901256602631,
+                    "\"client\"": 2.75,
+                    "\"scroll\"": 2.5,
+                    "\"offset\"": 2.5,
+                    "\"inner\"": 2.2359263506290326,
+                    "\"outer\"": 2.5216406363433186,
+                    "\"jquery\"": 2.75
+                }
+            },
+            "js.cookie.min.js": {
+                "count": 3.085,
+                "time": 0.0,
+                "additional_info": {
+                    "\"object\"": 2.75,
+                    "\"undefined\"": 2.7321588913645702,
+                    "\"function\"": 2.9219280948873623,
+                    "\"use strict\"": 3.084962500721156,
+                    "\"number\"": 2.75,
+                    "\"\"": -0.0,
+                    "\"; \"": 1.5,
+                    "\"=\"": 0.9182958340544896,
+                    "\";\"": 0.9182958340544896,
+                    "'\"'": 0.9182958340544896,
+                    "\"/\"": 0.9182958340544896
+                }
+            },
+            "sha256.min.js": {
+                "count": 4.059,
+                "time": 0.0,
+                "additional_info": {
+                    "\"use strict\"": 3.084962500721156,
+                    "\"string\"": 2.75,
+                    "\"object\"": 2.75,
+                    "\"input is invalid type\"": 3.6211755429194716,
+                    "\"function\"": 2.9219280948873623,
+                    "\"undefined\"": 2.7321588913645702,
+                    "\"0123456789abcdef\"": 4.058813890331201,
+                    "\"\"": -0.0,
+                    "\"hex\"": 1.9219280948873623,
+                    "\"array\"": 1.9502120649147465,
+                    "\"digest\"": 2.75,
+                    "\"arrayBuffer\"": 2.8731406795131336,
+                    "\"[object Array]\"": 3.75,
+                    "\"require('crypto')\"": 3.6818808028034016,
+                    "\"require('buffer').Buffer\"": 3.440636352673266,
+                    "\"sha224\"": 2.5,
+                    "\"sha256\"": 2.75,
+                    "\"utf8\"": 2.2516291673878226
+                }
+            }
+        },
+        "SuspiciousStringJS": {
+            "412.js": {
+                "count": 0,
+                "time": 0.0010006427764892578,
+                "additional_info": {
+                    "evil": 0,
+                    "shell": 0,
+                    "spray": 0,
+                    "crypt": 0
+                }
+            },
+            "jquery1.7.2.min.js": {
+                "count": 0,
+                "time": 0.012964487075805664,
+                "additional_info": {
+                    "evil": 0,
+                    "shell": 0,
+                    "spray": 0,
+                    "crypt": 0
+                }
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {
+                    "evil": 0,
+                    "shell": 0,
+                    "spray": 0,
+                    "crypt": 0
+                }
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.0019948482513427734,
+                "additional_info": {
+                    "evil": 0,
+                    "shell": 0,
+                    "spray": 0,
+                    "crypt": 0
+                }
+            }
+        },
+        "SuspiciousTagJS": {
+            "412.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {
+                    "script": 0,
+                    "object": 0,
+                    "embed": 0,
+                    "frame": 0
+                }
+            },
+            "jquery1.7.2.min.js": {
+                "count": 1,
+                "time": 0.0009975433349609375,
+                "additional_info": {
+                    "script": 1,
+                    "object": 0,
+                    "embed": 0,
+                    "frame": 0
+                }
+            },
+            "js.cookie.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {
+                    "script": 0,
+                    "object": 0,
+                    "embed": 0,
+                    "frame": 0
+                }
+            },
+            "sha256.min.js": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {
+                    "script": 0,
+                    "object": 0,
+                    "embed": 0,
+                    "frame": 0
+                }
             }
         }
     },
     "url": {
-        "SuspiciousPattern": {
+        "IPURL": {
+            "all_urls": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            }
+        },
+        "SubDomainURL": {
+            "all_urls": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": [
+                    "security",
+                    "bilibili",
+                    "com"
+                ]
+            }
+        },
+        "SuspiciousPatternURL": {
             "all_urls": {
                 "count": 0,
                 "time": 0.0,

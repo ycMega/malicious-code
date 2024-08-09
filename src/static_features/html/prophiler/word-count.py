@@ -3,14 +3,14 @@ from collections import Counter
 from src.static_features.html import *
 
 
-class WordCount(HTMLExtractor):
+class WordCountHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "WordCount",
+            "WordCountHTML",
             "prophiler",
-            "不含tag的文本内容的词数。词可能按照空格或斜线分隔",
+            "不含tag（包含tag的内容）的词数。词可能按照空格或斜线分隔",
             "1.0",
         )
 
@@ -84,4 +84,4 @@ if __name__ == "__main__":
 
     # 运行统计
     total_words, words_count = extract(example_content)
-    print(f"Total Words: {total_words}")
+    print(f"Total Words: {total_words}, words count={words_count}")

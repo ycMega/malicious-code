@@ -1,0 +1,36 @@
+website:
+  url: angler_darkleech
+  crawled_at: ''
+  website_name: ExampleSite
+content_info:
+  html:
+    count: 6
+    meta:
+    - filename: 2015-10-13 pseudo-Darkleech Script_injected.html
+      size: 11375
+    - filename: 2015-12-16 pseudo-Darkleech Script_injected.html
+      size: 20275
+    - filename: 2016-02-05 pseudo-Darkleech Script_injected.html
+      size: 6214
+    - filename: 2016-02-24 pseudo-Darkleech Script_injected.html
+      size: 6619
+    - filename: 2016-03-07 pseudo-Darkleech Script_injected.html
+      size: 6578
+    - filename: 2016-03-14 pseudo-Darkleech Script_injected.html
+      size: 6849
+  url:
+    count: 0
+    meta: []
+  css:
+    count: 0
+    meta: []
+  js:
+    count: 0
+    meta: []
+http_requests: {}
+robots_protocol: 'Disallow: /private/'
+sitemap: angler_darkleech/sitemap.xml
+ssl_certificate:
+  issuer: Certificate Authority
+  validity: 2024-01-01 to 2025-01-01
+notes: This is the initial crawl of the website for feature extraction.

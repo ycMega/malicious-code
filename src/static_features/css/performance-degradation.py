@@ -1,7 +1,36 @@
-import re
 from collections import Counter
 
+from src.static_features.css import *
 from src.utils.css import css_rules_listing, extract_css_features
+
+
+class PerformanceDegradationCSS(CSSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "css",
+            "PerformanceDegradationCSS",
+            "others",
+            "深层嵌套、通配符和（资源相关？）的属性",
+            "1.0",
+        )
+
+    # 似乎不能执行typechecked？会导致在模块加载阶段（而不是执行）报错，因为sys.modules中还没有对应的key
+    def extract(self) -> FeatureExtractionResult:
+        css_list = self.web_data.content["css"]
+        info_dict = {}
+        for css in css_list:
+            start_time = time.time()
+            input_list = css_rules_listing(css["content"])
+            res, rule_usage = extract(input_list)
+            info_dict[css["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": rule_usage,
+            }
+
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
+
 
 # 大尺寸元素：如宽度和高度过大。
 # 复杂的选择器：如过于复杂的嵌套选择器。
@@ -11,7 +40,7 @@ from src.utils.css import css_rules_listing, extract_css_features
 
 
 # 如果CSS规则导致页面渲染性能显著下降，这可能是攻击者故意使用资源密集型的CSS规则来拖慢页面响应，作为DoS攻击的一种形式
-def detect_performance_degradation(css_list: list):
+def extract(css_list: list):
     # 初始化计数器
     rule_usage = Counter()
     css_content = " ".join(css_list)
@@ -148,5 +177,5 @@ if __name__ == "__main__":
         css_test_content
     )
     # 运行检测
-    count, usage = detect_performance_degradation(css_test_list)
+    count, usage = extract(css_test_list)
     print(f"Performance Degradation Rules Detected count = {count}:", usage)

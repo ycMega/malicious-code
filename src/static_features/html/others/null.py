@@ -7,12 +7,12 @@ from src.static_features.html import *
 
 # NULL字符（\x00）可能被恶意使用来进行注入攻击或其他安全漏洞利用：
 # 字符串截断导致SQL注入或路径截断；绕过HTML或JavaScript的安全过滤，从而注入恶意脚本
-class NullCharacter(HTMLExtractor):
+class NullCharacterHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "NullCharacter",
+            "NullCharacterHTML",
             "others",
             "'\x00'的出现次数",
             "1.0",

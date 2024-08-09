@@ -3,12 +3,12 @@ import re
 from src.static_features.js import *
 
 
-class DocProperties(JSExtractor):
+class DocPropertiesJS(JSExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "js",
-            "DocProperties",
+            "DocPropertiesJS",
             "InfectedWebContent2017",
             "document.+特定property的使用次数",
             "1.0",

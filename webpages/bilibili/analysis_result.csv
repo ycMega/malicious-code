@@ -1,7 +1,7 @@
 Rule,Filename,Score
 WordLenCSS,test.css,53.994589720468895
-TestRule,bilibili.html,55.84905660377359
-JSTestRule,412.js,63.76203723518083
-JSTestRule,jquery1.7.2.min.js,41.11567063136627
-JSTestRule,js.cookie.min.js,49.131985731272295
-JSTestRule,sha256.min.js,34.247060047871784
+WordLenHTML,bilibili.html,55.84905660377359
+WordLenJS,412.js,63.76203723518083
+WordLenJS,jquery1.7.2.min.js,41.11567063136627
+WordLenJS,js.cookie.min.js,49.131985731272295
+WordLenJS,sha256.min.js,34.247060047871784

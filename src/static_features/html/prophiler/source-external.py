@@ -5,12 +5,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class SourceExternal(HTMLExtractor):
+class SourceExternalHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "SourceExternal",
+            "SourceExternalHTML",
             "prophiler",
             "urlparse(base_url).netloc 与当前domain不一致的img, script, a标签数量",
             "1.0",

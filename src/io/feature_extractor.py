@@ -9,7 +9,7 @@ from typeguard import typechecked
 
 from src.io.async_logger import GLOBAL_LOGGER, catch_exceptions
 from src.io.file_extractor import WebData
-from src.utils.utils import FILE_TYPES
+from src.utils.utils import FILE_TYPES, make_serializable
 
 # from enum import Enum, auto
 
@@ -156,8 +156,8 @@ class OverallExtractionResult:
                             count, time = res_dict["count"], res_dict["time"]
                         writer.writerow([key, feature, filename, count, time])
             except Exception as e:
-                print(f"Error saving to CSV: {e}")
-                GLOBAL_LOGGER.error(f"Error saving to CSV: {e}")
+                print(f"Error saving to CSV: {str(e)}")
+                GLOBAL_LOGGER.error(f"Error saving to CSV: {str(e)}")
 
     @catch_exceptions
     @typechecked
@@ -207,8 +207,8 @@ class OverallExtractionResult:
                 #     res_list.append(res_dict)
                 # file.write(json.dumps(res_list, indent=4))
         except Exception as e:
-            print(f"Error saving to JSON: {e}")
-            GLOBAL_LOGGER.error(f"Error saving to JSON: {e}")
+            print(f"Error saving to JSON: {str(e)}")
+            GLOBAL_LOGGER.error(f"Error saving to JSON: {str(e)}")
 
     # async很难，在这里一旦await就报错OSError: [WinError 6] 句柄无效
     # 一旦有exception也会报这个错
@@ -242,7 +242,14 @@ class OverallExtractionResult:
         for result in self.results:
             if result.filetype not in self.summary:
                 self.summary[result.filetype] = {}
-            self.summary[result.filetype][result.extractor_name] = result.info
+            try:
+                serialized_info = make_serializable(result.info)
+                self.summary[result.filetype][result.extractor_name] = serialized_info
+            except Exception as e:
+                GLOBAL_LOGGER.error(
+                    f"Error serializing info of {result.extractor_name}: {str(e)}. ignoring it."
+                )
+
             # {
             #     "Count": result.feature_count,
             #     "Time": round(result.execution_time, 5),

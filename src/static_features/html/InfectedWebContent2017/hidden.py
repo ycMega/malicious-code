@@ -4,12 +4,12 @@ from src.static_features.html import *
 
 
 # most of the tags that contain malicious sources, are put in the page as hidden tag
-class Hidden(HTMLExtractor):
+class HiddenHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "Hidden",
+            "HiddenHTML",
             "InfectedWebContent2017",
             "the number of hidden script patterns and hidden style patterns in suspicious tags",
             "1.0",

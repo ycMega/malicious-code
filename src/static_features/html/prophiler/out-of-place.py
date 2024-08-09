@@ -4,12 +4,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class OutOfPlace(HTMLExtractor):
+class OutOfPlaceHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "OutOfPlace",
+            "OutOfPlaceHTML",
             "prophiler",
             "位置不正确的tag",
             "1.0",

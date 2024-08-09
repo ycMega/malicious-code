@@ -3,14 +3,14 @@ from collections import Counter
 from src.static_features.js import *
 
 
-class ActiveX(JSExtractor):
+class ActiveXJS(JSExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "js",
-            "ActiveX",
+            "ActiveXJS",
             "others",
-            "document.+特定property的使用次数",
+            "一些ActiveX对象的使用次数",
             "1.0",
         )
 

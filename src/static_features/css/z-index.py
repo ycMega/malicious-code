@@ -1,9 +1,36 @@
 # import requests
-import re
-
 from bs4 import BeautifulSoup
 
+from src.static_features.css import *
 from src.utils.css import css_rules_listing, extract_css_features
+
+
+class ZIndexCSS(CSSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "css",
+            "ZIndexCSS",
+            "others",
+            "可疑的z-index：值过大，值为负数，较大的值太多",
+            "1.0",
+        )
+
+    # 似乎不能执行typechecked？会导致在模块加载阶段（而不是执行）报错，因为sys.modules中还没有对应的key
+    def extract(self) -> FeatureExtractionResult:
+        css_list = self.web_data.content["css"]
+        info_dict = {}
+        for css in css_list:
+            start_time = time.time()
+            input_list = css_rules_listing(css["content"])
+            res, suspicious_list = extract(input_list)
+            info_dict[css["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": suspicious_list,
+            }
+
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 # z-index 数量
@@ -21,7 +48,6 @@ def extract(css_list: list):
     suspicious_elements = []
     high_z_indices = []
     for css_style in css_list:
-        print(f"css style:{css_style}")
         # 提取元素的 name 属性
         name_match = re.search(r"(\w+)\s*{", css_style)
         element_name = name_match.group(1) if name_match else "unknown"

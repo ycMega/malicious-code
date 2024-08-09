@@ -4,12 +4,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class ScriptNum(HTMLExtractor):
+class ScriptNumHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "ScriptNum",
+            "ScriptNumHTML",
             "prophiler",
             "script tag数量",
             "1.0",

@@ -8,12 +8,12 @@ WHITESPACE_RATIO_THRESHOLD = 0.05
 from src.static_features.html import *
 
 
-class SuspiciousContentElements(HTMLExtractor):
+class SuspiciousContentElementsHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "SuspiciousContentElements",
+            "SuspiciousContentElementsHTML",
             "prophiler",
             "tag.get_text longer than a certain threshold (128 characters) and contains less than 5% of whitespace characters",
             "1.0",

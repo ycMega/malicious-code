@@ -1,0 +1,101 @@
+2024-08-09 17:31:47.767 | INFO | Loading web data from webpages/angler_1 and creating metadata.yaml......
+2024-08-09 17:31:47.773 | INFO | metadata.yaml loaded.
+2024-08-09 17:31:47.784 | WARNING | 文件夹 webpages/angler_1\css 不存在
+2024-08-09 17:31:47.791 | INFO | url:angler_fortinetdonation_indexm
+2024-08-09 17:31:47.791 | INFO | crawled time: 
+2024-08-09 17:31:47.791 | INFO | find 4 HTML files:['ek_angler_malware-traffic-analysis_net.html', 'fortinetdonation_indexm.html', 'indexsdpo3i3-dskuh3u4_indexm.html', 'lp_tachographs.html']
+2024-08-09 17:31:47.791 | INFO | find 1 JavaScript files:['ek_angler_2015_06_10.js']
+2024-08-09 17:31:47.791 | INFO | find 0 CSS files:[]
+2024-08-09 17:31:47.792 | INFO | Loading web data finished. Time: 24.93ms
+2024-08-09 17:31:47.792 | INFO | ===========================================================================
+2024-08-09 17:31:47.792 | INFO | Loading feature extractors from src/static_features/......
+2024-08-09 17:31:48.098 | INFO | ---------------------------------------------------------------------------
+2024-08-09 17:31:48.099 | INFO | Finished loading feature extractors. Time: 307.74ms
+2024-08-09 17:31:48.099 | INFO | ===========================================================================
+2024-08-09 17:31:48.099 | INFO | Extracting features......
+2024-08-09 17:31:48.099 | INFO | Extractor Finished in 0.00 ms: AbnormalAttributeCSS. 
+2024-08-09 17:31:48.099 | INFO | Extractor Finished in 0.00 ms: BlendModeCSS. 
+2024-08-09 17:31:48.099 | INFO | Extractor Finished in 0.00 ms: ComplexSelectorCSS. 
+2024-08-09 17:31:48.100 | INFO | Extractor Finished in 0.00 ms: FilterCSS. 
+2024-08-09 17:31:48.100 | INFO | Extractor Finished in 0.00 ms: FontUnusedCSS. 
+2024-08-09 17:31:48.100 | INFO | Extractor Finished in 0.00 ms: PerformanceDegradationCSS. 
+2024-08-09 17:31:48.100 | INFO | Extractor Finished in 0.00 ms: WordCountCSS. 
+2024-08-09 17:31:48.100 | INFO | Extractor Finished in 0.00 ms: ZIndexCSS. 
+2024-08-09 17:31:48.167 | INFO | Extractor Finished in 66.46 ms: EncodedStringHTML. 
+2024-08-09 17:31:48.190 | INFO | Extractor Finished in 22.97 ms: EncodedURLHTML. 
+2024-08-09 17:31:48.218 | INFO | Extractor Finished in 27.93 ms: FrameSetHTML. 
+2024-08-09 17:31:48.244 | INFO | Extractor Finished in 25.47 ms: HiddenHTML. 
+2024-08-09 17:31:48.260 | INFO | Extractor Finished in 15.96 ms: HTML5_TagsHTML. 
+2024-08-09 17:31:48.283 | INFO | Extractor Finished in 22.97 ms: IPExistHTML. 
+2024-08-09 17:31:48.298 | INFO | Extractor Finished in 14.96 ms: NoFrameHTML. 
+2024-08-09 17:31:59.697 | INFO | Extractor Finished in 11399.06 ms: XSSHTML. 
+2024-08-09 17:31:59.698 | INFO | Extractor Finished in 1.00 ms: NullCharacterHTML. 
+2024-08-09 17:31:59.713 | INFO | Extractor Finished in 14.54 ms: PortHTML. 
+2024-08-09 17:31:59.729 | INFO | Extractor Finished in 15.96 ms: UnsymmetricalTagHTML. 
+2024-08-09 17:31:59.745 | INFO | Extractor Finished in 15.96 ms: CharCountHTML. 
+2024-08-09 17:31:59.761 | INFO | Extractor Finished in 15.96 ms: DoubleDocumentsHTML. 
+2024-08-09 17:31:59.778 | INFO | Extractor Finished in 15.99 ms: EmbedAndObjectHTML. 
+2024-08-09 17:31:59.799 | INFO | Extractor Finished in 20.92 ms: IncludedUrlsHTML. 
+2024-08-09 17:31:59.813 | INFO | Extractor Finished in 14.86 ms: KnownMaliciousPatternsHTML. 
+2024-08-09 17:31:59.833 | INFO | Extractor Finished in 18.98 ms: OutOfPlaceHTML. 
+2024-08-09 17:31:59.849 | INFO | Extractor Finished in 14.93 ms: ScriptNumHTML. 
+2024-08-09 17:31:59.865 | INFO | Extractor Finished in 15.78 ms: ScriptRatioHTML. 
+2024-08-09 17:31:59.881 | INFO | Extractor Finished in 15.09 ms: ScriptWrongExtentionHTML. 
+2024-08-09 17:31:59.945 | INFO | Extractor Finished in 64.44 ms: SmallAreaElementsHTML. 
+2024-08-09 17:31:59.964 | INFO | Extractor Finished in 18.95 ms: SourceExternalHTML. 
+2024-08-09 17:32:00.037 | INFO | Extractor Finished in 72.88 ms: SuspiciousContentElementsHTML. 
+2024-08-09 17:32:00.055 | INFO | Extractor Finished in 17.95 ms: SuspiciousObjectsHTML. 
+2024-08-09 17:32:00.071 | INFO | Extractor Finished in 15.96 ms: UnknownTagsHTML. 
+2024-08-09 17:32:00.098 | INFO | Extractor Finished in 26.93 ms: WordCountHTML. 
+2024-08-09 17:32:00.116 | INFO | Extractor Finished in 17.56 ms: DocPropertiesJS. 
+2024-08-09 17:32:00.116 | INFO | Extractor Finished in 0.00 ms: DocWriteJS. 
+2024-08-09 17:32:00.117 | INFO | Extractor Finished in 0.00 ms: FormMethodJS. 
+2024-08-09 17:32:00.119 | INFO | Extractor Finished in 1.99 ms: GetComputedStyleJS. 
+2024-08-09 17:32:00.128 | INFO | Extractor Finished in 8.95 ms: GlobalFuncJS. 
+2024-08-09 17:32:00.150 | INFO | Extractor Finished in 21.94 ms: HTML_5_EventsJS. 
+2024-08-09 17:32:00.176 | INFO | Extractor Finished in 25.93 ms: JQueryJS. 
+2024-08-09 17:32:00.177 | INFO | Extractor Finished in 0.00 ms: LocationJS. 
+2024-08-09 17:32:00.316 | INFO | Extractor Finished in 139.04 ms: VBScriptJS. 
+2024-08-09 17:32:00.332 | INFO | Extractor Finished in 15.99 ms: ActiveXJS. 
+2024-08-09 17:32:00.362 | INFO | Extractor Finished in 29.89 ms: DomIdentityKeywordJS. 
+2024-08-09 17:32:00.363 | INFO | Extractor Finished in 1.00 ms: DynamicCSSJS. 
+2024-08-09 17:32:00.385 | INFO | Extractor Finished in 20.91 ms: TokenCountJS. 
+2024-08-09 17:32:00.391 | INFO | Extractor Finished in 5.98 ms: WordCountJS. 
+2024-08-09 17:32:00.396 | INFO | Extractor Finished in 4.99 ms: ContentEntropyJS. 
+2024-08-09 17:32:00.416 | INFO | Extractor Finished in 20.51 ms: DeobfuscationFuncJS. 
+2024-08-09 17:32:00.421 | INFO | Extractor Finished in 3.99 ms: DirectStrAssignJS. 
+2024-08-09 17:32:00.434 | INFO | Extractor Finished in 12.97 ms: DomModifyJS. 
+2024-08-09 17:32:00.436 | INFO | Extractor Finished in 1.99 ms: EvalJS. 
+2024-08-09 17:32:00.438 | INFO | Extractor Finished in 2.02 ms: EventAttachmentJS. 
+2024-08-09 17:32:00.438 | INFO | Extractor Finished in 0.00 ms: IframeJS. 
+2024-08-09 17:32:00.443 | INFO | Extractor Finished in 3.95 ms: KeywordRatioJS. 
+2024-08-09 17:32:00.463 | INFO | Extractor Finished in 19.97 ms: LongStringJS. 
+2024-08-09 17:32:00.466 | INFO | Extractor Finished in 2.99 ms: SetTimeoutIntervalJS. 
+2024-08-09 17:32:00.639 | INFO | Extractor Finished in 172.65 ms: ShellcodeJS. 
+2024-08-09 17:32:00.664 | INFO | Extractor Finished in 24.93 ms: StringEntropyJS. 
+2024-08-09 17:32:00.670 | INFO | Extractor Finished in 5.98 ms: SuspiciousStringJS. 
+2024-08-09 17:32:00.670 | INFO | Extractor Finished in 0.00 ms: SuspiciousTagJS. 
+2024-08-09 17:32:00.671 | INFO | Extractor Finished in 0.00 ms: IPURL. 
+2024-08-09 17:32:00.671 | INFO | Extractor Finished in 0.00 ms: SubDomainURL. 
+2024-08-09 17:32:00.672 | INFO | Extractor Finished in 0.00 ms: SuspiciousPatternURL. 
+2024-08-09 17:32:00.672 | INFO | ---------------------------------------------------------------------------
+2024-08-09 17:32:00.672 | INFO | Feature extraction finished in 12572.50 ms: 65 success, 0 failed. Starting writing results to file......
+2024-08-09 17:32:00.679 | INFO | Writing to file finished. Time: 5.98ms
+2024-08-09 17:32:00.687 | INFO | ***************************************************************************
+2024-08-09 17:32:00.687 | INFO | Now start loading rules from src/static_rules/......
+2024-08-09 17:32:00.689 | INFO | Finished loading rules. Time: 1.99ms
+2024-08-09 17:32:00.689 | INFO | ===========================================================================
+2024-08-09 17:32:00.690 | INFO | Analyzing rules......
+2024-08-09 17:32:00.690 | INFO | Rule Finished: WordLenCSS. Time: 0.00ms
+2024-08-09 17:32:00.690 | INFO | Rule Finished: WordLenHTML. Time: 0.00ms
+2024-08-09 17:32:00.690 | INFO | Rule Finished: WordLenJS. Time: 0.00ms
+2024-08-09 17:32:00.690 | INFO | ---------------------------------------------------------------------------
+2024-08-09 17:32:00.690 | INFO | Rule analysis finished in 0.00 ms: 3 success, 0 failed. Starting writing results to file......
+2024-08-09 17:32:00.692 | INFO | ---------------------------------------------------------------------------
+2024-08-09 17:32:00.692 | INFO | Final score: 
+2024-08-09 17:32:00.692 | INFO | ek_angler_malware-traffic-analysis_net.html : 62.683
+2024-08-09 17:32:00.692 | INFO | fortinetdonation_indexm.html                : 67.960
+2024-08-09 17:32:00.693 | INFO | indexsdpo3i3-dskuh3u4_indexm.html           : 70.018
+2024-08-09 17:32:00.693 | INFO | lp_tachographs.html                         : 62.161
+2024-08-09 17:32:00.693 | INFO | ek_angler_2015_06_10.js                     : 54.069
+2024-08-09 17:32:00.693 | INFO | All finished.

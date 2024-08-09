@@ -1,4 +1,31 @@
-import re
+from src.static_features.js import *
+
+
+class ShellcodeJS(JSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "js",
+            "ShellcodeJS",
+            "prophiler",
+            "对每个字符串统计以下特征：不可打印字符（ASCII[32,126]外）占比、十六进制字符占比、重复字符的规律性。取所有字符串中的最大评分",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        start_time = time.time()
+        js_content_list = self.web_data.content["js"]
+        info_dict = {}
+        for h in js_content_list:
+            start_time = time.time()
+            res, max_string = extract(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": max_string,
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
+
 
 # 被称为“shellcode”是因为它经常用于打开攻击者与受害者系统之间的命令行界面（即“shell”）。Shellcode的危害包括但不限于：
 
@@ -55,9 +82,18 @@ def has_regular_intervals(s):
 
 
 def extract(js_content: str):
-    strings = re.findall(r'"([^"]*)"', js_content) + re.findall(
-        r"'([^']*)'", js_content
-    )
+    # strings = re.findall(r'"([^"]*)"', js_content) + re.findall(
+    #     r"'([^']*)'", js_content
+    # )
+    string_pattern = r"""
+    "(?:\\.|[^"\\\n])*"         |  # 双引号字符串，支持换行
+    '(?:\\.|[^'\\\n])*'         |  # 单引号字符串，支持换行
+    `(?:\\.|[^`\\\n])*`         # 模板字符串，支持换行
+"""
+    # pattern = r"(['\"]{1,3})(.*?)(\1)"
+    strings = re.findall(
+        string_pattern, js_content, re.VERBOSE | re.DOTALL
+    )  # 允许在正则表达式中使用空格和注释；使 . 匹配所有字符，包括换行符（允许跨多行的匹配）
     probabilities = []
 
     for s in strings:
@@ -82,9 +118,12 @@ def extract(js_content: str):
         #     f"prob_non_printable:{prob_non_printable}, prob_hexadecimal:{prob_hexadecimal}, prob_regular_intervals:{prob_regular_intervals}"
         # )
         score = max(prob_non_printable, prob_hexadecimal, prob_regular_intervals)
-        probabilities.append(score)
+        probabilities.append((score, s))
 
-    return max(probabilities) if probabilities else 0
+    max_score = max(probabilities, key=lambda x: x[0])[0] if probabilities else 0
+    max_string = max(probabilities, key=lambda x: x[0])[1] if probabilities else ""
+
+    return max_score, max_string
 
 
 # 示例用法

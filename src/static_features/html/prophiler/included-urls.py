@@ -9,12 +9,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class IncludedUrls(HTMLExtractor):
+class IncludedUrlsHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "IncludedUrls",
+            "IncludedUrlsHTML",
             "prophiler",
             "统计部分tag的src或data属性的URL数量",
             "1.0",

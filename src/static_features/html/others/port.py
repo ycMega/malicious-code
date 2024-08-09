@@ -6,14 +6,14 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class Port(HTMLExtractor):
+class PortHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "Port",
+            "PortHTML",
             "others",
-            "查找链接中':\d+'且不是80、443（也就是其他端口）的出现次数",
+            "查找href中':\d+'且不是80、443（也就是其他端口）的出现次数",
             "1.0",
         )
 

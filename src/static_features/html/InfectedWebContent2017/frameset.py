@@ -3,12 +3,12 @@ from src.static_features.html import *
 
 # the frame tag is one of the tags that is susceptible to malicious attacks.
 # Frameset tag is used to hold the number of frame tags
-class FrameSet(HTMLExtractor):
+class FrameSetHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "FrameSet",
+            "FrameSetHTML",
             "InfectedWebContent2017",
             "其中一个<frame>的尺寸被设置为100%，而其他<frame>的尺寸没有被明确指定（通常使用*表示）",
             "1.0",

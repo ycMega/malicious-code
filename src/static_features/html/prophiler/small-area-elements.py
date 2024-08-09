@@ -11,12 +11,12 @@ AREA_THRESHOLD = 30
 SIDE_THRESHOLD = 2
 
 
-class SmallAreaElements(HTMLExtractor):
+class SmallAreaElementsHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "SmallAreaElements",
+            "SmallAreaElementsHTML",
             "prophiler",
             "高度/宽度/面积过小的div, iframe, 和 object元素的数量",
             "1.0",

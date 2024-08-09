@@ -1,4 +1,30 @@
-import re
+from src.static_features.js import *
+
+
+class LocationJS(JSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "js",
+            "LocationJS",
+            "InfectedWebContent2017",
+            "location对象的部分属性和函数出现次数",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        js_content_list = self.web_data.content["js"]
+        info_dict = {}
+        for h in js_content_list:
+            start_time = time.time()
+            res = extract(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": {},
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
+
 
 # The properties of a location object可能被读取，也可能成为initial sources of taint values
 

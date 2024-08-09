@@ -6,12 +6,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class ScriptWrongExtention(HTMLExtractor):
+class ScriptWrongExtentionHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "ScriptWrongExtention",
+            "ScriptWrongExtentionHTML",
             "prophiler",
             "扩展名不合理的script数量",
             "1.0",

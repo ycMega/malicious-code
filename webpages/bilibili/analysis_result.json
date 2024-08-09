@@ -7,7 +7,7 @@
             }
         }
     },
-    "TestRule": {
+    "WordLenHTML": {
         "bilibili.html": {
             "score": 55.84905660377359,
             "additional_info": {
@@ -15,7 +15,7 @@
             }
         }
     },
-    "JSTestRule": {
+    "WordLenJS": {
         "412.js": {
             "score": 63.76203723518083,
             "additional_info": {

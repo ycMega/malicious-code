@@ -1,6 +1,32 @@
-import re
 from typing import List, Tuple
 from urllib.parse import urlparse
+
+from src.static_features.url import *
+
+
+class IPURL(URLExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "url",
+            "IPURL",
+            "prophiler",
+            "URL中是否包含IP地址",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        url_list = self.web_data.content["url"]
+        info_dict = {}
+        for h in url_list:
+            start_time = time.time()
+            res, host_list = extract(h)
+            info_dict["all_urls"] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": host_list,
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
 def extract(url: str) -> Tuple[int, List[str]]:

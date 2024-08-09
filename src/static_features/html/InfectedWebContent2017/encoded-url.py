@@ -4,12 +4,12 @@ from src.utils.utils import ENCODED_URLS_AND_IPS
 # encode--obfuscate
 
 
-class EncodedURL(HTMLExtractor):
+class EncodedURLHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "EncodedURL",
+            "EncodedURLHTML",
             "InfectedWebContent2017",
             "至少五个URL编码或HTML实体编码",
             "1.0",

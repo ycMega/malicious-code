@@ -6,6 +6,7 @@ import dns.resolver
 import dns.reversename
 
 
+# 已解析的PTR记录是否等于被检查主机的IP地址。对于良性的web服务器，这些值应该是一致的。
 def get_ttl_for_a_record(domain: str) -> int:
     """
     获取域名的第一个A记录的TTL值
@@ -17,7 +18,7 @@ def get_ttl_for_a_record(domain: str) -> int:
         for rdata in answers:
             return answers.rrset.ttl
     except Exception as e:
-        print(f"Error resolving A record for {domain}: {e}")
+        print(f"Error resolving A record for {domain}: {str(e)}")
         return -1
 
 
@@ -32,7 +33,7 @@ def get_ttl_for_ns_record(domain: str) -> int:
         for rdata in answers:
             return answers.rrset.ttl
     except Exception as e:
-        print(f"Error resolving NS record for {domain}: {e}")
+        print(f"Error resolving NS record for {domain}: {str(e)}")
         return -1
 
 
@@ -47,7 +48,7 @@ def get_a_record(domain: str) -> str:
         for rdata in answers:
             return rdata.address
     except Exception as e:
-        print(f"Error resolving A record for {domain}: {e}")
+        print(f"Error resolving A record for {domain}: {str(e)}")
         return ""
 
 
@@ -63,7 +64,7 @@ def get_ptr_record(ip: str) -> str:
         for rdata in answers:
             return str(rdata.target).rstrip(".")
     except Exception as e:
-        print(f"Error resolving PTR record for {ip}: {e}")
+        print(f"Error resolving PTR record for {ip}: {str(e)}")
         return ""
 
 

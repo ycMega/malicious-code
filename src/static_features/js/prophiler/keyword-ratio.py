@@ -1,6 +1,33 @@
-import re
+from src.static_features.js import *
 
-# 恶意字符串的关键字相对少，而运instantiations, arithmetical operations, function calls可能相对多
+
+class KeywordRatioJS(JSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "js",
+            "KeywordRatioJS",
+            "prophiler",
+            "keyword在所有单词（'\b\w+\b'）中的占比",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        start_time = time.time()
+        js_content_list = self.web_data.content["js"]
+        info_dict = {}
+        for h in js_content_list:
+            start_time = time.time()
+            res = extract(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": {},
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
+
+
+# 恶意字符串的关键字相对少，而运算，instantiations, arithmetical operations, function calls可能相对多
 # TODO: 设定合适的公式来计算恶意分数
 
 
@@ -56,7 +83,7 @@ def extract(js_content: str) -> float:
     # 计算并返回关键字与总词数的比率
     if total_words == 0:  # 避免除以零的错误
         return 0.0
-    return round(keyword_count / total_words, 2)
+    return round(keyword_count / total_words, 5)
 
 
 if __name__ == "__main__":

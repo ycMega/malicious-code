@@ -43,6 +43,25 @@ ENCODED_URLS_AND_IPS = [
 ]
 
 
+def make_serializable(obj):
+    """检查对象是否可 JSON 序列化，如果不可序列化则转换为可序列化形式"""
+    try:
+        json.dumps(obj)  # 尝试序列化
+        return obj  # 如果可序列化，返回原对象
+    except (TypeError, OverflowError) as exc:
+        # 处理不可序列化的情况
+        if isinstance(obj, set):
+            return list(obj)  # 将 set 转换为 list
+        elif isinstance(obj, dict):
+            return {k: make_serializable(v) for k, v in obj.items()}  # 递归处理字典
+        elif isinstance(obj, list):
+            return [make_serializable(item) for item in obj]  # 递归处理列表
+        else:
+            raise ValueError(
+                f"对象类型 {type(obj)} 无法序列化"
+            ) from exc  # 保留原始异常信息
+
+
 def merge_dicts_add_values(*dicts: dict) -> dict:
     """
     合并任意数量的字典。如果字典中有相同的键，则将它们的值相加。
@@ -103,7 +122,7 @@ def parse_js_code(js_code: str, js_path: str = ""):
     #         return ast
     #         # print(json.dumps(ast, indent=2))
     #     except json.JSONDecodeError as e:
-    #         print(f"JSON decode error: {e}")
+    #         print(f"JSON decode error: {str(e)}")
 
 
 # def parse_js_code_python(js_code: str):
@@ -113,7 +132,7 @@ def parse_js_code(js_code: str, js_path: str = ""):
 #             ast = parse(line)
 #         except Exception as e:
 #             print(f"Error in line: {line}")
-#             print(f"Error: {e}")
+#             print(f"Error: {str(e)}")
 #             break
 #     try:
 #         # 匹配正则表达式的模式
@@ -143,6 +162,6 @@ def parse_js_code(js_code: str, js_path: str = ""):
 #         # js_code = js_code.replace("_", "") # 赋值_ = xxx会出错
 #         ast = parse(fin_code)
 #     except Exception as e:
-#         print(f"Failed to parse JavaScript code: {e}")
+#         print(f"Failed to parse JavaScript code: {str(e)}")
 #         return None
 #     return ast

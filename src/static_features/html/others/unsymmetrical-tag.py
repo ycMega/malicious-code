@@ -5,12 +5,12 @@ from bs4 import BeautifulSoup
 from src.static_features.html import *
 
 
-class UnsymmetricalTag(HTMLExtractor):
+class UnsymmetricalTagHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "UnsymmetricalTag",
+            "UnsymmetricalTagHTML",
             "others",
             "没有闭合的tag数量。这里只检查开始标签和结束标签在个数上是否匹配，而不检查标签的嵌套关系",
             "1.0",

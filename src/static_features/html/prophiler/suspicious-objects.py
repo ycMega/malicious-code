@@ -12,12 +12,12 @@ SUSPICIOUS_CLASSIDS = [
 from src.static_features.html import *
 
 
-class SuspiciousObjects(HTMLExtractor):
+class SuspiciousObjectsHTML(HTMLExtractor):
     def __init__(self, web_data):
         super().__init__(web_data)
         self.meta = ExtractorMeta(
             "html",
-            "SuspiciousObjects",
+            "SuspiciousObjectsHTML",
             "prophiler",
             "object tag中包含可疑classid的数量",
             "1.0",

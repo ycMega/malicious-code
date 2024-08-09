@@ -3,7 +3,7 @@ import geoip2.database
 
 def get_country_code(ip_address: str) -> str:
     """
-    获取IP地址对应的国家代码
+    使用geoip获取IP地址对应的国家代码
     :param ip_address: IP地址
     :return: 国家代码
     """
@@ -13,7 +13,7 @@ def get_country_code(ip_address: str) -> str:
             response = reader.country(ip_address)
             return response.country.iso_code
     except Exception as e:
-        print(f"Error fetching country code for IP {ip_address}: {e}")
+        print(f"Error fetching country code for IP {ip_address}: {str(e)}")
         return ""
 
 

@@ -51,7 +51,7 @@ class HARProcessor:
                 self.har_data = json.load(file)
             return True
         except Exception as e:
-            GLOBAL_LOGGER.error(f"Error loading HAR file: {e}")
+            GLOBAL_LOGGER.error(f"Error loading HAR file: {str(e)}")
             return False
 
     @typechecked
@@ -122,7 +122,11 @@ class WebData:
         self.metadata: dict | None = None
         self.url: str | None = None
         self.content: dict[str, list[dict[str, str]]] | None = None
-        self.har_processor = HARProcessor(dir_path)
+        self.har_processor = (
+            HARProcessor(dir_path)
+            if os.path.exists(os.path.join(dir_path, HAR_FILE))
+            else None
+        )
         # self.logger = Logger.with_default_handlers(level="DEBUG")
 
     # 在其中执行需要涉及到logger的内容
@@ -130,12 +134,14 @@ class WebData:
     def load_data(self):
         if self.har_processor:
             self.har_processor.load_data()
+            GLOBAL_LOGGER.info("network.har loaded.")
         try:
             metadata_path = os.path.join(self.dir_path, METADATA_FILE)
             with open(metadata_path, "r", encoding="utf-8") as file:
                 self.metadata = yaml.safe_load(file)
+            GLOBAL_LOGGER.info("metadata.yaml loaded.")
         except Exception as e:
-            GLOBAL_LOGGER.error(f"Error loading metadata.yaml: {e}")
+            GLOBAL_LOGGER.error(f"Error loading metadata.yaml: {str(e)}")
 
     def extract_url_from_meta(self) -> str:
         # 从metadata.yaml中提取URL
@@ -171,7 +177,7 @@ class WebData:
             files_content[file_type] = []
             # 检查文件夹是否存在
             if not os.path.exists(folder_path):
-                GLOBAL_LOGGER.error(f"文件夹 {folder_path} 不存在")
+                GLOBAL_LOGGER.warning(f"文件夹 {folder_path} 不存在")
                 continue
                 # raise FileNotFoundError(f"文件夹 {folder_path} 不存在")
 
@@ -194,7 +200,7 @@ class WebData:
                                 }
                             )
                     except Exception as e:
-                        GLOBAL_LOGGER.error(f"Error loading {file_path}: {e}")
+                        GLOBAL_LOGGER.error(f"Error loading {file_path}: {str(e)}")
             # 将所有URL添加到列表中
             url_list_set = list(set(url_list))
             files_content["url"] = url_list_set

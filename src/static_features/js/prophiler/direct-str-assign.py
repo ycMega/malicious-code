@@ -1,17 +1,92 @@
 # from pyjsparser import PyJsParser
+import deprecated
 import escodegen
 
+from src.static_features.js import *
 from src.utils.utils import parse_js_code
 
 # 个人认为，direct assign几乎等价于字符串字面量出现次数。前者因为嵌套而很难统计。
+
 
 # 直接赋值：例如 var str = "example";
 # 属性设置：例如 obj.key = "value";
 # 直接字符串声明：例如 const str = "example";
 # 条件运算符中的字符串：例如 let result = condition ? "true" : "false";
 # 数组中的字符串：例如 let arr = ["string1", "string2"];
+class DirectStrAssignJS(JSExtractor):
+    def __init__(self, web_data):
+        super().__init__(web_data)
+        self.meta = ExtractorMeta(
+            "js",
+            "DirectStrAssignJS",
+            "prophiler",
+            "JS代码中字符串作为右值的直接赋值情况（目前只考虑直接出现在等号右侧，没有考虑三目运算符、嵌套、列表复制等复杂情况）",
+            "1.0",
+        )
+
+    def extract(self) -> FeatureExtractionResult:
+        start_time = time.time()
+        js_content_list = self.web_data.content["js"]
+        info_dict = {}
+        for h in js_content_list:
+            start_time = time.time()
+            res = extract(h["content"])
+            info_dict[h["filename"]] = {
+                "count": res,
+                "time": time.time() - start_time,
+                "additional_info": {},
+            }
+        return FeatureExtractionResult(self.meta.filetype, self.meta.name, info_dict)
 
 
+def extract(js_content: str):
+
+    # 匹配字符串赋值的模式
+    assignment_pattern = r"""
+        \b\w+\s*=\s*              # 变量名和等号
+        (                         # 开始捕获组
+            "(?:\\.|[^"\\])*"    |  # 双引号字符串
+            '(?:\\.|[^'\\])*'    |  # 单引号字符串
+            `(?:\\.|[^`\\])*`     # 模板字符串
+        )                         # 结束捕获组
+    """
+
+    assignments = re.findall(assignment_pattern, js_content, re.VERBOSE)
+
+    return len(assignments)
+    # ast, error = parse_js_code(js_content)
+    # if error:
+    #     print(f"Error parsing code: {error}")
+    #     # return -1
+    # assignments = []  # 用于存储所有字符串赋值表达式
+    # for node in ast.body:
+    #     count_string_assignments(node, assignments)  # 记录字符串赋值
+
+    # return len(assignments), assignments
+
+
+# 示例JavaScript代码
+if __name__ == "__main__":
+    js_content = """
+
+    var sh = shellcode = "4c8bdc4981ec88000000488b8424900000004833c448898424800000004889442410";
+    var [x, y] = ["string1", "string2"];
+    obj.prop = "string";
+    x = shellcode = "This is a normal string for testing.";
+    var condition = true;
+    var result = condition ? "string1" : "string2";
+    var arr = ["string1", "string2"];
+    """
+
+    count, assignments = extract(js_content)
+    print(f"Number of direct string assignments: {count}")
+    for assignment in assignments:
+        print(assignment)
+
+
+@deprecated.deprecated(
+    reason="This function is deprecated due to unstable performance of parsing the ast."
+)
 def count_string_assignments(node, assignments):
     """递归提取长字符串."""
     # print(f"Current node: {escodegen.generate(node)}.")  # 输出当前遍历到的节点代码
@@ -81,37 +156,6 @@ def count_string_assignments(node, assignments):
         if node.alternate:
             count_string_assignments(node.alternate, assignments)
 
-
-def extract(js_content: str):
-    # print("direct-str-assign.py: extract")
-    ast, error = parse_js_code(js_content)
-    if error:
-        print(f"Error parsing code: {error}")
-        # return -1
-    assignments = []  # 用于存储所有字符串赋值表达式
-    for node in ast.body:
-        count_string_assignments(node, assignments)  # 记录字符串赋值
-
-    return len(assignments), assignments
-
-
-# 示例JavaScript代码
-if __name__ == "__main__":
-    js_content = """
-
-    var sh = shellcode = "4c8bdc4981ec88000000488b8424900000004833c448898424800000004889442410";
-    var [x, y] = ["string1", "string2"];
-    obj.prop = "string";
-    x = shellcode = "This is a normal string for testing.";
-    var condition = true;
-    var result = condition ? "string1" : "string2";
-    var arr = ["string1", "string2"];
-    """
-
-    count, assignments = extract(js_content)
-    print(f"Number of direct string assignments: {count}")
-    for assignment in assignments:
-        print(assignment)
 
 # def count_string_assignments(node, assignments):
 #     """记录字符串赋值表达式."""

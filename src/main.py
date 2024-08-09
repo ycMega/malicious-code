@@ -43,6 +43,7 @@ def main(*args, **kwargs):
         mode="w",  # 覆盖原文件
         format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level} | {message}",
         enqueue=True,  # 线程安全？
+        encoding="utf-8",
     )
     web_data = WebData(input_directory)
 
@@ -64,8 +65,8 @@ def main(*args, **kwargs):
             GLOBAL_LOGGER.info(info)
 
     except Exception as e:
-        GLOBAL_LOGGER.error(f"Exception caught: {e}")
-        print(f"Exception caught: {e}")
+        GLOBAL_LOGGER.error(f"Exception caught: {str(e)}")
+        print(f"Exception caught: {str(e)}")
     # elapsed_time_ms =
     GLOBAL_LOGGER.info(
         f"Loading web data finished. Time: {((time.time() - start_time) * 1000):.2f}ms"
@@ -73,7 +74,7 @@ def main(*args, **kwargs):
     features_dir = "src/static_features/"  # 特征提取脚本目录
 
     start_time = time.time()
-    GLOBAL_LOGGER.info("=" * 50)
+    GLOBAL_LOGGER.info("=" * 75)
     GLOBAL_LOGGER.info(f"Loading feature extractors from {features_dir}......")
     extractors = load_extractors_recursive(features_dir, web_data, [])
     for extractor in extractors:
@@ -93,13 +94,13 @@ def main(*args, **kwargs):
                 return -1
             feature_registry.register(extractor_added, is_user_feature=True)
         extractors.extend(extractors_added)
-    GLOBAL_LOGGER.info("-" * 50)
+    GLOBAL_LOGGER.info("-" * 75)
     GLOBAL_LOGGER.info(
         f"Finished loading feature extractors. Time: {((time.time() - start_time) * 1000):.2f}ms"
     )
     overall_results = OverallExtractionResult(web_data)
     start_time = time.time()
-    GLOBAL_LOGGER.info("=" * 50)
+    GLOBAL_LOGGER.info("=" * 75)
     GLOBAL_LOGGER.info("Extracting features......")
     extract_features(overall_result=overall_results, extractors=extractors)
 
@@ -110,7 +111,7 @@ def main(*args, **kwargs):
 
     start_time = time.time()
     rules_dir = "src/static_rules/"  # 规则脚本目录
-    GLOBAL_LOGGER.info("*" * 50)
+    GLOBAL_LOGGER.info("*" * 75)
     GLOBAL_LOGGER.info(f"Now start loading rules from {rules_dir}......")
     all_rules = load_rules_recursive(rules_dir, feature_loaded, [])
     if "rule_path" in kwargs and kwargs["rule_path"]:
@@ -140,11 +141,11 @@ def main(*args, **kwargs):
         f"Finished loading rules. Time: {((time.time() - start_time) * 1000):.2f}ms"
     )
     overall_analysis_result = OverallAnalysisResult(web_data.dir_path)
-    GLOBAL_LOGGER.info("=" * 50)
+    GLOBAL_LOGGER.info("=" * 75)
     GLOBAL_LOGGER.info("Analyzing rules......")
     analyze_rules(overall_analysis_result, all_rules)
     score_dict = overall_analysis_result.judge()
-    GLOBAL_LOGGER.info("-" * 50)
+    GLOBAL_LOGGER.info("-" * 75)
     GLOBAL_LOGGER.info("Final score: ")
     max_filename_len = max([len(filename) for filename in score_dict])
     for filename, score in score_dict.items():
@@ -162,7 +163,7 @@ if __name__ == "__main__":
         "--web_dir",
         type=str,
         help="directory path of webpages to process",
-        default="webpages/bilibili",
+        default="webpages/angler_fortinetdonation_indexm",
     )
     parser.add_argument(
         "-f",
